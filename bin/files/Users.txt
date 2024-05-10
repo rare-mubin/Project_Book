@@ -1,10 +1,3 @@
-a	a	a	a	a
-a	a	a	a	a
-Oishi	987654	265135466	dipon	shazidul.24@gmail.com
-oishi	123456	465665	ddddd	d@gmail.com
-Dip	123456	258963	Dipon	Dip@gmail.com
-Mafi	123456	987456	Oishi	oi@gmail.com
-ok	ok	ok	ok	ok
-jayna	987654	31-10-2003	jayna tanjum	jainu@gmail.com
-ma	123456	25/2/2003	Mafi	ma@gmail.com
-mubin	123	1-1-2003	mubin	mubin@gmail.com
+jayna	987	31/10/2003	jayna tanjum	jainu@gmail.com
+mafi	1234	25/2/2003	Muntahi safwan	ma@gmail.com
+mubin	123	01/01/2003	Mubin Hasan	mubin@gmail.com

@@ -61,13 +61,13 @@ public class Home extends JFrame implements ActionListener
 		l = new JLabel(fullName);
 		l.setFont(new Font("Felix Titling",Font.BOLD,36));
 		l.setForeground(new Color(0x505050));
-		l.setBounds(369,62,713,42);
+		l.setBounds(369,78,713,42);
 		l1.add(l);
 
 		l4 = new JLabel("Welcome To The Online Book Store");
 		l4.setFont(new Font("Felix Titling",Font.BOLD,32));
 		l4.setForeground(new Color(0x505050));
-		l4.setBounds(369,113,713,42);
+		l4.setBounds(369,137,713,42);
 		l1.add(l4);
 
 		//profile button 1

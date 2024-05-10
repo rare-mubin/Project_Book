@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class Profile extends JFrame implements ActionListener 
 {
-		JLabel l,l1,l2,l3,l4,l5,l6,l7,lP;
+		JLabel l,l1,l2,l3,l4,l5,l6,l7,l8,l9,l10,l11,l12,l13,lP;
 		JLabel pl1,Tpl; //for panel image
 		JLabel bl1,bl2,bl3,bl4,bl5,bl6,tl1,tl2; //for button and  textfield image
 		JTextField t1,t2;
@@ -64,9 +64,91 @@ public class Profile extends JFrame implements ActionListener
 
         l1.setIcon(image);
 
-		/*lP = new JLabel(new ImageIcon("image\\profile\\dummy-profile-pic.png"));
-		lP.setBounds(170,53,157,157);
-        l1.add(lP);*/
+		lP = new JLabel(new ImageIcon("image\\profile\\dummy-profile-pic.png"));
+		lP.setBounds(103,245,157,157);
+        l1.add(lP);
+
+		//right profile details er niche
+        l = new JLabel();
+		l.setFont(new Font("Felix Titling",Font.BOLD,36));
+		l.setForeground(new Color(0x505050));
+		l.setBounds(366,24,840,670);
+		l1.add(l);
+        //profile details
+        l2 = new JLabel("profile details");
+		l2.setFont(new Font("Felix Titling",Font.PLAIN,35));
+		l2.setForeground(new Color(0x505050));
+		l2.setBounds(674,51,289,42);
+		l1.add(l2);
+
+        //full name
+		l3 = new JLabel("Full Name");
+		l3.setFont(new Font("Arial",Font.PLAIN,32));
+		l3.setForeground(new Color(0x505050));
+		l3.setBounds(491,234,186,37);
+		l1.add(l3);
+        //full name er pase
+		l4 = new JLabel(fullName);
+		l4.setFont(new Font("Arial",Font.PLAIN,32));
+		l4.setForeground(new Color(0x505050));
+		l4.setBounds(748,234,429,37);
+		l1.add(l4);
+        //date of birth
+        l5 = new JLabel("Date Of Birth");
+		l5.setFont(new Font("Arial",Font.PLAIN,24));
+		l5.setForeground(new Color(0x505050));
+		l5.setBounds(491,339,181,28);
+		l1.add(l5);
+
+        //date of birth er paser button
+		l6 = new JLabel(dateOfBirth);
+		l6.setFont(new Font("Arial",Font.PLAIN,24));
+		l6.setForeground(new Color(0x505050));
+		l6.setBounds(748,339,429,28);
+		l1.add(l6);
+
+        //email
+		l7 = new JLabel("Email");
+		l7.setFont(new Font("Arial",Font.PLAIN,24));
+		l7.setForeground(new Color(0x505050));
+		l7.setBounds(491,435,188,28);
+		l1.add(l7);
+
+        //email er paser line
+		l8 = new JLabel(userEmail);
+		l8.setFont(new Font("Arial",Font.PLAIN,24));
+		l8.setForeground(new Color(0x505050));
+		l8.setBounds(748,435,429,28);
+		l1.add(l8);
+
+		//profile link
+        l9 = new JLabel("Profile Link");
+		l9.setFont(new Font("Arial",Font.PLAIN,24));
+		l9.setForeground(new Color(0x505050));
+		l9.setBounds(491,531,188,28);
+		l1.add(l9);
+
+        //profile er link er paser link
+		l10 = new JLabel("https://www.book.com/"+userName+"/");
+		l10.setFont(new Font("Arial",Font.PLAIN,24));
+		l10.setForeground(new Color(0x505050));
+		l10.setBounds(748,531,429,28);
+		l1.add(l10);
+        
+		//username er nicher ta
+		l11 = new JLabel();
+		l11.setFont(new Font("Felix Titling",Font.BOLD,36));
+		l11.setForeground(new Color(0x505050));
+		l11.setBounds(26,24,311,670);
+		l1.add(l11);
+        
+		//username
+        l13 = new JLabel(userName);
+		l13.setFont(new Font("Arial",Font.PLAIN,32));
+		l13.setForeground(new Color(0x505050));
+		l13.setHorizontalAlignment(JLabel.CENTER);
+		l13.setBounds(47,445,270,37);
+		l1.add(l13);
         
 		//Exit Button
 		b3 = new JButton();
@@ -108,9 +190,9 @@ public class Profile extends JFrame implements ActionListener
         l1.add(bl5);
 
 		//profile image
-		l3 = new JLabel();
-		l3.setBounds(170,53,157,157);
-		l1.add(l3);
+		l12 = new JLabel();
+		l12.setBounds(103,245,157,157);
+		l1.add(l12);
 
 		//right title bar
 		Tpl = new JLabel(new ImageIcon("image\\panel\\titleP.png"));
