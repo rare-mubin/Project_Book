@@ -71,7 +71,11 @@ public class Account {
             writer.write(getUserPassword()+"\t");
             writer.write(getnID()+"\t");
             writer.write(getFullName()+"\t");
-            writer.write(getUserEmail()+"\n");
+            writer.write(getUserEmail()+"\t");
+            writer.write("0"+"\t");
+            writer.write("aa"+"\t");
+            writer.write("aa"+"\t");
+            writer.write("aa"+"\n");
             writer.flush();
             writer.close();
         }

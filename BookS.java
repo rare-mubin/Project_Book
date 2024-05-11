@@ -11,11 +11,11 @@ public class BookS extends JFrame implements ActionListener
 		JButton b1,b2,b3,b4,b5,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16; 
 
 		static Point LP;
-		String name;
+		String userName;
 
-	public BookS(String name)
+	public BookS(String userName)
 	{
-		this.name = name;
+		this.userName = userName;
         ImageIcon image = new ImageIcon("image\\background\\f4.png");
         l1 = new JLabel();
 
@@ -139,6 +139,7 @@ public class BookS extends JFrame implements ActionListener
 		b8.addActionListener(this);
 		l1.add(b8);
 
+		//Book1
 		b9 = new JButton();
 		b9.setOpaque(false);
 		b9.setFocusable(false);
@@ -324,7 +325,13 @@ public class BookS extends JFrame implements ActionListener
 
 			if(ae.getSource()==b5) //back
 			{
-				Home f = new Home(this.name);
+				Home f = new Home(this.userName);
+				this.setVisible(false);
+				f.setVisible(true);
+			}
+			else if(ae.getSource()==b9)//Book1
+			{
+				Book1 f = new Book1(this.userName);
 				this.setVisible(false);
 				f.setVisible(true);
 			}
