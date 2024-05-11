@@ -214,14 +214,6 @@ public class BookS extends JFrame implements ActionListener
 
 
 
-
-
-
-
-
-		
-		
-
 		//Exit Button
 		b3 = new JButton();
 		b3.setOpaque(false);

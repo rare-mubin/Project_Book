@@ -103,16 +103,16 @@ public class Book1 extends JFrame implements ActionListener
 		l1.add(l12);
         
         //Add to my collection Button
-		b3 = new JButton("add to my collection");
-		b3.setFont(new Font("Arial",Font.PLAIN,17));
-		b3.setForeground(Color.WHITE);
-		b3.setOpaque(false);
-		b3.setFocusable(false);
-		b3.setBackground(Color.green);
-		b3.setBounds(739,610,256,49);
-		b3.setBorderPainted(false);
-		b3.addActionListener(this);
-		l1.add(b3);
+		b2 = new JButton("add to my collection");
+		b2.setFont(new Font("Arial",Font.PLAIN,17));
+		b2.setForeground(Color.WHITE);
+		b2.setOpaque(false);
+		b2.setFocusable(false);
+		b2.setBackground(Color.green);
+		b2.setBounds(739,610,256,49);
+		b2.setBorderPainted(false);
+		b2.addActionListener(this);
+		l1.add(b2);
 		bl2 = new JLabel(new ImageIcon("image\\button\\add_collection.png"));
 		bl2.setBounds(739,610,256,49);
         l1.add(bl2);
@@ -232,6 +232,13 @@ public class Book1 extends JFrame implements ActionListener
             if(ae.getSource()==b3) //exit
 			{
 				System.exit(0);
+			}
+			
+			else if(ae.getSource()==b2) //back
+			{
+				Slot f = new Slot(this.userName,ISBN);
+				this.setVisible(true);
+				f.setVisible(true);
 			}
 
 			else if(ae.getSource()==b4) //minimize
