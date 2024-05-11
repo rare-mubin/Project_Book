@@ -175,7 +175,7 @@ public class Book1 extends JFrame implements ActionListener
         l1.add(pl1);
         //book Details label
 		pl2 = new JLabel(new ImageIcon("image\\panel\\bookP2.png"));
-		pl2.setBounds(528,22,678,670);
+		pl2.setBounds(528,24,678,670);
         l1.add(pl2);
 
 		//right title bar
@@ -240,7 +240,7 @@ public class Book1 extends JFrame implements ActionListener
 			}
             else if(ae.getSource()==b5) //back
 			{
-				Home f = new Home(this.userName);
+				BookS f = new BookS(this.userName);
 				this.setVisible(false);
 				f.setVisible(true);
 			}

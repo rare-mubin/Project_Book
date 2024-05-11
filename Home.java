@@ -16,6 +16,9 @@ public class Home extends JFrame implements ActionListener
 
 		String userName;
         String fullName;
+		String Payment;
+		String PaymentNotDone = "0";
+		String PaymentDone = "1";
 
 
 		static Point LP;
@@ -35,6 +38,7 @@ public class Home extends JFrame implements ActionListener
                 if (line.contains(searchString)) {
                     String[] value = line.split("\t");
                     this.fullName = value[3];
+					this.Payment = value[5];
 					this.lineNumber= lineNumber;
                 }
             }
@@ -260,9 +264,18 @@ public class Home extends JFrame implements ActionListener
 			}
 			else if(ae.getSource()==b1)//Package
 			{
-				Package b=new Package(this.userName);
-				this.setVisible(false);
-				b.setVisible(true);
+				if(Payment.equals(PaymentNotDone))
+				{
+					Package b=new Package(this.userName);
+					this.setVisible(false);
+					b.setVisible(true);
+				}
+				else if(Payment.equals(PaymentDone))
+				{
+					BookS c=new BookS(this.userName);
+					this.setVisible(false);
+					c.setVisible(true);
+				}
 			}
 
 			else if(ae.getSource()==b1) //back

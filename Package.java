@@ -188,9 +188,16 @@ public class Package extends JFrame implements ActionListener {
 		public void actionPerformed(ActionEvent ae) 
 		{
 
-			if(ae.getSource()==b6) //profile2
+			if(ae.getSource()==b6) //profile
 			{
 				Profile f = new Profile(userName);
+				f.setVisible(true);
+			}
+
+			else if(ae.getSource()==b2)
+			{
+				Payment f = new Payment(userName);
+				this.setVisible(false);
 				f.setVisible(true);
 			}
 
