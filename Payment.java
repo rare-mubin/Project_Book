@@ -317,15 +317,16 @@ public class Payment extends JFrame implements ActionListener {
 
                         scanner.close();
 
-                        // Write the modified content back to the file
                         FileWriter writer = new FileWriter(file);
                         writer.write(fileContent.toString());
                         writer.close();
 
                         JOptionPane.showMessageDialog(null, "Payment Successful");
+                        
                         Home f = new Home(this.userName);
                         this.setVisible(false);
                         f.setVisible(true);
+
                     } catch (FileNotFoundException e) {
                         e.printStackTrace();
                     } catch (IOException e) {
