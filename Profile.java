@@ -1,14 +1,20 @@
-import javax.swing.*; 
+import javax.swing.*;
+import javax.swing.filechooser.FileSystemView;
+
 import java.awt.*;
 import java.awt.event.*;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Scanner;
 
 public class Profile extends JFrame implements ActionListener 
 {
 		JLabel l,l1,l2,l3,l4,l5,l6,l7,l8,l9,l10,l11,l12,l13,lP;
-		JLabel pl1,Tpl; //for panel image
+		JLabel pl1,pl2,Tpl; //for panel image
 		JLabel bl1,bl2,bl3,bl4,bl5,bl6,tl1,tl2; //for button and  textfield image
 		JTextField t1,t2;
 		JButton b1,b2,b3,b4,b5,b6; 
@@ -19,14 +25,15 @@ public class Profile extends JFrame implements ActionListener
         String fullName;
         String dateOfBirth;
         String userEmail;
+		String projectPath;
 
-
+		String filePath = "bin/files/Users.txt";
 		static Point LP;
 
 	public Profile(String userName)
 	{
 		this.userName = userName;
-		String filePath = "bin/files/Users.txt";
+		
         String searchString = this.userName;
 		try {
             File file = new File(filePath);
@@ -51,7 +58,7 @@ public class Profile extends JFrame implements ActionListener
         }
 
 		
-        ImageIcon image = new ImageIcon("image\\background\\fp.png");
+        ImageIcon image = new ImageIcon("image\\background\\login_page_L.png");
         l1 = new JLabel();
 
         this.setTitle("project_BOOK");
@@ -64,16 +71,20 @@ public class Profile extends JFrame implements ActionListener
 
         l1.setIcon(image);
 
-		lP = new JLabel(new ImageIcon("image\\profile\\dummy-profile-pic.png"));
-		lP.setBounds(103,245,157,157);
-        l1.add(lP);
-
-		//right profile details er niche
-        l = new JLabel();
-		l.setFont(new Font("Felix Titling",Font.BOLD,36));
-		l.setForeground(new Color(0x505050));
-		l.setBounds(366,24,840,670);
-		l1.add(l);
+		String picpath = "image\\profile\\"+userName+".png";
+		
+			File file = new File(picpath);
+			if (file.exists()){
+				lP = new JLabel(new ImageIcon(picpath));
+				lP.setBounds(103,245,157,157);
+				l1.add(lP);
+			}
+			else{
+				lP = new JLabel(new ImageIcon("image\\profile\\dummy-profile-pic.png"));
+				lP.setBounds(103,245,157,157);
+				l1.add(lP);
+			}
+			
         //profile details
         l2 = new JLabel("profile details");
 		l2.setFont(new Font("Felix Titling",Font.PLAIN,35));
@@ -135,13 +146,6 @@ public class Profile extends JFrame implements ActionListener
 		l10.setBounds(748,531,429,28);
 		l1.add(l10);
         
-		//username er nicher ta
-		l11 = new JLabel();
-		l11.setFont(new Font("Felix Titling",Font.BOLD,36));
-		l11.setForeground(new Color(0x505050));
-		l11.setBounds(26,24,311,670);
-		l1.add(l11);
-        
 		//username
         l13 = new JLabel(userName);
 		l13.setFont(new Font("Arial",Font.PLAIN,32));
@@ -149,6 +153,21 @@ public class Profile extends JFrame implements ActionListener
 		l13.setHorizontalAlignment(JLabel.CENTER);
 		l13.setBounds(47,445,270,37);
 		l1.add(l13);
+
+		//Edit profile button
+		b2 = new JButton("Update Profile");
+		b2.setFont(new Font("Arial",Font.PLAIN,20));
+		b2.setForeground(Color.WHITE);
+		b2.setOpaque(false);
+		b2.setFocusable(false);
+		b2.setBackground(Color.white);
+		b2.setBounds(698,625,176,49);
+		b2.setBorderPainted(false);
+		b2.addActionListener(this);
+		l1.add(b2);
+		bl2 = new JLabel(new ImageIcon("image\\button\\Login_Sign.png"));
+		bl2.setBounds(698,625,176,49);
+        l1.add(bl2);
         
 		//Exit Button
 		b3 = new JButton();
@@ -189,10 +208,15 @@ public class Profile extends JFrame implements ActionListener
 		bl5.setBounds(1234,127,35,35);
         l1.add(bl5);
 
-		//profile image
-		l12 = new JLabel();
-		l12.setBounds(103,245,157,157);
-		l1.add(l12);
+		//right profile details er niche
+        pl1 = new JLabel(new ImageIcon("image\\panel\\profile2.png"));
+		pl1.setBounds(366,24,840,670);
+		l1.add(pl1);
+
+		//username er nicher ta
+		pl2 = new JLabel(new ImageIcon("image\\panel\\profile1.png"));
+		pl2.setBounds(26,24,311,670);
+		l1.add(pl2);
 
 		//right title bar
 		Tpl = new JLabel(new ImageIcon("image\\panel\\titleP.png"));
@@ -245,7 +269,27 @@ public class Profile extends JFrame implements ActionListener
 		public void actionPerformed(ActionEvent ae) 
 		{
 
-            if(ae.getSource()==b3) //exit
+			if(ae.getSource()==b2) //exit
+			{
+				JFileChooser fileChooser = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
+				int result = fileChooser.showOpenDialog(null);
+
+				if (result == JFileChooser.APPROVE_OPTION) {
+					File selectedFile = fileChooser.getSelectedFile();
+					projectPath = System.getProperty("user.dir");
+					Path sourcePath = Paths.get(selectedFile.getAbsolutePath());
+					Path destinationPath = Paths.get("image\\profile\\", selectedFile.getName());
+
+					try {
+						Files.copy(sourcePath, destinationPath);
+						JOptionPane.showMessageDialog(null,"Profile Picture Upload Successful");
+					} catch (IOException e) {
+						JOptionPane.showMessageDialog(null,"Error Uploading file: " + e.getMessage());
+					}
+				}
+			}
+
+            else if(ae.getSource()==b3) //exit
 			{
 				this.setVisible(false);
 			}
@@ -254,6 +298,7 @@ public class Profile extends JFrame implements ActionListener
 			{
 				this.setState(JFrame.ICONIFIED);
 			}
+
             else if(ae.getSource()==b5) //back
 			{
 				this.setVisible(false);

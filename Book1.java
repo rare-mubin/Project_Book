@@ -1,15 +1,11 @@
 import javax.swing.*; 
 import java.awt.*;
 import java.awt.event.*;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.Scanner;
-
 
 public class Book1 extends JFrame implements ActionListener 
 {
-		JLabel l,l1,l2,l3,l4,l5,l6,l7,l8,l9,l10,l11,l12,l13,lP;
-		JLabel pl1,Tpl; //for panel image
+		JLabel l,l1,l2,l3,l4,l5,l6,l7,l8,l9,l10,l11,l12,l13,l14,l15,lP;
+		JLabel pl1,pl2,Tpl; //for panel image
 		JLabel bl1,bl2,bl3,bl4,bl5,bl6,tl1,tl2; //for button and  textfield image
 		JTextField t1,t2;
 		JButton b1,b2,b3,b4,b5,b6; 
@@ -17,7 +13,7 @@ public class Book1 extends JFrame implements ActionListener
         int lineNumber;
 
 		String userName;
-
+        String ISBN="DIFA2";
 
 
 		static Point LP;
@@ -26,7 +22,7 @@ public class Book1 extends JFrame implements ActionListener
 	{
 		this.userName = userName;
 
-        ImageIcon image = new ImageIcon("image\\background\\FB.png");
+        ImageIcon image = new ImageIcon("image\\background\\login_page_L.png");
         l1 = new JLabel();
 
         this.setTitle("project_BOOK");
@@ -39,16 +35,88 @@ public class Book1 extends JFrame implements ActionListener
 
         l1.setIcon(image);
 
-
-
-
         //Book Details
         l2 = new JLabel("Book Details");
 		l2.setFont(new Font("Felix Titling",Font.PLAIN,35));
 		l2.setForeground(new Color(0x505050));
-		l2.setBounds(674,51,289,42);
+		l2.setBounds(736,51,260,42);
 		l1.add(l2);
+        //book name  
+		l3 = new JLabel("Book Name");
+		l3.setFont(new Font("Arial",Font.PLAIN,32));
+		l3.setForeground(new Color(0x00000));
+		l3.setBounds(603,215,168,37);
+		l1.add(l3);
+        //Author
+		l4 = new JLabel("Author");
+		l4.setFont(new Font("Arial",Font.PLAIN,24));
+		l4.setForeground(new Color(0x00000));
+		l4.setBounds(603,296,71,28);
+		l1.add(l4);
+        //Addition
+		l5 = new JLabel("Addition");
+		l5.setFont(new Font("Arial",Font.PLAIN,24));
+		l5.setForeground(new Color(0x00000));
+		l5.setBounds(603,368,87,28);
+		l1.add(l5);
+        //Category
+		l6 = new JLabel("Category");
+		l6.setFont(new Font("Arial",Font.PLAIN,24));
+		l6.setForeground(new Color(0x00000));
+		l6.setBounds(603,440,98,28);
+		l1.add(l6);
+        //BOOK ISBN
+		l7 = new JLabel("BOOK ISBN");
+		l7.setFont(new Font("Arial",Font.PLAIN,24));
+		l7.setForeground(new Color(0x00000));
+		l7.setBounds(603,512,133,28);
+		l1.add(l7);
+        //Book name (Super Nova0
+		l8 = new JLabel("Super Nova");
+		l8.setFont(new Font("Arial",Font.PLAIN,32));
+		l8.setForeground(new Color(0x00000));
+		l8.setBounds(860,215,329,37);
+		l1.add(l8);
+        //Author name (okay)
+		l9 = new JLabel("okay");
+		l9.setFont(new Font("Arial",Font.PLAIN,24));
+		l9.setForeground(new Color(0x00000));
+		l9.setBounds(860,296,329,28);
+		l1.add(l9);
+        //Addition no( 12th addition )
+		l10 = new JLabel("12th Addition");
+		l10.setFont(new Font("Arial",Font.PLAIN,24));
+		l10.setForeground(new Color(0x00000));
+		l10.setBounds(860,368,329,28);
+		l1.add(l10);
+        //Category-(Si-fi)
+		l11 = new JLabel("Si-fi");
+		l11.setFont(new Font("Arial",Font.PLAIN,24));
+		l11.setForeground(new Color(0x00000));
+		l11.setBounds(860,440,329,28);
+		l1.add(l11);
+        //ISBN NO- AFT34
+		l12 = new JLabel(ISBN);
+		l12.setFont(new Font("Arial",Font.PLAIN,24));
+		l12.setForeground(new Color(0x00000));
+		l12.setBounds(860,512,329,28);
+		l1.add(l12);
         
+        //Add to my collection Button
+		b3 = new JButton("add to my collection");
+		b3.setFont(new Font("Arial",Font.PLAIN,17));
+		b3.setForeground(Color.WHITE);
+		b3.setOpaque(false);
+		b3.setFocusable(false);
+		b3.setBackground(Color.green);
+		b3.setBounds(739,610,256,49);
+		b3.setBorderPainted(false);
+		b3.addActionListener(this);
+		l1.add(b3);
+		bl2 = new JLabel(new ImageIcon("image\\button\\add_collection.png"));
+		bl2.setBounds(739,610,256,49);
+        l1.add(bl2);
+		
 		//Exit Button
 		b3 = new JButton();
 		b3.setOpaque(false);
@@ -101,10 +169,14 @@ public class Book1 extends JFrame implements ActionListener
 		bl6.setBounds(1234,585,35,35);
         l1.add(bl6);
 
-		//profile image
-		l12 = new JLabel();
-		l12.setBounds(103,245,157,157);
-		l1.add(l12);
+        //Book image label
+		pl1 = new JLabel(new ImageIcon("image\\panel\\bookP1.png"));
+		pl1.setBounds(26,24,475,670);
+        l1.add(pl1);
+        //book Details label
+		pl2 = new JLabel(new ImageIcon("image\\panel\\bookP2.png"));
+		pl2.setBounds(528,22,678,670);
+        l1.add(pl2);
 
 		//right title bar
 		Tpl = new JLabel(new ImageIcon("image\\panel\\titleP.png"));

@@ -70,6 +70,7 @@ public class Home extends JFrame implements ActionListener
 		l4.setBounds(369,137,713,42);
 		l1.add(l4);
 
+
 		//profile button 1
 		b7 = new JButton();
 		b7.setOpaque(false);
@@ -79,11 +80,21 @@ public class Home extends JFrame implements ActionListener
 		b7.setBorderPainted(false);
 		b7.addActionListener(this);
 		l1.add(b7);
-		lP = new JLabel(new ImageIcon("image\\profile\\dummy-profile-pic.png"));
-		lP.setBounds(170,53,157,157);
-        l1.add(lP);
-
-
+			String picpath = "image\\profile\\"+userName+".png";
+		
+			File file = new File(picpath);
+			if (file.exists()){
+				lP = new JLabel(new ImageIcon(picpath));
+				lP.setBounds(170,53,157,157);
+				l1.add(lP);
+			}
+			else{
+				lP = new JLabel(new ImageIcon("image\\profile\\dummy-profile-pic.png"));
+				lP.setBounds(170,53,157,157);
+				l1.add(lP);
+			}
+		
+			
         l6 = new JLabel("BOOK Store");
 		l6.setFont(new Font("Felix Titling",Font.PLAIN,32));
 		l6.setForeground(new Color(0x505050));
@@ -247,9 +258,9 @@ public class Home extends JFrame implements ActionListener
 				this.setVisible(false);
 				d.setVisible(true);
 			}
-			else if(ae.getSource()==b1) 
+			else if(ae.getSource()==b1)//Package
 			{
-				BookS b=new BookS(this.userName);
+				Package b=new Package(this.userName);
 				this.setVisible(false);
 				b.setVisible(true);
 			}

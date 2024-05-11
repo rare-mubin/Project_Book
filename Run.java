@@ -4,6 +4,7 @@ public class Run {
 		//Login f1 = new Login();
 		Book1 f1 = new Book1("mubin");
 		//f1.show();
+		//Package f1 = new Package("dipon");
 		f1.setVisible(true);
 	}
 }
