@@ -108,6 +108,29 @@ public class Account {
         }
         return isAuth;
     }
+    public boolean getAccount(String userName)
+    {
+        boolean isAuth = false;
+        String path ="bin\\files\\Users.txt";
+        file = new File(path);
+        try{
+            sc = new Scanner(file);
+            while(sc.hasNextLine())
+            {
+                String line = sc.nextLine();
+                String[] value = line.split("\t");
+                if(value[0].equals(userName))
+                {
+                    isAuth=true;
+                }
+            }
+        }
+        catch(IOException ioe)
+        {
+            ioe.printStackTrace();
+        }
+        return isAuth;
+    }
 
 }
 
