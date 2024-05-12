@@ -33,7 +33,7 @@ public class UserInformation extends JFrame implements ActionListener {
 		static Point LP;
 
     public UserInformation(String userName){
-
+		this.userName = userName;
 		try {
             File file = new File(filePath);
             Scanner scanner = new Scanner(file);
@@ -602,7 +602,6 @@ public class UserInformation extends JFrame implements ActionListener {
 				this.setVisible(false);
 				f.setVisible(true);
 			}
-
 
             else if(ae.getSource()==b3) //exit
 			{

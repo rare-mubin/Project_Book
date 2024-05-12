@@ -284,51 +284,35 @@ public class ABookC extends JFrame implements ActionListener
 			}
 			else if(ae.getSource()==b9)//Book1
 			{
-				Book1 f = new Book1(this.userName);
-				this.setVisible(false);
-				f.setVisible(true);
+				
 			}
 			else if(ae.getSource()==b10)//Book2
 			{
-				Book2 f = new Book2(this.userName);
-				this.setVisible(false);
-				f.setVisible(true);
+				
 			}
 			else if(ae.getSource()==b11)//Book3
 			{
-				Book3 f = new Book3(this.userName);
-				this.setVisible(false);
-				f.setVisible(true);
+				
 			}
 			else if(ae.getSource()==b12)//Book4
 			{
-				Book4 f = new Book4(this.userName);
-				this.setVisible(false);
-				f.setVisible(true);
+				
 			}
 			else if(ae.getSource()==b13)//Book5
 			{
-				Book5 f = new Book5(this.userName);
-				this.setVisible(false);
-				f.setVisible(true);
+				
 			}
 			else if(ae.getSource()==b14)//Book6
 			{
-				Book6 f = new Book6(this.userName);
-				this.setVisible(false);
-				f.setVisible(true);
+				
 			}
 			else if(ae.getSource()==b15)//Book7
 			{
-				Book7 f = new Book7(this.userName);
-				this.setVisible(false);
-				f.setVisible(true);
+				
 			}
 			else if(ae.getSource()==b16)//Book8
 			{
-				Book8 f = new Book8(this.userName);
-				this.setVisible(false);
-				f.setVisible(true);
+				
 			}
 
 

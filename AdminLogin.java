@@ -6,7 +6,7 @@ public class AdminLogin extends JFrame implements ActionListener
 {
 		JLabel l1,l2,l3,l4,l5,l6;
 		JLabel pl1,Tpl; //for panel image
-		JLabel bl1,bl2,bl3,bl4,tl1,tl2; //for button and  textfield image
+		JLabel bl1,bl2,bl3,bl4,bl5,tl1,tl2; //for button and  textfield image
 		JTextField t1,t2;
 		JButton b1,b2,b3,b4,b5; 
 
@@ -35,7 +35,7 @@ public class AdminLogin extends JFrame implements ActionListener
 
         l2 = new JLabel("ADMIN LOGIN");
 		l2.setFont(new Font("Felix Titling",Font.BOLD,32));
-		l2.setForeground(Color.GREEN);
+		l2.setForeground(new Color(0x505050));
 		l2.setBounds(824,94,231,37);
 		l1.add(l2);
 
@@ -47,7 +47,7 @@ public class AdminLogin extends JFrame implements ActionListener
 
 		l3 = new JLabel("MUBIN HASAN");
 		l3.setFont(new Font("Felix Titling",Font.BOLD,30));
-		l3.setForeground(new Color(0x000000));
+		l3.setForeground(new Color(0x505050));
 		l3.setBounds(828,313,223,37);
 		l1.add(l3);
 
@@ -131,7 +131,7 @@ public class AdminLogin extends JFrame implements ActionListener
 		bl4.setBounds(1234,51,35,35);
         l1.add(bl4);
 
-		//back button
+		//Back button
 		b5 = new JButton();
 		b5.setOpaque(false);
 		b5.setFocusable(false);
@@ -140,6 +140,9 @@ public class AdminLogin extends JFrame implements ActionListener
 		b5.setBorderPainted(false);
 		b5.addActionListener(this);
 		l1.add(b5);
+		bl5 = new JLabel(new ImageIcon("image\\button\\Back.png"));
+		bl5.setBounds(1234,127,35,35);
+        l1.add(bl5);
 		
 
 		//log In panel
@@ -218,7 +221,13 @@ public class AdminLogin extends JFrame implements ActionListener
 				
 			}
 
-			
+			else if(ae.getSource()==b5) //back
+			{
+				Login f = new Login();
+				this.setVisible(false);
+				f.setVisible(true);
+			}
+
 			else if(ae.getSource()==b3)
 			{
 				System.exit(0);

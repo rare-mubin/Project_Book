@@ -278,14 +278,14 @@ public class Home extends JFrame implements ActionListener
 				}
 			}
 
-			else if(ae.getSource()==b1) //back
+			else if(ae.getSource()==b1) // BOOk Store
 			{
 				BookS f = new BookS(this.userName);
 				this.setVisible(false);
 				f.setVisible(true);
 			}
 
-			 else if(ae.getSource()==b5) //back
+			else if(ae.getSource()==b5) //back
 			{
 				Login f = new Login();
 				this.setVisible(false);
