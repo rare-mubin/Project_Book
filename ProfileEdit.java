@@ -5,6 +5,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -25,6 +26,7 @@ public class ProfileEdit extends JFrame implements ActionListener
         String fullName;
         String dateOfBirth;
         String userEmail;
+		String userPassword;
 		String projectPath;
 
 		String filePath = "bin/files/Users.txt";
@@ -48,6 +50,7 @@ public class ProfileEdit extends JFrame implements ActionListener
                     this.userName = value[0];
                     this.dateOfBirth = value[2];
                     this.userEmail = value[4];
+					this.userPassword = value[1];
                     this.lineNumber= lineNumber;
                 }
             }
@@ -208,7 +211,7 @@ public class ProfileEdit extends JFrame implements ActionListener
 		l9.setBounds(491,531,188,28);
 		l1.add(l9);
 
-        //profile er link er paser link
+        //profile Link
 		l10 = new JLabel("https://www.book.com/"+userName+"/");
 		l10.setFont(new Font("Arial",Font.PLAIN,24));
 		l10.setForeground(new Color(0x505050));
@@ -221,7 +224,7 @@ public class ProfileEdit extends JFrame implements ActionListener
 		l11.setBounds(504,606,176,18);
 		l1.add(l11);
         //pld pass text field
-		t4 = new JTextField(); 
+		t4 = new JPasswordField(); 
 		t4.setBounds(480,627,223,28);
 		t4.setFont(new Font("Arial",Font.PLAIN,20));
 		t4.setForeground(Color.black);
@@ -388,7 +391,7 @@ public class ProfileEdit extends JFrame implements ActionListener
 		public void actionPerformed(ActionEvent ae) 
 		{
 
-			if(ae.getSource()==b6) //exit
+			if(ae.getSource()==b6)//profile pic uplod
 			{
 				JFileChooser fileChooser = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
 				int result = fileChooser.showOpenDialog(null);
@@ -406,7 +409,179 @@ public class ProfileEdit extends JFrame implements ActionListener
 						JOptionPane.showMessageDialog(null,"Error Uploading file: " + e.getMessage());
 					}
 				}
+				ProfileEdit f = new ProfileEdit(userName);
+				this.setVisible(false);
+				f.setVisible(true);
+				
 			}
+
+			//Change name Button
+			else if(ae.getSource()==b1)
+			{
+				String name = t1.getText();
+				try {
+                        File file = new File(filePath);
+                        Scanner scanner = new Scanner(file);
+
+                        StringBuilder fileContent = new StringBuilder();
+                        lineNumber = 0;
+                        while (scanner.hasNextLine()) {
+                            lineNumber++;
+                            String line = scanner.nextLine();
+
+                            if (line.contains(userName)) {
+                                String[] values = line.split("\t");
+                                values[3] = name; 
+                                line = String.join("\t", values);
+                            }
+
+                            fileContent.append(line).append("\n");
+                        }
+
+                        scanner.close();
+
+                        FileWriter writer = new FileWriter(file);
+                        writer.write(fileContent.toString());
+                        writer.close();
+
+                        JOptionPane.showMessageDialog(null, "Name Change Successful");
+                        
+
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+			}
+
+			else if(ae.getSource()==b2)
+			{
+				String DOB = t2.getText();
+				try {
+                        File file = new File(filePath);
+                        Scanner scanner = new Scanner(file);
+
+                        StringBuilder fileContent = new StringBuilder();
+                        lineNumber = 0;
+                        while (scanner.hasNextLine()) {
+                            lineNumber++;
+                            String line = scanner.nextLine();
+
+                            if (line.contains(userName)) {
+                                String[] values = line.split("\t");
+                                values[2] = DOB; 
+                                line = String.join("\t", values);
+                            }
+
+                            fileContent.append(line).append("\n");
+                        }
+
+                        scanner.close();
+
+                        FileWriter writer = new FileWriter(file);
+                        writer.write(fileContent.toString());
+                        writer.close();
+
+                        JOptionPane.showMessageDialog(null, "Date of Birth Change Successful");
+                        
+
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+			}
+
+			else if(ae.getSource()==b7)
+			{
+				String email = t3.getText();
+				try {
+                        File file = new File(filePath);
+                        Scanner scanner = new Scanner(file);
+
+                        StringBuilder fileContent = new StringBuilder();
+                        lineNumber = 0;
+                        while (scanner.hasNextLine()) {
+                            lineNumber++;
+                            String line = scanner.nextLine();
+
+                            if (line.contains(userName)) {
+                                String[] values = line.split("\t");
+                                values[4] = email; 
+                                line = String.join("\t", values);
+                            }
+
+                            fileContent.append(line).append("\n");
+                        }
+
+                        scanner.close();
+
+                        FileWriter writer = new FileWriter(file);
+                        writer.write(fileContent.toString());
+                        writer.close();
+
+                        JOptionPane.showMessageDialog(null, "Email Change Successful");
+                        
+
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+			}
+			else if(ae.getSource()==b8)
+			{
+				String oldPassword = t4.getText();
+				String newPassword = t5.getText();
+				
+				if(oldPassword.isEmpty() || newPassword.isEmpty()){
+					JOptionPane.showMessageDialog(null, "Full Fill Old Password And New Password Box");
+				}
+				else if(oldPassword.equals(this.userPassword))
+				{
+					try {
+                        File file = new File(filePath);
+                        Scanner scanner = new Scanner(file);
+
+                        StringBuilder fileContent = new StringBuilder();
+                        lineNumber = 0;
+                        while (scanner.hasNextLine()) {
+                            lineNumber++;
+                            String line = scanner.nextLine();
+
+                            if (line.contains(userName)) {
+                                String[] values = line.split("\t");
+                                values[1] = newPassword; 
+                                line = String.join("\t", values);
+                            }
+
+                            fileContent.append(line).append("\n");
+                        }
+
+                        scanner.close();
+
+                        FileWriter writer = new FileWriter(file);
+                        writer.write(fileContent.toString());
+                        writer.close();
+
+                        JOptionPane.showMessageDialog(null, "Password Change Successful");
+                        
+
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+				}
+				else
+				{
+					JOptionPane.showMessageDialog(null, "Your old password is wrong");
+				}
+				ProfileEdit f = new ProfileEdit(userName);
+				this.setVisible(false);
+				f.setVisible(true);
+			}
+
 
             else if(ae.getSource()==b3) //exit
 			{

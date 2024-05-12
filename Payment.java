@@ -92,7 +92,7 @@ public class Payment extends JFrame implements ActionListener {
 		l1.add(tl2);
         
 		//Enter Your Password
-		t3 = new JTextField(); 
+		t3 = new JPasswordField(); 
 		t3.setBounds(79,489,370,49);
 		t3.setFont(new Font("Arial",Font.PLAIN,20));
 		t3.setForeground(Color.black);

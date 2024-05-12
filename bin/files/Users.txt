@@ -1,3 +1,5 @@
-jayna	9876	31/10/2003	jayna tanjum	jainu@gmail.com	0	aa	aa	aa
+jayna	9876	31/10/2003	Jayna Tanjum	jainu@gmail.com	0	aa	aa	aa
 mafi	1234	25/2/2003	Muntahi safwan	mafi@gmail.com	0	aa	aa	aa
-mubin	1234	01/01/2003	Mubin Hasan	mubin@gmail.com	1	aa	aa	aa
+mubin	1234	01/01/2003	Mubin Hasan	mubin@gmail.com	0	aa	aa	aa
+dipon	12345	23/03/2003	Shazidul Islam	dip@gmail.com	1	aa	aa	aa
+oishi	1234	02/05/2002	Tasnuba Tabassum	oishi@gmail.com	1	aa	aa	aa
