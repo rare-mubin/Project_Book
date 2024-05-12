@@ -1,17 +1,23 @@
 import javax.swing.*;
+import javax.swing.filechooser.FileSystemView;
+
 import java.awt.*;
 import java.awt.event.*;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Scanner;
 
-public class Profile extends JFrame implements ActionListener 
+public class ProfileEdit extends JFrame implements ActionListener 
 {
 		JLabel l,l1,l2,l3,l4,l5,l6,l7,l8,l9,l10,l11,l12,l13,lP;
 		JLabel pl1,pl2,Tpl; //for panel image
-		JLabel bl1,bl2,bl3,bl4,bl5,bl6,tl1,tl2; //for button and  textfield image
-		JTextField t1,t2;
-		JButton b1,b2,b3,b4,b5,b6; 
+		JLabel bl1,bl2,bl3,bl4,bl5,bl6,tl1,tl2,tl3,tl4,tl5; //for button and  textfield image
+		JTextField t1,t2,t3,t4,t5;
+		JButton b1,b2,b3,b4,b5,b6,b7,b8; 
 		
         int lineNumber;
 
@@ -24,7 +30,7 @@ public class Profile extends JFrame implements ActionListener
 		String filePath = "bin/files/Users.txt";
 		static Point LP;
 
-	public Profile(String userName)
+	public ProfileEdit(String userName)
 	{
 		this.userName = userName;
 		
@@ -53,6 +59,10 @@ public class Profile extends JFrame implements ActionListener
 
 		
         ImageIcon image = new ImageIcon("image\\background\\login_page_L.png");
+		ImageIcon textF = new ImageIcon("image\\TextField\\profiletextfield.png");
+		ImageIcon textf = new ImageIcon("image\\TextField\\profiletextfield2.png");
+		ImageIcon button = new ImageIcon("image\\button\\button.png");
+		ImageIcon button1 = new ImageIcon("image\\button\\profilebutton.png");
         l1 = new JLabel();
 
         this.setTitle("project_BOOK");
@@ -92,12 +102,35 @@ public class Profile extends JFrame implements ActionListener
 		l3.setForeground(new Color(0x505050));
 		l3.setBounds(491,234,186,37);
 		l1.add(l3);
-        //full name er pase
-		l4 = new JLabel(fullName);
-		l4.setFont(new Font("Arial",Font.PLAIN,32));
-		l4.setForeground(new Color(0x505050));
-		l4.setBounds(748,234,429,37);
-		l1.add(l4);
+      
+		// full name textfield
+		t1 = new JTextField(); 
+		t1.setBounds(748,239,223,36);
+		t1.setFont(new Font("Arial",Font.PLAIN,20));
+		t1.setForeground(Color.black);
+		t1.setText(fullName);
+		t1.setHorizontalAlignment(SwingConstants.CENTER);
+		t1.setBorder(null);
+		t1.setOpaque(false);
+		l1.add(t1);
+		tl1 = new JLabel(textF);
+		tl1.setBounds(748,239,223,36);
+		l1.add(tl1);
+        //Change name Button
+		b1 = new JButton("Change Name");
+		b1.setFont(new Font("Arial",Font.PLAIN,14));
+		b1.setForeground(Color.WHITE);
+		b1.setOpaque(false);
+		b1.setFocusable(false);
+		b1.setBackground(Color.blue);
+		b1.setBounds(978,239,125,36);
+		b1.setBorderPainted(false);
+		b1.addActionListener(this);
+		l1.add(b1);
+		bl1 = new JLabel(button);
+		bl1.setBounds(978,239,125,36);
+		l1.add(bl1);
+        
         //date of birth
         l5 = new JLabel("Date Of Birth");
 		l5.setFont(new Font("Arial",Font.PLAIN,24));
@@ -105,26 +138,68 @@ public class Profile extends JFrame implements ActionListener
 		l5.setBounds(491,339,181,28);
 		l1.add(l5);
 
-        //date of birth er paser button
-		l6 = new JLabel(dateOfBirth);
-		l6.setFont(new Font("Arial",Font.PLAIN,24));
-		l6.setForeground(new Color(0x505050));
-		l6.setBounds(748,339,429,28);
-		l1.add(l6);
-
-        //email
+		//change DateofBirth
+		t2 = new JTextField(); 
+		t2.setBounds(748,335,223,36);
+		t2.setFont(new Font("Arial",Font.PLAIN,20));
+		t2.setForeground(Color.black);
+		t2.setText(dateOfBirth);
+		t2.setHorizontalAlignment(SwingConstants.CENTER);
+		t2.setBorder(null);
+		t2.setOpaque(false);
+		l1.add(t2);
+		tl2 = new JLabel(textF);
+		tl2.setBounds(748,335,223,36);
+		l1.add(tl2);
+        //Change DOB
+		b2 = new JButton("Change DOB");
+		b2.setFont(new Font("Arial",Font.PLAIN,14));
+		b2.setForeground(Color.WHITE);
+		b2.setOpaque(false);
+		b2.setFocusable(false);
+		b2.setBackground(Color.blue);
+		b2.setBounds(978,335,125,36);
+		b2.setBorderPainted(false);
+		b2.addActionListener(this);
+		l1.add(b2);
+		bl2 = new JLabel(button);
+		bl2.setBounds(978,335,125,36);
+		l1.add(bl2);
+		
+		//email
 		l7 = new JLabel("Email");
 		l7.setFont(new Font("Arial",Font.PLAIN,24));
 		l7.setForeground(new Color(0x505050));
 		l7.setBounds(491,435,188,28);
 		l1.add(l7);
 
-        //email er paser line
-		l8 = new JLabel(userEmail);
-		l8.setFont(new Font("Arial",Font.PLAIN,24));
-		l8.setForeground(new Color(0x505050));
-		l8.setBounds(748,435,429,28);
-		l1.add(l8);
+        //change email
+		t3 = new JTextField(); 
+		t3.setBounds(748,431,223,36);
+		t3.setFont(new Font("Arial",Font.PLAIN,20));
+		t3.setForeground(Color.black);
+		t3.setText(userEmail);
+		t3.setHorizontalAlignment(SwingConstants.CENTER);
+		t3.setBorder(null);
+		t3.setOpaque(false);
+		l1.add(t3);
+		tl3 = new JLabel(textF);
+		tl3.setBounds(748,431,223,36);
+		l1.add(tl3);
+        //Change Email
+		b7 = new JButton("Change Email");
+		b7.setFont(new Font("Arial",Font.PLAIN,14));
+		b7.setForeground(Color.WHITE);
+		b7.setOpaque(false);
+		b7.setFocusable(false);
+		b7.setBackground(Color.blue);
+		b7.setBounds(978,431,125,36);
+		b7.setBorderPainted(false);
+		b7.addActionListener(this);
+		l1.add(b7);
+		bl3 = new JLabel(button);
+		bl3.setBounds(978,431,125,36);
+		l1.add(bl3);
 
 		//profile link
         l9 = new JLabel("Profile Link");
@@ -139,6 +214,56 @@ public class Profile extends JFrame implements ActionListener
 		l10.setForeground(new Color(0x505050));
 		l10.setBounds(748,531,429,28);
 		l1.add(l10);
+        //Enter your old pass
+		l11 = new JLabel("Enter Your Old Password");
+		l11.setFont(new Font("Arial",Font.PLAIN,15));
+		l11.setForeground(new Color(0x777777));
+		l11.setBounds(504,606,176,18);
+		l1.add(l11);
+        //pld pass text field
+		t4 = new JTextField(); 
+		t4.setBounds(480,627,223,28);
+		t4.setFont(new Font("Arial",Font.PLAIN,20));
+		t4.setForeground(Color.black);
+		t4.setHorizontalAlignment(SwingConstants.CENTER);
+		t4.setBorder(null);
+		t4.setOpaque(false);
+		l1.add(t4);
+		tl4 = new JLabel(textf);
+		tl4.setBounds(480,627,223,28);
+		l1.add(tl4);
+        //Enter new pass
+		l12 = new JLabel("Enter Your New Password");
+		l12.setFont(new Font("Arial",Font.PLAIN,15));
+		l12.setForeground(new Color(0x777777));
+		l12.setBounds(743,606,184,18);
+		l1.add(l12);
+        //new pass textfield
+		t5 = new JTextField(); 
+		t5.setBounds(723,627,223,28);
+		t5.setFont(new Font("Arial",Font.PLAIN,20));
+		t5.setForeground(Color.black);
+		t5.setHorizontalAlignment(SwingConstants.CENTER);
+		t5.setBorder(null);
+		t5.setOpaque(false);
+		l1.add(t5);
+		tl5 = new JLabel(textf);
+		tl5.setBounds(723,627,223,28);
+		l1.add(tl5);
+        //update pass
+		b8 = new JButton();
+		b8.setFont(new Font("Arial",Font.PLAIN,12));
+		b8.setForeground(Color.WHITE);
+		b8.setOpaque(false);
+		b8.setFocusable(false);
+		b8.setBackground(Color.white);
+		b8.setBounds(966,627,125,28);
+		b8.setBorderPainted(false);
+		b8.addActionListener(this);
+		l1.add(b8);
+		bl4 = new JLabel(button1);
+		bl4.setBounds(966,627,125,28);
+        l1.add(bl4);
         
 		//username
         l13 = new JLabel(userName);
@@ -148,20 +273,20 @@ public class Profile extends JFrame implements ActionListener
 		l13.setBounds(47,445,270,37);
 		l1.add(l13);
 
-		//Edit profile button
-		b2 = new JButton("Update Profile");
-		b2.setFont(new Font("Arial",Font.PLAIN,20));
-		b2.setForeground(Color.WHITE);
-		b2.setOpaque(false);
-		b2.setFocusable(false);
-		b2.setBackground(Color.white);
-		b2.setBounds(698,625,176,49);
-		b2.setBorderPainted(false);
-		b2.addActionListener(this);
-		l1.add(b2);
-		bl2 = new JLabel(new ImageIcon("image\\button\\Login_Sign.png"));
-		bl2.setBounds(698,625,176,49);
-        l1.add(bl2);
+		//upload pic 
+		b6 = new JButton("Upload Picture");
+		b6.setFont(new Font("Arial",Font.PLAIN,13));
+		b6.setForeground(Color.WHITE);
+		b6.setOpaque(false);
+		b6.setFocusable(false);
+		b6.setBackground(Color.white);
+		b6.setBounds(119,624,125,36);
+		b6.setBorderPainted(false);
+		b6.addActionListener(this);
+		l1.add(b6);
+		bl4 = new JLabel(new ImageIcon("image\\button\\button.png"));
+		bl4.setBounds(119,624,125,36);
+        l1.add(bl4);
         
 		//Exit Button
 		b3 = new JButton();
@@ -263,11 +388,24 @@ public class Profile extends JFrame implements ActionListener
 		public void actionPerformed(ActionEvent ae) 
 		{
 
-			if(ae.getSource()==b2)
+			if(ae.getSource()==b6) //exit
 			{
-				ProfileEdit f = new ProfileEdit(userName);
-				this.setVisible(false);
-				f.setVisible(true);
+				JFileChooser fileChooser = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
+				int result = fileChooser.showOpenDialog(null);
+
+				if (result == JFileChooser.APPROVE_OPTION) {
+					File selectedFile = fileChooser.getSelectedFile();
+					projectPath = System.getProperty("user.dir");
+					Path sourcePath = Paths.get(selectedFile.getAbsolutePath());
+					Path destinationPath = Paths.get("image\\profile\\", selectedFile.getName());
+
+					try {
+						Files.copy(sourcePath, destinationPath);
+						JOptionPane.showMessageDialog(null,"Profile Picture Upload Successful");
+					} catch (IOException e) {
+						JOptionPane.showMessageDialog(null,"Error Uploading file: " + e.getMessage());
+					}
+				}
 			}
 
             else if(ae.getSource()==b3) //exit
@@ -282,7 +420,9 @@ public class Profile extends JFrame implements ActionListener
 
             else if(ae.getSource()==b5) //back
 			{
+				Profile f = new Profile(userName);
 				this.setVisible(false);
+				f.setVisible(true);
 			}
 		}
 

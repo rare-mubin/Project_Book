@@ -2,7 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class Book1 extends JFrame implements ActionListener 
+public class Book8 extends JFrame implements ActionListener 
 {
 		JLabel l,l1,l2,l3,l4,l5,l6,l7,l8,l9,l10,l11,l12,l13,l14,l15,lP;
 		JLabel pl1,pl2,Tpl; //for panel image
@@ -13,12 +13,12 @@ public class Book1 extends JFrame implements ActionListener
         int lineNumber;
 
 		String userName;
-        String ISBN="Si-2509";
+        String ISBN="H-R90R";
 
 
 		static Point LP;
 
-	public Book1(String userName)
+	public Book8(String userName)
 	{
 		this.userName = userName;
 
@@ -72,13 +72,13 @@ public class Book1 extends JFrame implements ActionListener
 		l7.setBounds(603,512,133,28);
 		l1.add(l7);
         //Book name (Super Nova0
-		l8 = new JLabel("Typhoon");
-		l8.setFont(new Font("Arial",Font.PLAIN,32));
+		l8 = new JLabel("The Butcher and the Wren");
+		l8.setFont(new Font("Arial",Font.PLAIN,25));
 		l8.setForeground(new Color(0x00000));
 		l8.setBounds(860,215,329,37);
 		l1.add(l8);
         //Author name (okay)
-		l9 = new JLabel("MCM");
+		l9 = new JLabel("Alaina Urquhart");
 		l9.setFont(new Font("Arial",Font.PLAIN,24));
 		l9.setForeground(new Color(0x00000));
 		l9.setBounds(860,296,329,28);
@@ -90,7 +90,7 @@ public class Book1 extends JFrame implements ActionListener
 		l10.setBounds(860,368,329,28);
 		l1.add(l10);
         //Category-(Si-fi)
-		l11 = new JLabel("Si-fi");
+		l11 = new JLabel("Mystery Thriller & Horror");
 		l11.setFont(new Font("Arial",Font.PLAIN,24));
 		l11.setForeground(new Color(0x00000));
 		l11.setBounds(860,440,329,28);
@@ -170,7 +170,7 @@ public class Book1 extends JFrame implements ActionListener
         l1.add(bl6);
 
         //Book image label
-		pl1 = new JLabel(new ImageIcon("image\\panel\\Book1.jpg"));
+		pl1 = new JLabel(new ImageIcon("image\\panel\\Book8.jpg"));
 		pl1.setBounds(26,24,475,670);
         l1.add(pl1);
         //book Details label
@@ -233,6 +233,8 @@ public class Book1 extends JFrame implements ActionListener
 			{
 				System.exit(0);
 			}
+
+			
 			else if (ae.getSource()==b2)
 			{
 				Slot f=new Slot(this.userName,ISBN);

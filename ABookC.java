@@ -2,7 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class BookS extends JFrame implements ActionListener
+public class ABookC extends JFrame implements ActionListener
 {
 		JLabel l,l1,l2,l3,l4,l5,l6,l7,l8,l9,l10,l11,l12,l13,l14;
 		JLabel pl1,pl2,Tpl; //for panel image
@@ -13,7 +13,7 @@ public class BookS extends JFrame implements ActionListener
 		static Point LP;
 		String userName;
 
-	public BookS(String userName)
+	public ABookC(String userName)
 	{
 		this.userName = userName;
         ImageIcon image = new ImageIcon("image\\background\\f4.png");
@@ -278,7 +278,7 @@ public class BookS extends JFrame implements ActionListener
 
 			if(ae.getSource()==b5) //back
 			{
-				Home f = new Home(this.userName);
+				AdminHome f = new AdminHome(this.userName);
 				this.setVisible(false);
 				f.setVisible(true);
 			}
