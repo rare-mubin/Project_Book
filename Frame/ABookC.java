@@ -1,8 +1,9 @@
+package Frame;
 import javax.swing.*; 
 import java.awt.*;
 import java.awt.event.*;
 
-public class BookS extends JFrame implements ActionListener
+public class ABookC extends JFrame implements ActionListener
 {
 		JLabel l,l1,l2,l3,l4,l5,l6,l7,l8,l9,l10,l11,l12,l13,l14;
 		JLabel pl1,pl2,Tpl; //for panel image
@@ -13,7 +14,7 @@ public class BookS extends JFrame implements ActionListener
 		static Point LP;
 		String userName;
 
-	public BookS(String userName)
+	public ABookC(String userName)
 	{
 		this.userName = userName;
         ImageIcon image = new ImageIcon("image\\background\\f4.png");
@@ -29,8 +30,7 @@ public class BookS extends JFrame implements ActionListener
 
         l1.setIcon(image);
 		//Catagory1
-		b1 = new JButton("Science Fiction");
-		b1.setFont(new Font("Arial",Font.PLAIN,25));
+		b1 = new JButton();
 		b1.setOpaque(false);
 		b1.setFocusable(false);
 		b1.setBackground(Color.white);
@@ -42,8 +42,7 @@ public class BookS extends JFrame implements ActionListener
 		l2.setBounds(54,56,246,45);
 		l1.add(l2);
         //Catagory 2
-		b2 = new JButton("Academic");
-		b2.setFont(new Font("Arial",Font.PLAIN,25));
+		b2 = new JButton();
 		b2.setOpaque(false);
 		b2.setFocusable(false);
 		b2.setBackground(Color.white);
@@ -55,8 +54,7 @@ public class BookS extends JFrame implements ActionListener
 		l3.setBounds(54,128,246,45);
 		l1.add(l3);
         //Catagory 3
-		b7 = new JButton("Horror");
-		b7.setFont(new Font("Arial",Font.PLAIN,25));
+		b7 = new JButton();
 		b7.setOpaque(false);
 		b7.setFocusable(false);
 		b7.setBackground(Color.white);
@@ -68,8 +66,7 @@ public class BookS extends JFrame implements ActionListener
 		l4.setBounds(54,200,246,45);
 		l1.add(l4);
         //Catagory 4
-		b8 = new JButton("Programming");
-		b8.setFont(new Font("Arial",Font.PLAIN,25));
+		b8 = new JButton();
 		b8.setOpaque(false);
 		b8.setFocusable(false);
 		b8.setBackground(Color.white);
@@ -282,81 +279,41 @@ public class BookS extends JFrame implements ActionListener
 
 			if(ae.getSource()==b5) //back
 			{
-				Home f = new Home(this.userName);
-				this.setVisible(false);
-				f.setVisible(true);
-			}
-			else if(ae.getSource()==b1)//category1
-			{
-				Books1_category f = new Books1_category(this.userName);
-				this.setVisible(false);
-				f.setVisible(true);
-			}
-			else if(ae.getSource()==b2)//category2
-			{
-				Books2_category f = new Books2_category(this.userName);
-				this.setVisible(false);
-				f.setVisible(true);
-			}
-			else if(ae.getSource()==b7)//category3
-			{
-				Books3_category f = new Books3_category(this.userName);
-				this.setVisible(false);
-				f.setVisible(true);
-			}
-			else if(ae.getSource()==b8)//category4
-			{
-				Books4_category f = new Books4_category(this.userName);
+				AdminHome f = new AdminHome(this.userName);
 				this.setVisible(false);
 				f.setVisible(true);
 			}
 			else if(ae.getSource()==b9)//Book1
 			{
-				Book1 f = new Book1(this.userName);
-				this.setVisible(false);
-				f.setVisible(true);
+				
 			}
 			else if(ae.getSource()==b10)//Book2
 			{
-				Book2 f = new Book2(this.userName);
-				this.setVisible(false);
-				f.setVisible(true);
+				
 			}
 			else if(ae.getSource()==b11)//Book3
 			{
-				Book3 f = new Book3(this.userName);
-				this.setVisible(false);
-				f.setVisible(true);
+				
 			}
 			else if(ae.getSource()==b12)//Book4
 			{
-				Book4 f = new Book4(this.userName);
-				this.setVisible(false);
-				f.setVisible(true);
+				
 			}
 			else if(ae.getSource()==b13)//Book5
 			{
-				Book5 f = new Book5(this.userName);
-				this.setVisible(false);
-				f.setVisible(true);
+				
 			}
 			else if(ae.getSource()==b14)//Book6
 			{
-				Book6 f = new Book6(this.userName);
-				this.setVisible(false);
-				f.setVisible(true);
+				
 			}
 			else if(ae.getSource()==b15)//Book7
 			{
-				Book7 f = new Book7(this.userName);
-				this.setVisible(false);
-				f.setVisible(true);
+				
 			}
 			else if(ae.getSource()==b16)//Book8
 			{
-				Book8 f = new Book8(this.userName);
-				this.setVisible(false);
-				f.setVisible(true);
+				
 			}
 
 

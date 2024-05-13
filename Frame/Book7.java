@@ -1,8 +1,9 @@
+package Frame;
 import javax.swing.*; 
 import java.awt.*;
 import java.awt.event.*;
 
-public class Book5 extends JFrame implements ActionListener 
+public class Book7 extends JFrame implements ActionListener 
 {
 		JLabel l,l1,l2,l3,l4,l5,l6,l7,l8,l9,l10,l11,l12,l13,l14,l15,lP;
 		JLabel pl1,pl2,Tpl; //for panel image
@@ -13,12 +14,12 @@ public class Book5 extends JFrame implements ActionListener
         int lineNumber;
 
 		String userName;
-        String ISBN="P-0077";
+        String ISBN="P-9729";
 
 
 		static Point LP;
 
-	public Book5(String userName)
+	public Book7(String userName)
 	{
 		this.userName = userName;
 
@@ -72,25 +73,25 @@ public class Book5 extends JFrame implements ActionListener
 		l7.setBounds(603,512,133,28);
 		l1.add(l7);
         //Book name (Super Nova0
-		l8 = new JLabel("Teach Yourself C++");
+		l8 = new JLabel("Author of Pain");
 		l8.setFont(new Font("Arial",Font.PLAIN,32));
 		l8.setForeground(new Color(0x00000));
 		l8.setBounds(860,215,329,37);
 		l1.add(l8);
         //Author name (okay)
-		l9 = new JLabel("Herbert Schildt");
+		l9 = new JLabel("David Dwan");
 		l9.setFont(new Font("Arial",Font.PLAIN,24));
 		l9.setForeground(new Color(0x00000));
 		l9.setBounds(860,296,329,28);
 		l1.add(l9);
         //Addition no( 12th addition )
-		l10 = new JLabel("3rd Addition");
+		l10 = new JLabel("4th Addition");
 		l10.setFont(new Font("Arial",Font.PLAIN,24));
 		l10.setForeground(new Color(0x00000));
 		l10.setBounds(860,368,329,28);
 		l1.add(l10);
         //Category-(Si-fi)
-		l11 = new JLabel("Programming");
+		l11 = new JLabel("Fantasy & Horror");
 		l11.setFont(new Font("Arial",Font.PLAIN,24));
 		l11.setForeground(new Color(0x00000));
 		l11.setBounds(860,440,329,28);
@@ -170,7 +171,7 @@ public class Book5 extends JFrame implements ActionListener
         l1.add(bl6);
 
         //Book image label
-		pl1 = new JLabel(new ImageIcon("image\\panel\\Book5.jpeg"));
+		pl1 = new JLabel(new ImageIcon("image\\panel\\Book7.jpg"));
 		pl1.setBounds(26,24,475,670);
         l1.add(pl1);
         //book Details label
@@ -260,3 +261,4 @@ public class Book5 extends JFrame implements ActionListener
 
     
 }
+

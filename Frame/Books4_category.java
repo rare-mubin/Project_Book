@@ -1,8 +1,9 @@
+package Frame;
 import javax.swing.*; 
 import java.awt.*;
 import java.awt.event.*;
 
-public class Books1_category extends JFrame implements ActionListener
+public class Books4_category extends JFrame implements ActionListener
 {
 		JLabel l,l1,l2,l3,l4,l5,l6,l7,l8,l9,l10,l11,l12,l13,l14;
 		JLabel pl1,pl2,Tpl; //for panel image
@@ -13,7 +14,7 @@ public class Books1_category extends JFrame implements ActionListener
 		static Point LP;
 		String userName;
 
-	public Books1_category(String userName)
+	public Books4_category(String userName)
 	{
 		this.userName = userName;
         ImageIcon image = new ImageIcon("image\\background\\f4.png");
@@ -288,13 +289,13 @@ public class Books1_category extends JFrame implements ActionListener
 			}
 			else if(ae.getSource()==b9)//Book1
 			{
-				Book1 f = new Book1(this.userName);
+				Book5 f = new Book5(this.userName);
 				this.setVisible(false);
 				f.setVisible(true);
 			}
 			else if(ae.getSource()==b10)//Book2
 			{
-				Book4 f = new Book4(this.userName);
+				Book6 f = new Book6(this.userName);
 				this.setVisible(false);
 				f.setVisible(true);
 			}

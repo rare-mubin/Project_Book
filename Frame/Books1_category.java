@@ -1,8 +1,9 @@
+package Frame;
 import javax.swing.*; 
 import java.awt.*;
 import java.awt.event.*;
 
-public class ABookC extends JFrame implements ActionListener
+public class Books1_category extends JFrame implements ActionListener
 {
 		JLabel l,l1,l2,l3,l4,l5,l6,l7,l8,l9,l10,l11,l12,l13,l14;
 		JLabel pl1,pl2,Tpl; //for panel image
@@ -13,7 +14,7 @@ public class ABookC extends JFrame implements ActionListener
 		static Point LP;
 		String userName;
 
-	public ABookC(String userName)
+	public Books1_category(String userName)
 	{
 		this.userName = userName;
         ImageIcon image = new ImageIcon("image\\background\\f4.png");
@@ -29,7 +30,8 @@ public class ABookC extends JFrame implements ActionListener
 
         l1.setIcon(image);
 		//Catagory1
-		b1 = new JButton();
+		b1 = new JButton("Science Fiction");
+		b1.setFont(new Font("Arial",Font.PLAIN,25));
 		b1.setOpaque(false);
 		b1.setFocusable(false);
 		b1.setBackground(Color.white);
@@ -41,7 +43,8 @@ public class ABookC extends JFrame implements ActionListener
 		l2.setBounds(54,56,246,45);
 		l1.add(l2);
         //Catagory 2
-		b2 = new JButton();
+		b2 = new JButton("Academic");
+		b2.setFont(new Font("Arial",Font.PLAIN,25));
 		b2.setOpaque(false);
 		b2.setFocusable(false);
 		b2.setBackground(Color.white);
@@ -53,7 +56,8 @@ public class ABookC extends JFrame implements ActionListener
 		l3.setBounds(54,128,246,45);
 		l1.add(l3);
         //Catagory 3
-		b7 = new JButton();
+		b7 = new JButton("Horror");
+		b7.setFont(new Font("Arial",Font.PLAIN,25));
 		b7.setOpaque(false);
 		b7.setFocusable(false);
 		b7.setBackground(Color.white);
@@ -65,7 +69,8 @@ public class ABookC extends JFrame implements ActionListener
 		l4.setBounds(54,200,246,45);
 		l1.add(l4);
         //Catagory 4
-		b8 = new JButton();
+		b8 = new JButton("Programming");
+		b8.setFont(new Font("Arial",Font.PLAIN,25));
 		b8.setOpaque(false);
 		b8.setFocusable(false);
 		b8.setBackground(Color.white);
@@ -278,17 +283,21 @@ public class ABookC extends JFrame implements ActionListener
 
 			if(ae.getSource()==b5) //back
 			{
-				AdminHome f = new AdminHome(this.userName);
+				Home f = new Home(this.userName);
 				this.setVisible(false);
 				f.setVisible(true);
 			}
 			else if(ae.getSource()==b9)//Book1
 			{
-				
+				Book1 f = new Book1(this.userName);
+				this.setVisible(false);
+				f.setVisible(true);
 			}
 			else if(ae.getSource()==b10)//Book2
 			{
-				
+				Book4 f = new Book4(this.userName);
+				this.setVisible(false);
+				f.setVisible(true);
 			}
 			else if(ae.getSource()==b11)//Book3
 			{

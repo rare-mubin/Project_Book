@@ -1,31 +1,24 @@
+package Frame;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.Scanner;
 
 
-public class Slot extends JFrame implements ActionListener {
+public class Package extends JFrame implements ActionListener {
         JLabel l,l1,l2,l3,l4,l5,l6,l7,l8,l9,l10,l11,l12,l13,lP;
 		JLabel pl1,pl2,Tpl; //for panel image
 		JLabel bl1,bl2,bl3,bl4,bl5,bl6,tl1,tl2; //for button and  textfield image
 		JTextField t1,t2;
-		JButton b1,b2,b3,b4,b5,b6,b7; 
+		JButton b1,b2,b3,b4,b5,b6; 
 		
         int lineNumber;
 
 		String userName;
-		String ISBN;
-		String filePath = "bin/files/Users.txt";
 		static Point LP;
 
-    public Slot(String userName, String ISBN){
+    public Package(String userName){
 
         this.userName = userName;
-		this.ISBN = ISBN;
 
 		
         ImageIcon image = new ImageIcon("image\\background\\FP1.png");
@@ -41,10 +34,10 @@ public class Slot extends JFrame implements ActionListener {
 
         l1.setIcon(image);
 
-        l4 = new JLabel("select A Slot to add on my collection ");
+        l4 = new JLabel("SELECT A SUBSCRIPTION PACKAGE");
 		l4.setFont(new Font("Felix Titling",Font.PLAIN,34));
 		l4.setForeground(new Color(0x00000));
-		l4.setBounds(221,59,788,42);
+		l4.setBounds(321,59,589,42);
 		l1.add(l4);
 
         b1 = new JButton();//slot 1
@@ -103,14 +96,14 @@ public class Slot extends JFrame implements ActionListener {
         l1.add(bl6);
 
 		//Exit Button
-		b7 = new JButton();
-		b7.setOpaque(false);
-		b7.setFocusable(false);
-		b7.setBackground(Color.white);
-		b7.setBounds(1234,11,35,35);
-		b7.setBorderPainted(false);
-		b7.addActionListener(this);
-		l1.add(b7);
+		b3 = new JButton();
+		b3.setOpaque(false);
+		b3.setFocusable(false);
+		b3.setBackground(Color.white);
+		b3.setBounds(1234,11,35,35);
+		b3.setBorderPainted(false);
+		b3.addActionListener(this);
+		l1.add(b3);
 		bl3 = new JLabel(new ImageIcon("image\\button\\Exit.png"));
 		bl3.setBounds(1234,11,35,35);
         l1.add(bl3);
@@ -202,126 +195,16 @@ public class Slot extends JFrame implements ActionListener {
 				f.setVisible(true);
 			}
 
-				//Slot 1
-				else if(ae.getSource()==b1)
-				{
-					try {
-                        File file = new File(filePath);
-                        Scanner scanner = new Scanner(file);
-
-                        StringBuilder fileContent = new StringBuilder();
-                        lineNumber = 0;
-                        while (scanner.hasNextLine()) {
-                            lineNumber++;
-                            String line = scanner.nextLine();
-
-                            if (line.contains(userName)) {
-                                String[] values = line.split("\t");
-                                values[6] = ISBN; 
-                                line = String.join("\t", values);
-                            }
-
-                            fileContent.append(line).append("\n");
-                        }
-
-                        scanner.close();
-
-                        FileWriter writer = new FileWriter(file);
-                        writer.write(fileContent.toString());
-                        writer.close();
-
-                        JOptionPane.showMessageDialog(null, "Book Added to Slot 1");
-
-                    } catch (FileNotFoundException e) {
-                        e.printStackTrace();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-					this.setVisible(false);
-
-				}
-
-					//Slot 2
-					else if(ae.getSource()==b2)
-					{
-						try {
-							File file = new File(filePath);
-							Scanner scanner = new Scanner(file);
-	
-							StringBuilder fileContent = new StringBuilder();
-							lineNumber = 0;
-							while (scanner.hasNextLine()) {
-								lineNumber++;
-								String line = scanner.nextLine();
-	
-								if (line.contains(userName)) {
-									String[] values = line.split("\t");
-									values[7] = ISBN; 
-									line = String.join("\t", values);
-								}
-	
-								fileContent.append(line).append("\n");
-							}
-	
-							scanner.close();
-	
-							FileWriter writer = new FileWriter(file);
-							writer.write(fileContent.toString());
-							writer.close();
-	
-							JOptionPane.showMessageDialog(null, "Book Added to Slot 2");
-	
-						} catch (FileNotFoundException e) {
-							e.printStackTrace();
-						} catch (IOException e) {
-							e.printStackTrace();
-						}
-						this.setVisible(false);
-
-					}
-					
-					//Slot 3
-					else if(ae.getSource()==b3)
-					{
-						try {
-							File file = new File(filePath);
-							Scanner scanner = new Scanner(file);
-	
-							StringBuilder fileContent = new StringBuilder();
-							lineNumber = 0;
-							while (scanner.hasNextLine()) {
-								lineNumber++;
-								String line = scanner.nextLine();
-	
-								if (line.contains(userName)) {
-									String[] values = line.split("\t");
-									values[8] = ISBN; 
-									line = String.join("\t", values);
-								}
-	
-								fileContent.append(line).append("\n");
-							}
-	
-							scanner.close();
-	
-							FileWriter writer = new FileWriter(file);
-							writer.write(fileContent.toString());
-							writer.close();
-	
-							JOptionPane.showMessageDialog(null, "Book Added to Slot 3");
-	
-						} catch (FileNotFoundException e) {
-							e.printStackTrace();
-						} catch (IOException e) {
-							e.printStackTrace();
-						}
-						this.setVisible(false);
-			
-					}
-
-            else if(ae.getSource()==b7) //exit
+			else if(ae.getSource()==b2)
 			{
+				Payment f = new Payment(userName);
 				this.setVisible(false);
+				f.setVisible(true);
+			}
+
+            else if(ae.getSource()==b3) //exit
+			{
+				System.exit(0);
 			}
 
 			else if(ae.getSource()==b4) //minimize
@@ -331,7 +214,9 @@ public class Slot extends JFrame implements ActionListener {
 
             else if(ae.getSource()==b5) //back
 			{
+				Home f = new Home(this.userName);
 				this.setVisible(false);
+				f.setVisible(true);
 			}
 		}
     
