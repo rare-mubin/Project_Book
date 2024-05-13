@@ -2,7 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class BookS extends JFrame implements ActionListener
+public class Books3_category extends JFrame implements ActionListener
 {
 		JLabel l,l1,l2,l3,l4,l5,l6,l7,l8,l9,l10,l11,l12,l13,l14;
 		JLabel pl1,pl2,Tpl; //for panel image
@@ -13,7 +13,7 @@ public class BookS extends JFrame implements ActionListener
 		static Point LP;
 		String userName;
 
-	public BookS(String userName)
+	public Books3_category(String userName)
 	{
 		this.userName = userName;
         ImageIcon image = new ImageIcon("image\\background\\f4.png");
@@ -286,77 +286,41 @@ public class BookS extends JFrame implements ActionListener
 				this.setVisible(false);
 				f.setVisible(true);
 			}
-			else if(ae.getSource()==b1)//category1
-			{
-				Books1_category f = new Books1_category(this.userName);
-				this.setVisible(false);
-				f.setVisible(true);
-			}
-			else if(ae.getSource()==b2)//category2
-			{
-				Books2_category f = new Books2_category(this.userName);
-				this.setVisible(false);
-				f.setVisible(true);
-			}
-			else if(ae.getSource()==b7)//category3
-			{
-				Books3_category f = new Books3_category(this.userName);
-				this.setVisible(false);
-				f.setVisible(true);
-			}
-			else if(ae.getSource()==b8)//category4
-			{
-				Books4_category f = new Books4_category(this.userName);
-				this.setVisible(false);
-				f.setVisible(true);
-			}
 			else if(ae.getSource()==b9)//Book1
-			{
-				Book1 f = new Book1(this.userName);
-				this.setVisible(false);
-				f.setVisible(true);
-			}
-			else if(ae.getSource()==b10)//Book2
-			{
-				Book2 f = new Book2(this.userName);
-				this.setVisible(false);
-				f.setVisible(true);
-			}
-			else if(ae.getSource()==b11)//Book3
-			{
-				Book3 f = new Book3(this.userName);
-				this.setVisible(false);
-				f.setVisible(true);
-			}
-			else if(ae.getSource()==b12)//Book4
-			{
-				Book4 f = new Book4(this.userName);
-				this.setVisible(false);
-				f.setVisible(true);
-			}
-			else if(ae.getSource()==b13)//Book5
-			{
-				Book5 f = new Book5(this.userName);
-				this.setVisible(false);
-				f.setVisible(true);
-			}
-			else if(ae.getSource()==b14)//Book6
-			{
-				Book6 f = new Book6(this.userName);
-				this.setVisible(false);
-				f.setVisible(true);
-			}
-			else if(ae.getSource()==b15)//Book7
 			{
 				Book7 f = new Book7(this.userName);
 				this.setVisible(false);
 				f.setVisible(true);
 			}
-			else if(ae.getSource()==b16)//Book8
+			else if(ae.getSource()==b10)//Book2
 			{
 				Book8 f = new Book8(this.userName);
 				this.setVisible(false);
 				f.setVisible(true);
+			}
+			else if(ae.getSource()==b11)//Book3
+			{
+				
+			}
+			else if(ae.getSource()==b12)//Book4
+			{
+				
+			}
+			else if(ae.getSource()==b13)//Book5
+			{
+				
+			}
+			else if(ae.getSource()==b14)//Book6
+			{
+				
+			}
+			else if(ae.getSource()==b15)//Book7
+			{
+				
+			}
+			else if(ae.getSource()==b16)//Book8
+			{
+				
 			}
 
 
