@@ -258,7 +258,7 @@ public class Home extends JFrame implements ActionListener
 
 			if(ae.getSource()==b2) 
 			{
-				myfile d=new myfile(this.userName);
+				MyFile d=new MyFile(this.userName);
 				this.setVisible(false);
 				d.setVisible(true);
 			}
@@ -278,12 +278,6 @@ public class Home extends JFrame implements ActionListener
 				}
 			}
 
-			else if(ae.getSource()==b1) // BOOk Store
-			{
-				BookS f = new BookS(this.userName);
-				this.setVisible(false);
-				f.setVisible(true);
-			}
 
 			else if(ae.getSource()==b5) //back
 			{

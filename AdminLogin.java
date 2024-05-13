@@ -203,11 +203,11 @@ public class AdminLogin extends JFrame implements ActionListener
 		{
 			if(ae.getSource()==b1)
 			{
-				String userName =t1.getText();
+				String UserName =t1.getText();
 				String userPassword = t2.getText();
 				Account createAccount = new Account();
 
-			 	if(createAccount.getAccount(userName, userPassword))
+			 	if((UserName.equals(this.userName))&&(createAccount.getAccount(this.userName, userPassword)))
 				{
 					JOptionPane.showMessageDialog(null,"Login Successful");
 					AdminHome f = new AdminHome(userName);
