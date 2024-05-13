@@ -7,8 +7,8 @@ public class FPassword extends JFrame implements ActionListener
 {
 		JLabel l1,l2,l3,l4,l5,l6;
 		JLabel pl1,Tpl; //for panel image
-		JLabel bl1,bl2,bl3,bl4,bl6,tl1,tl2,tl3; //for button and  textfield image
-		JTextField t1,t2,t3;
+		JLabel bl1,bl2,bl3,bl4,bl5,bl6,tl1,tl2,tl3,tl4; //for button and  textfield image
+		JTextField t1,t2,t3,t4;
 		JButton b1,b2,b3,b4,b5,b6; 
 
 
@@ -32,39 +32,39 @@ public class FPassword extends JFrame implements ActionListener
 
         l1.setIcon(image);
 
-        l2 = new JLabel("FORGOT");
-		l2.setFont(new Font("Felix Titling",Font.PLAIN,52));
+        l2 = new JLabel("FORGOT PASSWORD");
+		l2.setFont(new Font("Felix Titling",Font.BOLD,33));
 		l2.setForeground(new Color(0x505050));
-		l2.setBounds(826,95,226,64);
+		l2.setBounds(759,102,359,42);
 		l1.add(l2);
-
-		l3 = new JLabel("PASSWORD");
-		l3.setFont(new Font("Felix Titling",Font.PLAIN,57));
-		l3.setForeground(new Color(0x505050));
-		l3.setBounds(772,180,334,70);
-		l1.add(l3);
 
 		l4 = new JLabel("Enter Your User Name");
 		l4.setFont(new Font("Arial",Font.PLAIN,17));
 		l4.setForeground(new Color(0x777777));
-		l4.setBounds(754,298,178,21);
+		l4.setBounds(754,213,171,20);
 		l1.add(l4);
 
 		l5 = new JLabel("Enter Your Email");
 		l5.setFont(new Font("Arial",Font.PLAIN,17));
 		l5.setForeground(new Color(0x777777));
-		l5.setBounds(754,383,131,21);
+		l5.setBounds(754,298,127,20);
 		l1.add(l5);
+
+		l3 = new JLabel("What Is Your Date Of Birth?(dd/mm/yyyy)");
+		l3.setFont(new Font("Arial",Font.PLAIN,17));
+		l3.setForeground(new Color(0x777777));
+		l3.setBounds(754,383,312,20);
+		l1.add(l3);
 
 		l6 = new JLabel("Enter New Password");
 		l6.setFont(new Font("Arial",Font.PLAIN,17));
 		l6.setForeground(new Color(0x777777));
-		l6.setBounds(754,468,167,21);
+		l6.setBounds(754,468,159,20);
 		l1.add(l6);
 
 		//Enter User Name TextField
 		t1 = new JTextField(); 
-		t1.setBounds(754,319,370,49);
+		t1.setBounds(754,234,370,49);
 		t1.setFont(new Font("Arial",Font.PLAIN,20));
 		t1.setForeground(Color.black);
 		t1.setHorizontalAlignment(SwingConstants.CENTER);
@@ -72,12 +72,12 @@ public class FPassword extends JFrame implements ActionListener
 		t1.setOpaque(false);
 		l1.add(t1);
 		tl1 = new JLabel(); tl1.setIcon(textF);
-		tl1.setBounds(754,319,370,49);
+		tl1.setBounds(754,234,370,49);
 		l1.add(tl1);
 
 		//Email-Field
 		t2 = new JTextField();
-		t2.setBounds(754,404,370,49);
+		t2.setBounds(754,319,370,49);
 		t2.setFont(new Font("Arial",Font.PLAIN,20));
 		t2.setForeground(Color.black);
 		t2.setHorizontalAlignment(SwingConstants.CENTER);
@@ -85,7 +85,7 @@ public class FPassword extends JFrame implements ActionListener
 		t2.setOpaque(false);
 		l1.add(t2);
 		tl2 = new JLabel(); tl2.setIcon(textF);
-		tl2.setBounds(754,404,370,49);
+		tl2.setBounds(754,319,370,49);
 		l1.add(tl2);
 
 		//Password-Field
@@ -100,8 +100,21 @@ public class FPassword extends JFrame implements ActionListener
 		tl3 = new JLabel(); tl3.setIcon(textF);
 		tl3.setBounds(754,489,370,49);
 		l1.add(tl3);
+
+		//DOB-TextField
+		t4 = new JTextField(); 
+		t4.setBounds(754,404,370,49);
+		t4.setFont(new Font("Arial",Font.PLAIN,20));
+		t4.setForeground(Color.black);
+		t4.setHorizontalAlignment(SwingConstants.CENTER);
+		t4.setBorder(null);
+		t4.setOpaque(false);
+		l1.add(t4);
+		tl4 = new JLabel(); tl4.setIcon(textF);
+		tl4.setBounds(754,404,370,49);
+		l1.add(tl4);
 		
-		//log in button
+		//Submit button
 		b1 = new JButton("Submit");
 		b1.setFont(new Font("Arial",Font.PLAIN,25));
 		b1.setForeground(Color.WHITE);
@@ -142,7 +155,7 @@ public class FPassword extends JFrame implements ActionListener
 		bl4.setBounds(1234,51,35,35);
         l1.add(bl4);
 
-		//back button
+		//Back button
 		b5 = new JButton();
 		b5.setOpaque(false);
 		b5.setFocusable(false);
@@ -151,6 +164,9 @@ public class FPassword extends JFrame implements ActionListener
 		b5.setBorderPainted(false);
 		b5.addActionListener(this);
 		l1.add(b5);
+		bl5 = new JLabel(new ImageIcon("image\\button\\Back.png"));
+		bl5.setBounds(1234,127,35,35);
+        l1.add(bl5);
 
 		//Admin Panel Button
 		b6 = new JButton();
@@ -242,20 +258,25 @@ public class FPassword extends JFrame implements ActionListener
 				
 			}
 
-			if(ae.getSource()==b2)
+			else if(ae.getSource()==b2)
 			{
 				SignUp f = new SignUp();
 				this.setVisible(false);
 				f.setVisible(true);
 			}
-			if(ae.getSource()==b6)
+			else if(ae.getSource()==b6)
 			{
 				AdminLogin f = new AdminLogin("mubin");
 				this.setVisible(false);
 				f.setVisible(true);
 			}
 
-			
+			else if(ae.getSource()==b5) //back
+			{
+				Login f = new Login();
+				this.setVisible(false);
+				f.setVisible(true);
+			}
 			
 			else if(ae.getSource()==b3)
 			{
