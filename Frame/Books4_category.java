@@ -2,20 +2,29 @@ package Frame;
 import javax.swing.*; 
 import java.awt.*;
 import java.awt.event.*;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Scanner;
 
 public class Books4_category extends JFrame implements ActionListener
 {
-		JLabel l,l1,l2,l3,l4,l5,l6,l7,l8,l9,l10,l11,l12,l13,l14;
+		JLabel l,l1,l2,l3,l4,l5,l6,l7,l8,l9,l10,l11,l12,l13,l14,l15;
 		JLabel pl1,pl2,Tpl; //for panel image
-		JLabel bl1,bl2,bl3,bl4,bl5,tl1,tl2; //for button and  textfield image
+		JLabel bl1,bl2,bl3,bl4,bl5,bl6,tl1,tl2; //for button and  textfield image
 		JTextField t1,t2;
-		JButton b1,b2,b3,b4,b5,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16; 
+		JButton b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16; 
 
 		static Point LP;
+		String payment;
 		String userName;
+		String filePath = "bin/files/Users.txt";
+		int lineNumber;
 
-	public Books4_category(String userName)
+	public Books4_category(String userName,String payment)
 	{
+		this.payment = payment;
 		this.userName = userName;
         ImageIcon image = new ImageIcon("image\\background\\f4.png");
         l1 = new JLabel();
@@ -92,7 +101,7 @@ public class Books4_category extends JFrame implements ActionListener
 		b9.setBorderPainted(false);
 		b9.addActionListener(this);
 		l1.add(b9);
-		l7 = new JLabel();
+		l7 = new JLabel(new ImageIcon("image\\Book\\Book5.2.png"));
 		l7.setBounds(377,55,169,279);
 		l1.add(l7);
         //Book 2
@@ -104,7 +113,7 @@ public class Books4_category extends JFrame implements ActionListener
 		b10.setBorderPainted(false);
 		b10.addActionListener(this);
 		l1.add(b10);
-		l8 = new JLabel();
+		l8 = new JLabel(new ImageIcon("image\\Book\\Book6.2.png"));
 		l8.setBounds(588,55,169,279);
 		l1.add(l8);
         //Book3
@@ -179,6 +188,29 @@ public class Books4_category extends JFrame implements ActionListener
 		l14 = new JLabel();
 		l14.setBounds(1010,386,169,279);
 		l1.add(l14);
+
+		if(payment.equals("1"))
+		{
+			l15 = new JLabel("You Have 30 days Subscription");
+			l15.setFont(new Font("Arial",Font.BOLD,12));
+			l15.setForeground(new Color(0x850000));
+			l15.setBounds(92,618,178,14);
+			l1.add(l15);
+	
+			b6 = new JButton("Cancel Sub");
+			b6.setFont(new Font("Arial",Font.PLAIN,12));
+			b6.setForeground(Color.WHITE);
+			b6.setOpaque(false);
+			b6.setFocusable(false);
+			b6.setBackground(Color.white);
+			b6.setBounds(119,642,125,28);
+			b6.setBorderPainted(false);
+			b6.addActionListener(this);
+			l1.add(b6);
+			bl6 = new JLabel(new ImageIcon("image\\button\\Cancelsubmission.png"));
+			bl6.setBounds(119,642,125,28);
+			l1.add(bl6);
+		}
 
 		//Exit Button
 		b3 = new JButton();
@@ -287,6 +319,30 @@ public class Books4_category extends JFrame implements ActionListener
 				this.setVisible(false);
 				f.setVisible(true);
 			}
+			else if(ae.getSource()==b1)//category1
+			{
+				Books1_category f = new Books1_category(this.userName,this.payment);
+				this.setVisible(false);
+				f.setVisible(true);
+			}
+			else if(ae.getSource()==b2)//category2
+			{
+				Books2_category f = new Books2_category(this.userName,this.payment);
+				this.setVisible(false);
+				f.setVisible(true);
+			}
+			else if(ae.getSource()==b7)//category3
+			{
+				Books3_category f = new Books3_category(this.userName,this.payment);
+				this.setVisible(false);
+				f.setVisible(true);
+			}
+			else if(ae.getSource()==b8)//category4
+			{
+				Books4_category f = new Books4_category(this.userName,this.payment);
+				this.setVisible(false);
+				f.setVisible(true);
+			}
 			else if(ae.getSource()==b9)//Book1
 			{
 				Book5 f = new Book5(this.userName);
@@ -322,6 +378,45 @@ public class Books4_category extends JFrame implements ActionListener
 			else if(ae.getSource()==b16)//Book8
 			{
 				
+			}
+			else if(ae.getSource()==b6)
+			{
+				try {
+                        File file = new File(filePath);
+                        Scanner scanner = new Scanner(file);
+
+                        StringBuilder fileContent = new StringBuilder();
+                        lineNumber = 0;
+                        while (scanner.hasNextLine()) {
+                            lineNumber++;
+                            String line = scanner.nextLine();
+
+                            if (line.contains(userName)) {
+                                String[] values = line.split("\t");
+                                values[5] = "0"; 
+                                line = String.join("\t", values);
+                            }
+
+                            fileContent.append(line).append("\n");
+                        }
+
+                        scanner.close();
+
+                        FileWriter writer = new FileWriter(file);
+                        writer.write(fileContent.toString());
+                        writer.close();
+
+                        JOptionPane.showMessageDialog(null, "Subscription Cancel Successful");
+
+                        Home f = new Home(this.userName);
+                        this.setVisible(false);
+                        f.setVisible(true);
+
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
 			}
 
 

@@ -121,7 +121,7 @@ public class BookS extends JFrame implements ActionListener
 		b9.setBorderPainted(false);
 		b9.addActionListener(this);
 		l1.add(b9);
-		l7 = new JLabel();
+		l7 = new JLabel(new ImageIcon("image\\Book\\Book1.2.png"));
 		l7.setBounds(377,55,169,279);
 		l1.add(l7);
         //Book 2
@@ -133,7 +133,7 @@ public class BookS extends JFrame implements ActionListener
 		b10.setBorderPainted(false);
 		b10.addActionListener(this);
 		l1.add(b10);
-		l8 = new JLabel();
+		l8 = new JLabel(new ImageIcon("image\\Book\\Book2.2.png"));
 		l8.setBounds(588,55,169,279);
 		l1.add(l8);
         //Book3
@@ -145,7 +145,7 @@ public class BookS extends JFrame implements ActionListener
 		b11.setBorderPainted(false);
 		b11.addActionListener(this);
 		l1.add(b11);
-		l9 = new JLabel();
+		l9 = new JLabel(new ImageIcon("image\\Book\\Book3.2.png"));
 		l9.setBounds(799,55,169,279);
 		l1.add(l9);
         //Book4
@@ -157,7 +157,7 @@ public class BookS extends JFrame implements ActionListener
 		b12.setBorderPainted(false);
 		b12.addActionListener(this);
 		l1.add(b12);
-		l10 = new JLabel();
+		l10 = new JLabel(new ImageIcon("image\\Book\\Book4.2.png"));
 		l10.setBounds(1010,55,169,279);
 		l1.add(l10);
         //Book 5
@@ -169,7 +169,7 @@ public class BookS extends JFrame implements ActionListener
 		b13.setBorderPainted(false);
 		b13.addActionListener(this);
 		l1.add(b13);
-		l11 = new JLabel();
+		l11 = new JLabel(new ImageIcon("image\\Book\\Book5.2.png"));
 		l11.setBounds(377,386,169,279);
 		l1.add(l11);
         //Book6
@@ -181,7 +181,7 @@ public class BookS extends JFrame implements ActionListener
 		b14.setBorderPainted(false);
 		b14.addActionListener(this);
 		l1.add(b14);
-		l12 = new JLabel();
+		l12 = new JLabel(new ImageIcon("image\\Book\\Book6.2.png"));
 		l12.setBounds(588,386,169,279);
 		l1.add(l12);
 		//Book 7
@@ -193,7 +193,7 @@ public class BookS extends JFrame implements ActionListener
 		b15.setBorderPainted(false);
 		b15.addActionListener(this);
 		l1.add(b15);
-		l13 = new JLabel();
+		l13 = new JLabel(new ImageIcon("image\\Book\\Book7.2.png"));
 		l13.setBounds(799,386,169,279);
 		l1.add(l13);
         //Book8
@@ -205,7 +205,7 @@ public class BookS extends JFrame implements ActionListener
 		b16.setBorderPainted(false);
 		b16.addActionListener(this);
 		l1.add(b16);
-		l14 = new JLabel();
+		l14 = new JLabel(new ImageIcon("image\\Book\\Book8.2.png"));
 		l14.setBounds(1010,386,169,279);
 		l1.add(l14);
 
@@ -341,25 +341,25 @@ public class BookS extends JFrame implements ActionListener
 			}
 			else if(ae.getSource()==b1)//category1
 			{
-				Books1_category f = new Books1_category(this.userName);
+				Books1_category f = new Books1_category(this.userName,this.payment);
 				this.setVisible(false);
 				f.setVisible(true);
 			}
 			else if(ae.getSource()==b2)//category2
 			{
-				Books2_category f = new Books2_category(this.userName);
+				Books2_category f = new Books2_category(this.userName,this.payment);
 				this.setVisible(false);
 				f.setVisible(true);
 			}
 			else if(ae.getSource()==b7)//category3
 			{
-				Books3_category f = new Books3_category(this.userName);
+				Books3_category f = new Books3_category(this.userName,this.payment);
 				this.setVisible(false);
 				f.setVisible(true);
 			}
 			else if(ae.getSource()==b8)//category4
 			{
-				Books4_category f = new Books4_category(this.userName);
+				Books4_category f = new Books4_category(this.userName,this.payment);
 				this.setVisible(false);
 				f.setVisible(true);
 			}
