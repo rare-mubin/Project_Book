@@ -35,9 +35,10 @@ public class Package extends JFrame implements ActionListener {
         l1.setIcon(image);
 
         l4 = new JLabel("SELECT A SUBSCRIPTION PACKAGE");
-		l4.setFont(new Font("Felix Titling",Font.PLAIN,34));
-		l4.setForeground(new Color(0x00000));
+		l4.setFont(new Font("Felix Titling",Font.BOLD,34));
+		l4.setForeground(new Color(0x505050));
 		l4.setBounds(321,59,589,42);
+		l4.setHorizontalAlignment(SwingConstants.CENTER);
 		l1.add(l4);
 
         b1 = new JButton();//slot 1

@@ -4,11 +4,13 @@ import java.awt.*;
 import java.awt.event.*;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Profile extends JFrame implements ActionListener 
 {
-		JLabel l,l1,l2,l3,l4,l5,l6,l7,l8,l9,l10,l11,l12,l13,lP;
+		JLabel l,l1,l2,l3,l4,l5,l6,l7,l8,l9,l10,l11,l12,l13,l14,lP;
 		JLabel pl1,pl2,Tpl; //for panel image
 		JLabel bl1,bl2,bl3,bl4,bl5,bl6,tl1,tl2; //for button and  textfield image
 		JTextField t1,t2;
@@ -20,6 +22,7 @@ public class Profile extends JFrame implements ActionListener
         String fullName;
         String dateOfBirth;
         String userEmail;
+		String payment;
 		String projectPath;
 
 		String filePath = "bin/files/Users.txt";
@@ -43,6 +46,7 @@ public class Profile extends JFrame implements ActionListener
                     this.userName = value[0];
                     this.dateOfBirth = value[2];
                     this.userEmail = value[4];
+					this.payment = value[5];
                     this.lineNumber= lineNumber;
                 }
             }
@@ -54,6 +58,8 @@ public class Profile extends JFrame implements ActionListener
 
 		
         ImageIcon image = new ImageIcon("image\\background\\login_page_L.png");
+		ImageIcon button1 = new ImageIcon("image\\button\\Cancelsubmission.png");
+
         l1 = new JLabel();
 
         this.setTitle("project_BOOK");
@@ -148,6 +154,32 @@ public class Profile extends JFrame implements ActionListener
 		l13.setHorizontalAlignment(JLabel.CENTER);
 		l13.setBounds(47,445,270,37);
 		l1.add(l13);
+
+
+		if(payment.equals("1"))
+		{
+			l14 = new JLabel("You Have 30 days Subscription");
+			l14.setFont(new Font("Arial",Font.BOLD,12));
+			l14.setForeground(new Color(0x850000));
+			l14.setBounds(92,618,178,14);
+			l1.add(l14);
+	
+			b6 = new JButton("Cancel Sub");
+			b6.setFont(new Font("Arial",Font.PLAIN,12));
+			b6.setForeground(Color.WHITE);
+			b6.setOpaque(false);
+			b6.setFocusable(false);
+			b6.setBackground(Color.white);
+			b6.setBounds(119,642,125,28);
+			b6.setBorderPainted(false);
+			b6.addActionListener(this);
+			l1.add(b6);
+			bl6 = new JLabel(button1);
+			bl6.setBounds(119,642,125,28);
+			l1.add(bl6);
+		}
+		
+      
 
 		//Edit profile button
 		b2 = new JButton("Update Profile");
@@ -269,6 +301,51 @@ public class Profile extends JFrame implements ActionListener
 				ProfileEdit f = new ProfileEdit(userName);
 				this.setVisible(false);
 				f.setVisible(true);
+			}
+
+			else if(ae.getSource()==b6)
+			{
+				try {
+                        File file = new File(filePath);
+                        Scanner scanner = new Scanner(file);
+
+                        StringBuilder fileContent = new StringBuilder();
+                        lineNumber = 0;
+                        while (scanner.hasNextLine()) {
+                            lineNumber++;
+                            String line = scanner.nextLine();
+
+                            if (line.contains(userName)) {
+                                String[] values = line.split("\t");
+                                values[5] = "0"; 
+                                line = String.join("\t", values);
+                            }
+
+                            fileContent.append(line).append("\n");
+                        }
+
+                        scanner.close();
+
+                        FileWriter writer = new FileWriter(file);
+                        writer.write(fileContent.toString());
+                        writer.close();
+
+                        JOptionPane.showMessageDialog(null, "Subscription Cancel Successful");
+
+						Home f1 = new Home(this.userName);
+                        f1.setVisible(false);
+						Home f2 = new Home(this.userName);
+						f2.setVisible(true);
+
+                        Profile f = new Profile(this.userName);
+                        this.setVisible(false);
+                        f.setVisible(true);
+
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
 			}
 
             else if(ae.getSource()==b3) //exit
