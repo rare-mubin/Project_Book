@@ -619,7 +619,7 @@ public class MyFile extends JFrame implements ActionListener {
 				}
 			}
 
-            else if(ae.getSource()==b3) //exit
+            else if(ae.getSource()==b7) //exit
 			{
 				System.exit(0);
 			}

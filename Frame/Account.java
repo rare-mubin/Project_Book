@@ -109,7 +109,7 @@ public class Account {
         }
         return isAuth;
     }
-    public boolean getAccount(String userName,String userEmail,String DOF)
+    public boolean getAccount(String UserName,String UserEmail,String DOF)
     {
         boolean isAuth = false;
         String path ="bin\\files\\Users.txt";
@@ -120,7 +120,7 @@ public class Account {
             {
                 String line = sc.nextLine();
                 String[] value = line.split("\t");
-                if(value[0].equals(userName) && value[1].equals(userEmail) && value[1].equals(DOF))
+                if(value[0].equals(UserName) && value[4].equals(UserEmail) && value[2].equals(DOF))
                 {
                     isAuth=true;
                 }

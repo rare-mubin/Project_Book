@@ -2,6 +2,11 @@ package Frame;
 import javax.swing.*; 
 import java.awt.*;
 import java.awt.event.*;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Scanner;
 
 public class FPassword extends JFrame implements ActionListener
 {
@@ -10,7 +15,9 @@ public class FPassword extends JFrame implements ActionListener
 		JLabel bl1,bl2,bl3,bl4,bl5,bl6,tl1,tl2,tl3,tl4; //for button and  textfield image
 		JTextField t1,t2,t3,t4;
 		JButton b1,b2,b3,b4,b5,b6; 
-
+		
+		int lineNumber;
+		String filePath = "bin/files/Users.txt";
 
 		static Point LP;
 
@@ -88,31 +95,33 @@ public class FPassword extends JFrame implements ActionListener
 		tl2.setBounds(754,319,370,49);
 		l1.add(tl2);
 
-		//Password-Field
-		t3 = new JPasswordField();
-		t3.setBounds(754,489,370,49);
+		//DOB-TextField
+		t3 = new JTextField(); 
+		t3.setBounds(754,404,370,49);
 		t3.setFont(new Font("Arial",Font.PLAIN,20));
 		t3.setForeground(Color.black);
 		t3.setHorizontalAlignment(SwingConstants.CENTER);
 		t3.setBorder(null);
 		t3.setOpaque(false);
 		l1.add(t3);
-		tl3 = new JLabel(); tl3.setIcon(textF);
-		tl3.setBounds(754,489,370,49);
-		l1.add(tl3);
+		tl4 = new JLabel(); tl4.setIcon(textF);
+		tl4.setBounds(754,404,370,49);
+		l1.add(tl4);
 
-		//DOB-TextField
-		t4 = new JTextField(); 
-		t4.setBounds(754,404,370,49);
+		//Password-Field
+		t4 = new JPasswordField();
+		t4.setBounds(754,489,370,49);
 		t4.setFont(new Font("Arial",Font.PLAIN,20));
 		t4.setForeground(Color.black);
 		t4.setHorizontalAlignment(SwingConstants.CENTER);
 		t4.setBorder(null);
 		t4.setOpaque(false);
 		l1.add(t4);
-		tl4 = new JLabel(); tl4.setIcon(textF);
-		tl4.setBounds(754,404,370,49);
-		l1.add(tl4);
+		tl3 = new JLabel(); tl3.setIcon(textF);
+		tl3.setBounds(754,489,370,49);
+		l1.add(tl3);
+
+		
 		
 		//Submit button
 		b1 = new JButton("Submit");
@@ -241,19 +250,59 @@ public class FPassword extends JFrame implements ActionListener
 			if(ae.getSource()==b1)
 			{
 				String userName =t1.getText();
-				String userPassword = t2.getText();
+				String userEmail = t2.getText();
+				String DOB = t3.getText();
+				String pass = t4.getText();
+
 				Account createAccount = new Account();
 
-			 	if(createAccount.getAccount(userName, userPassword))
+				if(userName.isEmpty() || userEmail.isEmpty() || DOB.isEmpty() || pass.isEmpty())
 				{
-					JOptionPane.showMessageDialog(null,"Login Successful");
-					Home f = new Home(userName);
-					this.setVisible(false);
-					f.setVisible(true);
+					JOptionPane.showMessageDialog(null, "Full Fill All Box");
+				}
+			 	else if(createAccount.getAccount(userName,userEmail,DOB))
+				{
+					try {
+                        File file = new File(filePath);
+                        Scanner scanner = new Scanner(file);
+
+                        StringBuilder fileContent = new StringBuilder();
+                        lineNumber = 0;
+                        while (scanner.hasNextLine()) {
+                            lineNumber++;
+                            String line = scanner.nextLine();
+
+                            if (line.contains(userName)) {
+                                String[] values = line.split("\t");
+                                values[1] = pass; 
+                                line = String.join("\t", values);
+                            }
+
+                            fileContent.append(line).append("\n");
+                        }
+
+                        scanner.close();
+
+                        FileWriter writer = new FileWriter(file);
+                        writer.write(fileContent.toString());
+                        writer.close();
+
+                        JOptionPane.showMessageDialog(null, "Password Change Successful");
+                        
+                        Login f = new Login();
+						this.setVisible(false);
+						f.setVisible(true);
+
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+					
 	
 				}
 
-				else{JOptionPane.showMessageDialog(null, "Check UserName/Password");}
+				else{JOptionPane.showMessageDialog(null, "(UserName or Email or Date of Birth) did not Match");}
 			
 				
 			}
