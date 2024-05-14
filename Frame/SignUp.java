@@ -2,6 +2,9 @@ package Frame;
 import javax.swing.*; 
 import java.awt.*;
 import java.awt.event.*;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 
 public class SignUp extends JFrame implements ActionListener
 {
@@ -12,6 +15,9 @@ public class SignUp extends JFrame implements ActionListener
 		JButton b1,b2,b3,b4,b5; 
 		JLabel pl1,Tpl; //for panel image
 		JLabel bl1,bl2,bl3,bl4,bl5,tl1,tl2,tl3,tl4,tl5,tl6; //for button and  textfield image
+
+		int lineNumber;
+		String user;
 
 		static Point LP;
 		
@@ -271,10 +277,36 @@ public class SignUp extends JFrame implements ActionListener
 				String userName = t4.getText();
 				String userPassword = t5.getText();
 				String userPasswordConfirm = t6.getText();
+
+				String filePath = "bin/files/Users.txt";
+				String searchString = t4.getText();;
+				try {
+					File file = new File(filePath);
+					Scanner scanner = new Scanner(file);
+
+					for (int lineNumber = 0 ; scanner.hasNextLine() ; lineNumber++) {
+						String line = scanner.nextLine();
+
+						if (line.contains(searchString)) {
+							String[] value = line.split("\t");
+							this.user = value[0];
+							this.lineNumber = lineNumber;
+						}
+					}
+					scanner.close();
+				} 
+					catch (FileNotFoundException e) {
+					e.printStackTrace();
+				}
 	
+
 				if(fullName.isEmpty() ||  nID.isEmpty() || userEmail.isEmpty() || userName.isEmpty() || userPassword.isEmpty() || userPasswordConfirm.isEmpty())
 				{
 					JOptionPane.showMessageDialog(null, "Full Fill All Box");
+				}
+				else if(userName.equals(this.user))
+				{
+					JOptionPane.showMessageDialog(null, "Try Diffrent Username");
 				}
 				else if(userPassword.equals(userPasswordConfirm))
 				{

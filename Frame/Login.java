@@ -44,7 +44,7 @@ public class Login extends JFrame implements ActionListener
 		l3.setBounds(743,180,392,70);
 		l1.add(l3);
 
-		l4 = new JLabel("Enter Email User Name");
+		l4 = new JLabel("Enter Your User Name");
 		l4.setFont(new Font("Arial",Font.PLAIN,17));
 		l4.setForeground(new Color(0x777777));
 		l4.setBounds(754,358,185,21);
