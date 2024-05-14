@@ -2,10 +2,11 @@ package Frame;
 import javax.swing.*; 
 import java.awt.*;
 import java.awt.event.*;
+import java.io.File;
 
 public class AdminLogin extends JFrame implements ActionListener
 {
-		JLabel l1,l2,l3,l4,l5,l6;
+		JLabel l1,l2,l3,l4,l5,l6,lP;
 		JLabel pl1,Tpl; //for panel image
 		JLabel bl1,bl2,bl3,bl4,bl5,tl1,tl2; //for button and  textfield image
 		JTextField t1,t2;
@@ -33,6 +34,20 @@ public class AdminLogin extends JFrame implements ActionListener
 		this.setLocationRelativeTo(null);
 
         l1.setIcon(image);
+
+		String picpath = "image\\profile\\mubin.png";
+		
+			File file = new File(picpath);
+			if (file.exists()){
+				lP = new JLabel(new ImageIcon(picpath));
+				lP.setBounds(860,148,157,157);
+				l1.add(lP);
+			}
+			else{
+				lP = new JLabel(new ImageIcon("image\\profile\\dummy-profile-pic.png"));
+				lP.setBounds(860,148,157,157);
+				l1.add(lP);
+			}
 
         l2 = new JLabel("ADMIN LOGIN");
 		l2.setFont(new Font("Felix Titling",Font.BOLD,32));

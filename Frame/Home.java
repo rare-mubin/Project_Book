@@ -357,14 +357,14 @@ public class Home extends JFrame implements ActionListener
 				c.setVisible(true);
 			}
 
-			else if(ae.getSource()==b9) //reload
+			else if(ae.getSource()==b9) //about
 			{
 				Home c=new Home(this.userName);
 				this.setVisible(false);
 				c.setVisible(true);
 			}
 
-			else if(ae.getSource()==b10) //reload
+			else if(ae.getSource()==b10) //userifo
 			{
 				UserInformation c=new UserInformation(this.userName);
 				this.setVisible(false);
