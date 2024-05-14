@@ -238,11 +238,9 @@ public class Login extends JFrame implements ActionListener
 
 			 	if(createAccount.getAccount(userName, userPassword))
 				{
-					JOptionPane.showMessageDialog(null,"Login Successful");
 					Home f = new Home(userName);
 					this.setVisible(false);
 					f.setVisible(true);
-	
 				}
 
 				else{JOptionPane.showMessageDialog(null, "Check UserName/Password");}

@@ -2,21 +2,50 @@ package Frame;
 import javax.swing.*; 
 import java.awt.*;
 import java.awt.event.*;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Scanner;
 
 public class BookS extends JFrame implements ActionListener
 {
-		JLabel l,l1,l2,l3,l4,l5,l6,l7,l8,l9,l10,l11,l12,l13,l14;
+		JLabel l,l1,l2,l3,l4,l5,l6,l7,l8,l9,l10,l11,l12,l13,l14,l15;
 		JLabel pl1,pl2,Tpl; //for panel image
-		JLabel bl1,bl2,bl3,bl4,bl5,tl1,tl2; //for button and  textfield image
+		JLabel bl1,bl2,bl3,bl4,bl5,bl6,tl1,tl2; //for button and  textfield image
 		JTextField t1,t2;
-		JButton b1,b2,b3,b4,b5,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16; 
+		JButton b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16; 
 
+
+        int lineNumber;
 		static Point LP;
 		String userName;
+		String payment;
+		String filePath = "bin/files/Users.txt";
 
 	public BookS(String userName)
 	{
 		this.userName = userName;
+
+		 String searchString = this.userName;
+		try {
+            File file = new File(filePath);
+            Scanner scanner = new Scanner(file);
+
+            for (int lineNumber = 0 ; scanner.hasNextLine() ; lineNumber++) {
+                String line = scanner.nextLine();
+
+                if (line.contains(searchString)) {
+                    String[] value = line.split("\t");
+					this.payment = value[5];
+                    this.lineNumber= lineNumber;
+                }
+            }
+            scanner.close();
+        } 
+			catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
         ImageIcon image = new ImageIcon("image\\background\\f4.png");
         l1 = new JLabel();
 
@@ -179,6 +208,29 @@ public class BookS extends JFrame implements ActionListener
 		l14 = new JLabel();
 		l14.setBounds(1010,386,169,279);
 		l1.add(l14);
+
+		if(payment.equals("1"))
+		{
+			l15 = new JLabel("You Have 30 days Subscription");
+			l15.setFont(new Font("Arial",Font.BOLD,12));
+			l15.setForeground(new Color(0x850000));
+			l15.setBounds(92,618,178,14);
+			l1.add(l15);
+	
+			b6 = new JButton("Cancel Sub");
+			b6.setFont(new Font("Arial",Font.PLAIN,12));
+			b6.setForeground(Color.WHITE);
+			b6.setOpaque(false);
+			b6.setFocusable(false);
+			b6.setBackground(Color.white);
+			b6.setBounds(119,642,125,28);
+			b6.setBorderPainted(false);
+			b6.addActionListener(this);
+			l1.add(b6);
+			bl6 = new JLabel(new ImageIcon("image\\button\\Cancelsubmission.png"));
+			bl6.setBounds(119,642,125,28);
+			l1.add(bl6);
+		}
 
 		//Exit Button
 		b3 = new JButton();
@@ -358,6 +410,46 @@ public class BookS extends JFrame implements ActionListener
 				Book8 f = new Book8(this.userName);
 				this.setVisible(false);
 				f.setVisible(true);
+			}
+
+			else if(ae.getSource()==b6)
+			{
+				try {
+                        File file = new File(filePath);
+                        Scanner scanner = new Scanner(file);
+
+                        StringBuilder fileContent = new StringBuilder();
+                        lineNumber = 0;
+                        while (scanner.hasNextLine()) {
+                            lineNumber++;
+                            String line = scanner.nextLine();
+
+                            if (line.contains(userName)) {
+                                String[] values = line.split("\t");
+                                values[5] = "0"; 
+                                line = String.join("\t", values);
+                            }
+
+                            fileContent.append(line).append("\n");
+                        }
+
+                        scanner.close();
+
+                        FileWriter writer = new FileWriter(file);
+                        writer.write(fileContent.toString());
+                        writer.close();
+
+                        JOptionPane.showMessageDialog(null, "Subscription Cancel Successful");
+
+                        Home f = new Home(this.userName);
+                        this.setVisible(false);
+                        f.setVisible(true);
+
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
 			}
 
 

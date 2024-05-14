@@ -257,13 +257,23 @@ public class Home extends JFrame implements ActionListener
 		public void actionPerformed(ActionEvent ae) 
 		{
 
-			if(ae.getSource()==b2) 
+			if(ae.getSource()==b2)//Books
 			{
-				MyFile d=new MyFile(this.userName);
-				this.setVisible(false);
-				d.setVisible(true);
+				if(Payment.equals(PaymentNotDone))
+				{
+					Package b=new Package(this.userName);
+					this.setVisible(false);
+					b.setVisible(true);
+				}
+				else if(Payment.equals(PaymentDone))
+				{
+					MyFile d=new MyFile(this.userName);
+					this.setVisible(false);
+					d.setVisible(true);
+				}
+				
 			}
-			else if(ae.getSource()==b1)//Package
+			else if(ae.getSource()==b1)//Books
 			{
 				if(Payment.equals(PaymentNotDone))
 				{

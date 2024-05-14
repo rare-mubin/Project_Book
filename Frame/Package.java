@@ -21,7 +21,7 @@ public class Package extends JFrame implements ActionListener {
         this.userName = userName;
 
 		
-        ImageIcon image = new ImageIcon("image\\background\\FP1.png");
+        ImageIcon image = new ImageIcon("image\\background\\login_page_L.png");
         l1 = new JLabel();
 
         this.setTitle("project_BOOK");
@@ -35,7 +35,7 @@ public class Package extends JFrame implements ActionListener {
         l1.setIcon(image);
 
         l4 = new JLabel("SELECT A SUBSCRIPTION PACKAGE");
-		l4.setFont(new Font("Felix Titling",Font.BOLD,34));
+		l4.setFont(new Font("Felix Titling",Font.BOLD,32));
 		l4.setForeground(new Color(0x505050));
 		l4.setBounds(321,59,589,42);
 		l4.setHorizontalAlignment(SwingConstants.CENTER);
@@ -135,7 +135,7 @@ public class Package extends JFrame implements ActionListener {
 		bl5.setBounds(1234,127,35,35);
         l1.add(bl5);
 
-		l2 = new JLabel();
+		l2 = new JLabel(new ImageIcon("image\\panel\\Package.png"));
 		l2.setBounds(26,24,1180,670);
 		l1.add(l2);
 

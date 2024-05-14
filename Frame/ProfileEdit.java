@@ -410,10 +410,6 @@ public class ProfileEdit extends JFrame implements ActionListener
 						JOptionPane.showMessageDialog(null,"Error Uploading file: " + e.getMessage());
 					}
 				}
-				Home f1 = new Home(this.userName);
-                f1.setVisible(false);
-				Home f2 = new Home(this.userName);
-				f2.setVisible(true);
 
 				ProfileEdit f = new ProfileEdit(userName);
 				this.setVisible(false);
@@ -451,11 +447,6 @@ public class ProfileEdit extends JFrame implements ActionListener
                         writer.close();
 
                         JOptionPane.showMessageDialog(null, "Name Change Successful");
-
-						Home f1 = new Home(this.userName);
-						f1.setVisible(false);
-						Home f2 = new Home(this.userName);
-						f2.setVisible(true);
 
 						ProfileEdit f = new ProfileEdit(userName);
 						this.setVisible(false);

@@ -4,8 +4,6 @@ import java.awt.*;
 import java.awt.event.*;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.Scanner;
 
 public class Profile extends JFrame implements ActionListener 
@@ -58,7 +56,6 @@ public class Profile extends JFrame implements ActionListener
 
 		
         ImageIcon image = new ImageIcon("image\\background\\login_page_L.png");
-		ImageIcon button1 = new ImageIcon("image\\button\\Cancelsubmission.png");
 
         l1 = new JLabel();
 
@@ -163,20 +160,6 @@ public class Profile extends JFrame implements ActionListener
 			l14.setForeground(new Color(0x850000));
 			l14.setBounds(92,618,178,14);
 			l1.add(l14);
-	
-			b6 = new JButton("Cancel Sub");
-			b6.setFont(new Font("Arial",Font.PLAIN,12));
-			b6.setForeground(Color.WHITE);
-			b6.setOpaque(false);
-			b6.setFocusable(false);
-			b6.setBackground(Color.white);
-			b6.setBounds(119,642,125,28);
-			b6.setBorderPainted(false);
-			b6.addActionListener(this);
-			l1.add(b6);
-			bl6 = new JLabel(button1);
-			bl6.setBounds(119,642,125,28);
-			l1.add(bl6);
 		}
 		
       
@@ -303,50 +286,6 @@ public class Profile extends JFrame implements ActionListener
 				f.setVisible(true);
 			}
 
-			else if(ae.getSource()==b6)
-			{
-				try {
-                        File file = new File(filePath);
-                        Scanner scanner = new Scanner(file);
-
-                        StringBuilder fileContent = new StringBuilder();
-                        lineNumber = 0;
-                        while (scanner.hasNextLine()) {
-                            lineNumber++;
-                            String line = scanner.nextLine();
-
-                            if (line.contains(userName)) {
-                                String[] values = line.split("\t");
-                                values[5] = "0"; 
-                                line = String.join("\t", values);
-                            }
-
-                            fileContent.append(line).append("\n");
-                        }
-
-                        scanner.close();
-
-                        FileWriter writer = new FileWriter(file);
-                        writer.write(fileContent.toString());
-                        writer.close();
-
-                        JOptionPane.showMessageDialog(null, "Subscription Cancel Successful");
-
-						Home f1 = new Home(this.userName);
-                        f1.setVisible(false);
-						Home f2 = new Home(this.userName);
-						f2.setVisible(true);
-
-                        Profile f = new Profile(this.userName);
-                        this.setVisible(false);
-                        f.setVisible(true);
-
-                    } catch (FileNotFoundException e) {
-                        e.printStackTrace();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-			}
 
             else if(ae.getSource()==b3) //exit
 			{
