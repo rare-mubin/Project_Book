@@ -26,7 +26,7 @@ public class Books4_category extends JFrame implements ActionListener
 	{
 		this.payment = payment;
 		this.userName = userName;
-        ImageIcon image = new ImageIcon("image\\background\\f4.png");
+        ImageIcon image = new ImageIcon("image\\background\\login_page_L.png");
         l1 = new JLabel();
 
         this.setTitle("project_BOOK");
@@ -87,7 +87,7 @@ public class Books4_category extends JFrame implements ActionListener
 		b8.setBorderPainted(false);
 		b8.addActionListener(this);
 		l1.add(b8);
-		l5 = new JLabel("");
+		l5 = new JLabel(new ImageIcon("image\\button\\Cat.png"));
 		l5.setBounds(54,272,246,45);
 		l1.add(l5);
 
@@ -251,11 +251,11 @@ public class Books4_category extends JFrame implements ActionListener
 		bl5.setBounds(1234,127,35,35);
         l1.add(bl5);
 
-		pl1 = new JLabel("");
+		pl1 = new JLabel(new ImageIcon("image\\panel\\Books1P.png"));
 		pl1.setBounds(26,25,301,669);
 		l1.add(pl1);
 
-		pl2 = new JLabel("");
+		pl2 = new JLabel(new ImageIcon("image\\panel\\Books2P.png"));
 		pl2.setBounds(350,25,855,669);
 		l1.add(pl2);
 

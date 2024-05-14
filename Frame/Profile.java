@@ -155,11 +155,15 @@ public class Profile extends JFrame implements ActionListener
 
 		if(payment.equals("1"))
 		{
-			l14 = new JLabel("You Have 30 days Subscription");
-			l14.setFont(new Font("Arial",Font.BOLD,12));
-			l14.setForeground(new Color(0x850000));
-			l14.setBounds(92,618,178,14);
-			l1.add(l14);
+			if(userName.equals("mubin")){}
+			else
+			{
+				l14 = new JLabel("You Have 30 days Subscription");
+				l14.setFont(new Font("Arial",Font.BOLD,12));
+				l14.setForeground(new Color(0x850000));
+				l14.setBounds(92,618,178,14);
+				l1.add(l14);
+			}
 		}
 		
       

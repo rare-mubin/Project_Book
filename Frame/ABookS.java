@@ -3,12 +3,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.util.Scanner;
 
-public class Books2_category extends JFrame implements ActionListener
+public class ABookS extends JFrame implements ActionListener
 {
 		JLabel l,l1,l2,l3,l4,l5,l6,l7,l8,l9,l10,l11,l12,l13,l14,l15;
 		JLabel pl1,pl2,Tpl; //for panel image
@@ -16,16 +13,24 @@ public class Books2_category extends JFrame implements ActionListener
 		JTextField t1,t2;
 		JButton b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16; 
 
+		String Book[] = {"","","","","","","",""};
+        int lineNumber;
 		static Point LP;
-		String payment;
 		String userName;
-		String filePath = "bin/files/Users.txt";
-		int lineNumber;
 
-	public Books2_category(String userName,String payment)
+
+	public ABookS(String userName)
 	{
-		this.payment = payment;
 		this.userName = userName;
+		Book[0] = "BookPdf\\Si-2509.pdf";
+		Book[1] = "BookPdf\\Si-001G.pdf";
+		Book[2] = "BookPdf\\DIC34.pdf";
+		Book[3] = "BookPdf\\Si-281X.pdf";
+		Book[4] = "BookPdf\\P-0077.pdf";
+		Book[5] = "BookPdf\\P-0078.pdf";
+		Book[6] = "BookPdf\\P-9729.pdf";
+		Book[7] = "BookPdf\\H-R90R.pdf";
+
         ImageIcon image = new ImageIcon("image\\background\\login_page_L.png");
         l1 = new JLabel();
 
@@ -61,7 +66,7 @@ public class Books2_category extends JFrame implements ActionListener
 		b2.setBorderPainted(false);
 		b2.addActionListener(this);
 		l1.add(b2);
-		l3 = new JLabel(new ImageIcon("image\\button\\Cat.png"));
+		l3 = new JLabel();
 		l3.setBounds(54,128,246,45);
 		l1.add(l3);
         //Catagory 3
@@ -101,7 +106,7 @@ public class Books2_category extends JFrame implements ActionListener
 		b9.setBorderPainted(false);
 		b9.addActionListener(this);
 		l1.add(b9);
-		l7 = new JLabel(new ImageIcon("image\\Book\\Book2.2.png"));
+		l7 = new JLabel(new ImageIcon("image\\Book\\Book1.2.png"));
 		l7.setBounds(377,55,169,279);
 		l1.add(l7);
         //Book 2
@@ -113,7 +118,7 @@ public class Books2_category extends JFrame implements ActionListener
 		b10.setBorderPainted(false);
 		b10.addActionListener(this);
 		l1.add(b10);
-		l8 = new JLabel(new ImageIcon("image\\Book\\Book3.2.png"));
+		l8 = new JLabel(new ImageIcon("image\\Book\\Book2.2.png"));
 		l8.setBounds(588,55,169,279);
 		l1.add(l8);
         //Book3
@@ -125,7 +130,7 @@ public class Books2_category extends JFrame implements ActionListener
 		b11.setBorderPainted(false);
 		b11.addActionListener(this);
 		l1.add(b11);
-		l9 = new JLabel();
+		l9 = new JLabel(new ImageIcon("image\\Book\\Book3.2.png"));
 		l9.setBounds(799,55,169,279);
 		l1.add(l9);
         //Book4
@@ -137,7 +142,7 @@ public class Books2_category extends JFrame implements ActionListener
 		b12.setBorderPainted(false);
 		b12.addActionListener(this);
 		l1.add(b12);
-		l10 = new JLabel();
+		l10 = new JLabel(new ImageIcon("image\\Book\\Book4.2.png"));
 		l10.setBounds(1010,55,169,279);
 		l1.add(l10);
         //Book 5
@@ -149,7 +154,7 @@ public class Books2_category extends JFrame implements ActionListener
 		b13.setBorderPainted(false);
 		b13.addActionListener(this);
 		l1.add(b13);
-		l11 = new JLabel();
+		l11 = new JLabel(new ImageIcon("image\\Book\\Book5.2.png"));
 		l11.setBounds(377,386,169,279);
 		l1.add(l11);
         //Book6
@@ -161,7 +166,7 @@ public class Books2_category extends JFrame implements ActionListener
 		b14.setBorderPainted(false);
 		b14.addActionListener(this);
 		l1.add(b14);
-		l12 = new JLabel();
+		l12 = new JLabel(new ImageIcon("image\\Book\\Book6.2.png"));
 		l12.setBounds(588,386,169,279);
 		l1.add(l12);
 		//Book 7
@@ -173,7 +178,7 @@ public class Books2_category extends JFrame implements ActionListener
 		b15.setBorderPainted(false);
 		b15.addActionListener(this);
 		l1.add(b15);
-		l13 = new JLabel();
+		l13 = new JLabel(new ImageIcon("image\\Book\\Book7.2.png"));
 		l13.setBounds(799,386,169,279);
 		l1.add(l13);
         //Book8
@@ -185,32 +190,9 @@ public class Books2_category extends JFrame implements ActionListener
 		b16.setBorderPainted(false);
 		b16.addActionListener(this);
 		l1.add(b16);
-		l14 = new JLabel();
+		l14 = new JLabel(new ImageIcon("image\\Book\\Book8.2.png"));
 		l14.setBounds(1010,386,169,279);
 		l1.add(l14);
-
-		if(payment.equals("1"))
-		{
-			l15 = new JLabel("You Have 30 days Subscription");
-			l15.setFont(new Font("Arial",Font.BOLD,12));
-			l15.setForeground(new Color(0x850000));
-			l15.setBounds(92,618,178,14);
-			l1.add(l15);
-	
-			b6 = new JButton("Cancel Sub");
-			b6.setFont(new Font("Arial",Font.PLAIN,12));
-			b6.setForeground(Color.WHITE);
-			b6.setOpaque(false);
-			b6.setFocusable(false);
-			b6.setBackground(Color.white);
-			b6.setBounds(119,642,125,28);
-			b6.setBorderPainted(false);
-			b6.addActionListener(this);
-			l1.add(b6);
-			bl6 = new JLabel(new ImageIcon("image\\button\\Cancelsubmission.png"));
-			bl6.setBounds(119,642,125,28);
-			l1.add(bl6);
-		}
 
 		//Exit Button
 		b3 = new JButton();
@@ -315,108 +297,105 @@ public class Books2_category extends JFrame implements ActionListener
 
 			if(ae.getSource()==b5) //back
 			{
-				Home f = new Home(this.userName);
+				AdminHome f = new AdminHome(this.userName);
 				this.setVisible(false);
 				f.setVisible(true);
 			}
 			else if(ae.getSource()==b1)//category1
 			{
-				Books1_category f = new Books1_category(this.userName,this.payment);
+				ABooks1_category f = new ABooks1_category(this.userName);
 				this.setVisible(false);
 				f.setVisible(true);
 			}
 			else if(ae.getSource()==b2)//category2
 			{
-				Books2_category f = new Books2_category(this.userName,this.payment);
+				ABooks2_category f = new ABooks2_category(this.userName);
 				this.setVisible(false);
 				f.setVisible(true);
 			}
 			else if(ae.getSource()==b7)//category3
 			{
-				Books3_category f = new Books3_category(this.userName,this.payment);
+				ABooks3_category f = new ABooks3_category(this.userName);
 				this.setVisible(false);
 				f.setVisible(true);
 			}
 			else if(ae.getSource()==b8)//category4
 			{
-				Books4_category f = new Books4_category(this.userName,this.payment);
+				ABooks4_category f = new ABooks4_category(this.userName);
 				this.setVisible(false);
 				f.setVisible(true);
 			}
 			else if(ae.getSource()==b9)//Book1
 			{
-				Book2 f = new Book2(this.userName);
-				this.setVisible(false);
-				f.setVisible(true);
+				try {
+					File myFile = new File(Book[0]);
+					Desktop.getDesktop().open(myFile);
+				} catch (IOException ex) {
+					JOptionPane.showMessageDialog(null, "error");
+				}
 			}
 			else if(ae.getSource()==b10)//Book2
 			{
-				Book3 f = new Book3(this.userName);
-				this.setVisible(false);
-				f.setVisible(true);
+				try {
+					File myFile = new File(Book[1]);
+					Desktop.getDesktop().open(myFile);
+				} catch (IOException ex) {
+					JOptionPane.showMessageDialog(null, "error");
+				}
 			}
 			else if(ae.getSource()==b11)//Book3
 			{
-				
+				try {
+					File myFile = new File(Book[2]);
+					Desktop.getDesktop().open(myFile);
+				} catch (IOException ex) {
+					JOptionPane.showMessageDialog(null, "error");
+				}
 			}
 			else if(ae.getSource()==b12)//Book4
 			{
-				
+				try {
+					File myFile = new File(Book[3]);
+					Desktop.getDesktop().open(myFile);
+				} catch (IOException ex) {
+					JOptionPane.showMessageDialog(null, "error");
+				}
 			}
 			else if(ae.getSource()==b13)//Book5
 			{
-				
+				try {
+					File myFile = new File(Book[4]);
+					Desktop.getDesktop().open(myFile);
+				} catch (IOException ex) {
+					JOptionPane.showMessageDialog(null, "error");
+				}
 			}
 			else if(ae.getSource()==b14)//Book6
 			{
-				
+				try {
+					File myFile = new File(Book[5]);
+					Desktop.getDesktop().open(myFile);
+				} catch (IOException ex) {
+					JOptionPane.showMessageDialog(null, "error");
+				}
 			}
 			else if(ae.getSource()==b15)//Book7
 			{
-				
+				try {
+					File myFile = new File(Book[6]);
+					Desktop.getDesktop().open(myFile);
+				} catch (IOException ex) {
+					JOptionPane.showMessageDialog(null, "error");
+				}
 			}
 			else if(ae.getSource()==b16)//Book8
 			{
-				
-			}
-			else if(ae.getSource()==b6)
-			{
 				try {
-                        File file = new File(filePath);
-                        Scanner scanner = new Scanner(file);
-
-                        StringBuilder fileContent = new StringBuilder();
-                        lineNumber = 0;
-                        while (scanner.hasNextLine()) {
-                            lineNumber++;
-                            String line = scanner.nextLine();
-
-                            if (line.contains(userName)) {
-                                String[] values = line.split("\t");
-                                values[5] = "0"; 
-                                line = String.join("\t", values);
-                            }
-
-                            fileContent.append(line).append("\n");
-                        }
-
-                        scanner.close();
-
-                        FileWriter writer = new FileWriter(file);
-                        writer.write(fileContent.toString());
-                        writer.close();
-
-                        JOptionPane.showMessageDialog(null, "Subscription Cancel Successful");
-
-                        Home f = new Home(this.userName);
-                        this.setVisible(false);
-                        f.setVisible(true);
-
-                    } catch (FileNotFoundException e) {
-                        e.printStackTrace();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
+					File myFile = new File(Book[7]);
+					Desktop.getDesktop().open(myFile);
+				} catch (IOException ex) {
+					JOptionPane.showMessageDialog(null, "error");
+				}
 			}
 
 

@@ -57,7 +57,7 @@ public class UserInformation extends JFrame implements ActionListener {
         }
 
 		
-        ImageIcon image = new ImageIcon("image\\background\\info.png");
+        ImageIcon image = new ImageIcon("image\\background\\login_page_L.png");
         l1 = new JLabel();
 
         this.setTitle("project_BOOK");
@@ -72,8 +72,9 @@ public class UserInformation extends JFrame implements ActionListener {
 
         l4 = new JLabel("USERS INFORMATION");
 		l4.setFont(new Font("Felix Titling",Font.PLAIN,34));
-		l4.setForeground(new Color(0x00000));
+		l4.setForeground(new Color(0x505050));
 		l4.setBounds(427,53,377,42);
+		l4.setHorizontalAlignment(SwingConstants.CENTER);
 		l1.add(l4);
 
 		l = new JLabel("User Name");
@@ -420,7 +421,7 @@ public class UserInformation extends JFrame implements ActionListener {
 				t1.setBorder(null);
 				t1.setOpaque(false);
 				l1.add(t1);
-				tl1 = new JLabel();// tl1.setIcon(textF);
+				tl1 = new JLabel(new ImageIcon("image\\TextField\\user.png"));
 				tl1.setBounds(249,604,124,49);
 				l1.add(tl1);
 
@@ -439,7 +440,7 @@ public class UserInformation extends JFrame implements ActionListener {
 				t2.setBorder(null);
 				t2.setOpaque(false);
 				l1.add(t2);
-				tl2 = new JLabel();// tl1.setIcon(textF);
+				tl2 = new JLabel(new ImageIcon("image\\TextField\\email_pass.png"));
 				tl2.setBounds(405,604,370,49);
 				l1.add(tl2);
 
@@ -514,7 +515,7 @@ public class UserInformation extends JFrame implements ActionListener {
 		bl5.setBounds(1234,127,35,35);
         l1.add(bl5);
 
-		l48 = new JLabel();
+		l48 = new JLabel(new ImageIcon("image\\panel\\userdata.png"));
 		l48.setBounds(26,24,1180,670);
 		l1.add(l48);
 

@@ -2,22 +2,35 @@ package Frame;
 import javax.swing.*; 
 import java.awt.*;
 import java.awt.event.*;
+import java.io.File;
+import java.io.IOException;
 
-public class ABookC extends JFrame implements ActionListener
+public class ABooks1_category extends JFrame implements ActionListener
 {
-		JLabel l,l1,l2,l3,l4,l5,l6,l7,l8,l9,l10,l11,l12,l13,l14;
-		JLabel pl1,pl2,Tpl; //for panel image
-		JLabel bl1,bl2,bl3,bl4,bl5,tl1,tl2; //for button and  textfield image
-		JTextField t1,t2;
-		JButton b1,b2,b3,b4,b5,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16; 
-
+	JLabel l,l1,l2,l3,l4,l5,l6,l7,l8,l9,l10,l11,l12,l13,l14,l15;
+	JLabel pl1,pl2,Tpl; //for panel image
+	JLabel bl1,bl2,bl3,bl4,bl5,bl6,tl1,tl2; //for button and  textfield image
+	JTextField t1,t2;
+	JButton b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16; 
+	
+		String Book[] = {"","","","","","","",""};
 		static Point LP;
 		String userName;
+		int lineNumber;
 
-	public ABookC(String userName)
+	public ABooks1_category(String userName)
 	{
 		this.userName = userName;
-        ImageIcon image = new ImageIcon("image\\background\\f4.png");
+		Book[0] = "BookPdf\\Si-2509.pdf";
+		Book[1] = "BookPdf\\Si-001G.pdf";
+		Book[2] = "BookPdf\\DIC34.pdf";
+		Book[3] = "BookPdf\\Si-281X.pdf";
+		Book[4] = "BookPdf\\P-0077.pdf";
+		Book[5] = "BookPdf\\P-0078.pdf";
+		Book[6] = "BookPdf\\P-9729.pdf";
+		Book[7] = "BookPdf\\H-R90R.pdf";
+		
+        ImageIcon image = new ImageIcon("image\\background\\login_page_L.png");
         l1 = new JLabel();
 
         this.setTitle("project_BOOK");
@@ -30,7 +43,8 @@ public class ABookC extends JFrame implements ActionListener
 
         l1.setIcon(image);
 		//Catagory1
-		b1 = new JButton();
+		b1 = new JButton("Science Fiction");
+		b1.setFont(new Font("Arial",Font.PLAIN,25));
 		b1.setOpaque(false);
 		b1.setFocusable(false);
 		b1.setBackground(Color.white);
@@ -38,11 +52,12 @@ public class ABookC extends JFrame implements ActionListener
 		b1.setBorderPainted(false);
 		b1.addActionListener(this);
 		l1.add(b1);
-		l2 = new JLabel();
+		l2 = new JLabel(new ImageIcon("image\\button\\Cat.png"));
 		l2.setBounds(54,56,246,45);
 		l1.add(l2);
         //Catagory 2
-		b2 = new JButton();
+		b2 = new JButton("Academic");
+		b2.setFont(new Font("Arial",Font.PLAIN,25));
 		b2.setOpaque(false);
 		b2.setFocusable(false);
 		b2.setBackground(Color.white);
@@ -54,7 +69,8 @@ public class ABookC extends JFrame implements ActionListener
 		l3.setBounds(54,128,246,45);
 		l1.add(l3);
         //Catagory 3
-		b7 = new JButton();
+		b7 = new JButton("Horror");
+		b7.setFont(new Font("Arial",Font.PLAIN,25));
 		b7.setOpaque(false);
 		b7.setFocusable(false);
 		b7.setBackground(Color.white);
@@ -66,7 +82,8 @@ public class ABookC extends JFrame implements ActionListener
 		l4.setBounds(54,200,246,45);
 		l1.add(l4);
         //Catagory 4
-		b8 = new JButton();
+		b8 = new JButton("Programming");
+		b8.setFont(new Font("Arial",Font.PLAIN,25));
 		b8.setOpaque(false);
 		b8.setFocusable(false);
 		b8.setBackground(Color.white);
@@ -88,7 +105,7 @@ public class ABookC extends JFrame implements ActionListener
 		b9.setBorderPainted(false);
 		b9.addActionListener(this);
 		l1.add(b9);
-		l7 = new JLabel();
+		l7 = new JLabel(new ImageIcon("image\\Book\\Book1.2.png"));
 		l7.setBounds(377,55,169,279);
 		l1.add(l7);
         //Book 2
@@ -100,7 +117,7 @@ public class ABookC extends JFrame implements ActionListener
 		b10.setBorderPainted(false);
 		b10.addActionListener(this);
 		l1.add(b10);
-		l8 = new JLabel();
+		l8 = new JLabel(new ImageIcon("image\\Book\\Book4.2.png"));
 		l8.setBounds(588,55,169,279);
 		l1.add(l8);
         //Book3
@@ -176,6 +193,7 @@ public class ABookC extends JFrame implements ActionListener
 		l14.setBounds(1010,386,169,279);
 		l1.add(l14);
 
+
 		//Exit Button
 		b3 = new JButton();
 		b3.setOpaque(false);
@@ -215,11 +233,11 @@ public class ABookC extends JFrame implements ActionListener
 		bl5.setBounds(1234,127,35,35);
         l1.add(bl5);
 
-		pl1 = new JLabel("");
+		pl1 = new JLabel(new ImageIcon("image\\panel\\Books1P.png"));
 		pl1.setBounds(26,25,301,669);
 		l1.add(pl1);
 
-		pl2 = new JLabel("");
+		pl2 = new JLabel(new ImageIcon("image\\panel\\Books2P.png"));
 		pl2.setBounds(350,25,855,669);
 		l1.add(pl2);
 
@@ -279,17 +297,51 @@ public class ABookC extends JFrame implements ActionListener
 
 			if(ae.getSource()==b5) //back
 			{
-				AdminHome f = new AdminHome(this.userName);
+				ABookS f = new ABookS(this.userName);
+				this.setVisible(false);
+				f.setVisible(true);
+			}
+			else if(ae.getSource()==b1)//category1
+			{
+				ABooks1_category f = new ABooks1_category(this.userName);
+				this.setVisible(false);
+				f.setVisible(true);
+			}
+			else if(ae.getSource()==b2)//category2
+			{
+				ABooks2_category f = new ABooks2_category(this.userName);
+				this.setVisible(false);
+				f.setVisible(true);
+			}
+			else if(ae.getSource()==b7)//category3
+			{
+				ABooks3_category f = new ABooks3_category(this.userName);
+				this.setVisible(false);
+				f.setVisible(true);
+			}
+			else if(ae.getSource()==b8)//category4
+			{
+				ABooks4_category f = new ABooks4_category(this.userName);
 				this.setVisible(false);
 				f.setVisible(true);
 			}
 			else if(ae.getSource()==b9)//Book1
 			{
-				
+				try {
+					File myFile = new File(Book[0]);
+					Desktop.getDesktop().open(myFile);
+				} catch (IOException ex) {
+					JOptionPane.showMessageDialog(null, "error");
+				}
 			}
 			else if(ae.getSource()==b10)//Book2
 			{
-				
+				try {
+					File myFile = new File(Book[3]);
+					Desktop.getDesktop().open(myFile);
+				} catch (IOException ex) {
+					JOptionPane.showMessageDialog(null, "error");
+				}
 			}
 			else if(ae.getSource()==b11)//Book3
 			{

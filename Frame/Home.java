@@ -104,12 +104,14 @@ public class Home extends JFrame implements ActionListener
 		l6.setFont(new Font("Felix Titling",Font.PLAIN,32));
 		l6.setForeground(new Color(0x505050));
 		l6.setBounds(219,620,209,37);
+		l6.setHorizontalAlignment(SwingConstants.CENTER);
 		l1.add(l6);
 
         l7 = new JLabel("MY Collection");
 		l7.setFont(new Font("Felix Titling",Font.PLAIN,32));
 		l7.setForeground(new Color(0x505050));
 		l7.setBounds(772,620,263,37);
+		l7.setHorizontalAlignment(SwingConstants.CENTER);
 		l1.add(l7);
         
 		//BookShop Button

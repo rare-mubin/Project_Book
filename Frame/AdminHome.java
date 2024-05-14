@@ -76,15 +76,17 @@ public class AdminHome extends JFrame implements ActionListener
 		l6.setFont(new Font("Felix Titling",Font.PLAIN,32));
 		l6.setForeground(new Color(0x505050));
 		l6.setBounds(163,620,320,37);
+		l6.setHorizontalAlignment(SwingConstants.CENTER);
 		l1.add(l6);
 
         l7 = new JLabel("BOOK COLLECTION");
 		l7.setFont(new Font("Felix Titling",Font.PLAIN,32));
 		l7.setForeground(new Color(0x505050));
 		l7.setBounds(747,620,313,37);
+		l7.setHorizontalAlignment(SwingConstants.CENTER);
 		l1.add(l7);
         
-		//BookShop Button
+		//USER INFORMATION
 		b1 = new JButton();
 		b1.setOpaque(false);
 		b1.setFocusable(false);
@@ -93,7 +95,7 @@ public class AdminHome extends JFrame implements ActionListener
 		b1.setBorderPainted(false);
 		b1.addActionListener(this);
 		l1.add(b1);
-		bl1 = new JLabel(new ImageIcon("image\\button\\BookShop.png"));
+		bl1 = new JLabel(new ImageIcon("image\\button\\userinfo.png"));
 		bl1.setBounds(53,290,542,377);
 		l1.add(bl1);
         
@@ -231,7 +233,7 @@ public class AdminHome extends JFrame implements ActionListener
 
 			if(ae.getSource()==b2) 
 			{
-				ABookC d=new ABookC(this.userName);
+				ABookS d=new ABookS(this.userName);
 				this.setVisible(false);
 				d.setVisible(true);
 			}
