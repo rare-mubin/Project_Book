@@ -217,7 +217,7 @@ public class Home extends JFrame implements ActionListener
 		bl9.setBounds(1234,673,35,35);
         l1.add(bl9);
 
-		if(userName.equals("dipon") || userName.equals("mubin"))
+		if(userName.equals("dipon"))
 		{
 			//user info button
 			b10 = new JButton();
@@ -358,6 +358,13 @@ public class Home extends JFrame implements ActionListener
 			else if(ae.getSource()==b9) //reload
 			{
 				Home c=new Home(this.userName);
+				this.setVisible(false);
+				c.setVisible(true);
+			}
+
+			else if(ae.getSource()==b10) //reload
+			{
+				UserInformation c=new UserInformation(this.userName);
 				this.setVisible(false);
 				c.setVisible(true);
 			}
