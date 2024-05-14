@@ -225,7 +225,6 @@ public class AdminLogin extends JFrame implements ActionListener
 
 			 	if((UserName.equals(this.userName))&&(createAccount.getAccount(this.userName, userPassword)))
 				{
-					JOptionPane.showMessageDialog(null,"Login Successful");
 					AdminHome f = new AdminHome(userName);
 					this.setVisible(false);
 					f.setVisible(true);

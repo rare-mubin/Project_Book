@@ -10,11 +10,11 @@ import java.util.Scanner;
 
 
 public class Payment extends JFrame implements ActionListener {
-    JLabel l,l1,l2,l3,l4,l5,l6,l7,l8,l9,l10,l11,l12,l13,l14,l15,lP;
+    JLabel l,l1,l2,l3,l4,l5,l6,l7,l8,l9,l10,l11,l12,l13,l14,l15,l16,l17,l18,l19,l20,lP;
     JLabel pl1,pl2,Tpl; //for panel image
     JLabel bl1,bl2,bl3,bl4,bl5,bl6,tl1,tl2,tl3; //for button and  textfield image
     JTextField t1,t2,t3;
-    JButton b1,b2,b3,b4,b5,b6; 
+    JButton b1,b2,b3,b4,b5,b6,b7,b8,b9; 
     
     int lineNumber;
 
@@ -42,11 +42,19 @@ public class Payment extends JFrame implements ActionListener {
 
         l1.setIcon(image);
 
-        l3 = new JLabel("INTER YOUR\nCREDENTIAL\nHERE");
-		l3.setFont(new Font("Felix Titling",Font.PLAIN,36));
+        l3 = new JLabel("ENTER YOUR");
+		l3.setFont(new Font("Felix Titling",Font.PLAIN,27));
 		l3.setForeground(new Color(0x000000));
-		l3.setBounds(147,63,233,126);
+		l3.setBounds(147,84,233,42);
 		l1.add(l3);
+
+		l16 = new JLabel("CREDENTIAL HERE");
+		l16.setFont(new Font("Felix Titling",Font.PLAIN,27));
+		l16.setForeground(new Color(0x000000));
+		l16.setBounds(96,151,335,42);
+		l16.setHorizontalAlignment(SwingConstants.CENTER);
+		l1.add(l16);
+
 
         l4 = new JLabel("Enter Phone Number or Card Number");
 		l4.setFont(new Font("Arial",Font.PLAIN,17));
@@ -107,7 +115,7 @@ public class Payment extends JFrame implements ActionListener {
          
 
         l8 = new JLabel("PAYMENT");
-		l8.setFont(new Font("Felix Titling",Font.PLAIN,36));
+		l8.setFont(new Font("Felix Titling",Font.PLAIN,27));
 		l8.setForeground(new Color(0x000000));
 		l8.setBounds(786,51,161,42);
 		l1.add(l8);
@@ -121,19 +129,19 @@ public class Payment extends JFrame implements ActionListener {
         l10 = new JLabel("Bkash");
 		l10.setFont(new Font("Arial",Font.PLAIN,17));
 		l10.setForeground(new Color(0x505050));
-		l10.setBounds(640,237,113,193);
+		l10.setBounds(672,379,49,20);
 		l1.add(l10);
 
         l11 = new JLabel("Nagad");
 		l11.setFont(new Font("Arial",Font.PLAIN,17));
 		l11.setForeground(new Color(0x505050));
-		l11.setBounds(810,237,113,193);
+		l11.setBounds(841,379,51,20);
 		l1.add(l11);
 
         l12 = new JLabel("Card");
 		l12.setFont(new Font("Arial",Font.PLAIN,17));
 		l12.setForeground(new Color(0x505050));
-		l12.setBounds(980,237,193,113);
+		l12.setBounds(1018,379,37,20);
 		l1.add(l12);
 
         l13 = new JLabel("Payment Details");
@@ -142,17 +150,31 @@ public class Payment extends JFrame implements ActionListener {
 		l13.setBounds(801,473,130,21);
 		l1.add(l13);
 
-        l14 = new JLabel("1 Month Subscription of Book Store");
+        l14 = new JLabel("1 Month Subscription");
 		l14.setFont(new Font("Arial",Font.PLAIN,17));
 		l14.setForeground(new Color(0x505050));
-		l14.setBounds(638,564,170,42);
+		l14.setBounds(643,564,160,20);
 		l1.add(l14);
 
-        l15 = new JLabel("TOTAL 399 BDT");
+		l17 = new JLabel("of Book Store");
+		l17.setFont(new Font("Arial",Font.PLAIN,17));
+		l17.setForeground(new Color(0x505050));
+		l17.setBounds(669,585,104,20);
+		l1.add(l17);
+
+
+        l15 = new JLabel("TOTAL");
 		l15.setFont(new Font("Arial",Font.PLAIN,17));
 		l15.setForeground(new Color(0x505050));
-		l15.setBounds(955,564,71,42);
+		l15.setBounds(963,564,54,20);
 		l1.add(l15);
+
+		l18 = new JLabel("999 BDT");
+		l18.setFont(new Font("Arial",Font.PLAIN,17));
+		l18.setForeground(new Color(0x505050));
+		l18.setBounds(956,585,68,20);
+		l1.add(l18);
+
 
         b1 = new JButton("Submit");
         b1.setFont(new Font("Arial",Font.PLAIN,25));
@@ -167,6 +189,44 @@ public class Payment extends JFrame implements ActionListener {
         bl1 = new JLabel(new ImageIcon("image\\button\\Save.png"));
 		bl1.setBounds(176,574,176,49);
 		l1.add(bl1);
+
+
+		b7= new JButton();
+        b7.setFont(new Font("Arial",Font.PLAIN,25));
+		b7.setForeground(Color.WHITE);
+		b7.setOpaque(false);
+		b7.setFocusable(false);
+		b7.setBackground(Color.green);
+		b7.setBounds(640,258,113,159);
+		b7.setBorderPainted(false);
+		b7.addActionListener(this);
+		l1.add(b7);
+
+		b8 = new JButton();
+        b8.setFont(new Font("Arial",Font.PLAIN,25));
+		b8.setForeground(Color.WHITE);
+		b8.setOpaque(false);
+		b8.setFocusable(false);
+		b8.setBackground(Color.green);
+		b8.setBounds(810,258,113,159);
+		b8.setBorderPainted(false);
+		b8.addActionListener(this);
+		l1.add(b8);
+
+		b9 = new JButton();
+        b9.setFont(new Font("Arial",Font.PLAIN,25));
+		b9.setForeground(Color.WHITE);
+		b9.setOpaque(false);
+		b9.setFocusable(false);
+		b9.setBackground(Color.green);
+		b9.setBounds(980,258,113,159);
+		b9.setBorderPainted(false);
+		b9.addActionListener(this);
+		l1.add(b9);
+
+		
+		
+       
 
 
         

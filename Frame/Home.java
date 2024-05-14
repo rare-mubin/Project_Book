@@ -317,7 +317,7 @@ public class Home extends JFrame implements ActionListener
 				}
 				
 			}
-			else if(ae.getSource()==b1)//Books
+			else if(ae.getSource()==b1)//Books collection
 			{
 				if(Payment.equals(PaymentNotDone))
 				{

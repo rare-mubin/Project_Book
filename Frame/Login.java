@@ -38,7 +38,7 @@ public class Login extends JFrame implements ActionListener
 		l2.setBounds(753,95,372,64);
 		l1.add(l2);
 
-		l3 = new JLabel("Book Store");
+		l3 = new JLabel("Pixelated Book");
 		l3.setFont(new Font("Felix Titling",Font.BOLD,57));
 		l3.setForeground(new Color(0x505050));
 		l3.setBounds(743,180,392,70);

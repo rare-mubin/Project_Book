@@ -4,7 +4,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class Account {
+public class Account extends Fpass{
     private String fullName;
     private String nID;
     private String userEmail;
@@ -109,6 +109,8 @@ public class Account {
         }
         return isAuth;
     }
+    
+    @Override
     public boolean getAccount(String UserName,String UserEmail,String DOF)
     {
         boolean isAuth = false;

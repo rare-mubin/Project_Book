@@ -28,6 +28,7 @@ public class UserInformation extends JFrame implements ActionListener {
 		String[] fullName = {"__","__","__","__","__","__","__","__"};
 		String[] dateOfBirth = {"__","__","__","__","__","__","__","__"};
 		String[] userEmail = {"__","__","__","__","__","__","__","__"};
+		String Password;
 
 		String filePath = "bin/files/Users.txt";
 		Path path = Paths.get("bin/files/Users.txt");
@@ -49,6 +50,26 @@ public class UserInformation extends JFrame implements ActionListener {
                     this.userEmail[lineNumber] = value[4];
                     this.lineNumber = lineNumber;
                 
+            }
+            scanner.close();
+        } 
+			catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+		String searchString = this.userName;
+		try {
+            File file = new File(filePath);
+            Scanner scanner = new Scanner(file);
+
+            for (int lineNumber = 0 ; scanner.hasNextLine() ; lineNumber++) {
+                String line = scanner.nextLine();
+
+                if (line.contains(searchString)) {
+                    String[] value = line.split("\t");
+                    this.Password = value[1];
+					this.lineNumber= lineNumber;
+                }
             }
             scanner.close();
         } 
@@ -590,7 +611,7 @@ public class UserInformation extends JFrame implements ActionListener {
 					JOptionPane.showMessageDialog(null,"Full Fill User Serial and Admin Password");
 				}
 
-				else if(adminPassword.equals("1234"))
+				else if(adminPassword.equals(this.Password))
 				{
 					try {
 					List<String> lines = Files.readAllLines(path);
@@ -600,12 +621,14 @@ public class UserInformation extends JFrame implements ActionListener {
 					} catch (IOException e) {
 					JOptionPane.showMessageDialog(null,"ERROR");
 					}
+
+					UserInformation f = new UserInformation(userName);
+					this.setVisible(false);
+					f.setVisible(true);
 				}
 				else{JOptionPane.showMessageDialog(null,"User Password is Wrong");}
 
-				UserInformation f = new UserInformation("mubin");
-				this.setVisible(false);
-				f.setVisible(true);
+
 			}
 
             else if(ae.getSource()==b3) //exit

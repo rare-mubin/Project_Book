@@ -48,7 +48,7 @@ public class Books1_category extends JFrame implements ActionListener
 		b1.setBorderPainted(false);
 		b1.addActionListener(this);
 		l1.add(b1);
-		l2 = new JLabel();
+		l2 = new JLabel(new ImageIcon("image\\button\\Cat.png"));
 		l2.setBounds(54,56,246,45);
 		l1.add(l2);
         //Catagory 2
