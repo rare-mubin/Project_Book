@@ -8,6 +8,7 @@ public class Book1 extends JFrame implements ActionListener
 		JLabel l,l1,l2,l3,l4,l5,l6,l7,l8,l9,l10,l11,l12,l13,l14,l15,lP;
 		JLabel pl1,pl2,Tpl; //for panel image
 		JLabel bl1,bl2,bl3,bl4,bl5,bl6,tl1,tl2; //for button and  textfield image
+		JLabel BOOKp1;
 		JTextField t1,t2;
 		JButton b1,b2,b3,b4,b5,b6; 
 		
@@ -171,7 +172,10 @@ public class Book1 extends JFrame implements ActionListener
         l1.add(bl6);
 
         //Book image label
-		pl1 = new JLabel(new ImageIcon("image\\panel\\Book1.jpg"));
+		BOOKp1 = new JLabel(new ImageIcon("image\\Book\\Book1.1.png"));
+		BOOKp1.setBounds(57,69,413,582);
+        l1.add(BOOKp1);
+		pl1 = new JLabel(new ImageIcon("image\\panel\\bookP1.png"));
 		pl1.setBounds(26,24,475,670);
         l1.add(pl1);
         //book Details label

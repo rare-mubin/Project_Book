@@ -10,9 +10,9 @@ public class Home extends JFrame implements ActionListener
 {
 		JLabel l,l1,l2,l3,l4,l5,l6,l7,lP;
 		JLabel pl1,Tpl; //for panel image
-		JLabel bl1,bl2,bl3,bl4,bl5,bl6,tl1,tl2; //for button and  textfield image
+		JLabel bl1,bl2,bl3,bl4,bl5,bl6,bl7,bl8,bl9,bl10,tl1,tl2; //for button and  textfield image
 		JTextField t1,t2;
-		JButton b1,b2,b3,b4,b5,b6,b7; 
+		JButton b1,b2,b3,b4,b5,b6,b7,b8,b9,b10; 
 		int lineNumber;
 
 		String userName;
@@ -69,7 +69,7 @@ public class Home extends JFrame implements ActionListener
 		l.setBounds(369,78,713,42);
 		l1.add(l);
 
-		l4 = new JLabel("Welcome To The Online Book Store");
+		l4 = new JLabel("Welcome To The Pixelated Book");
 		l4.setFont(new Font("Felix Titling",Font.BOLD,32));
 		l4.setForeground(new Color(0x505050));
 		l4.setBounds(369,137,713,42);
@@ -191,6 +191,48 @@ public class Home extends JFrame implements ActionListener
 		bl6.setBounds(1234,585,35,35);
         l1.add(bl6);
 
+		//reload button
+		b8 = new JButton();
+		b8.setOpaque(false);
+		b8.setFocusable(false);
+		b8.setBackground(Color.white);
+		b8.setBounds(1234,167,35,35);
+		b8.setBorderPainted(false);
+		b8.addActionListener(this);
+		l1.add(b8);
+		bl8 = new JLabel(new ImageIcon("image\\button\\reload.png"));
+		bl8.setBounds(1234,167,35,35);
+        l1.add(bl8);
+
+		//about button
+		b9 = new JButton();
+		b9.setOpaque(false);
+		b9.setFocusable(false);
+		b9.setBackground(Color.white);
+		b9.setBounds(1234,673,35,35);
+		b9.setBorderPainted(false);
+		b9.addActionListener(this);
+		l1.add(b9);
+		bl9 = new JLabel(new ImageIcon("image\\button\\about.png"));
+		bl9.setBounds(1234,673,35,35);
+        l1.add(bl9);
+
+		if(userName.equals("dipon") || userName.equals("mubin"))
+		{
+			//user info button
+			b10 = new JButton();
+			b10.setOpaque(false);
+			b10.setFocusable(false);
+			b10.setBackground(Color.white);
+			b10.setBounds(1234,541,35,35);
+			b10.setBorderPainted(false);
+			b10.addActionListener(this);
+			l1.add(b10);
+			bl10 = new JLabel(new ImageIcon("image\\button\\about.png"));
+			bl10.setBounds(1234,541,35,35);
+			l1.add(bl10);
+		}
+
 		//profile image
 		l3 = new JLabel();
 		l3.setBounds(170,53,157,157);
@@ -305,6 +347,19 @@ public class Home extends JFrame implements ActionListener
 			{
 				Profile f = new Profile(userName);
 				f.setVisible(true);
+			}
+			else if(ae.getSource()==b8) //reload
+			{
+				Home c=new Home(this.userName);
+				this.setVisible(false);
+				c.setVisible(true);
+			}
+
+			else if(ae.getSource()==b9) //reload
+			{
+				Home c=new Home(this.userName);
+				this.setVisible(false);
+				c.setVisible(true);
 			}
 
 		
