@@ -65,7 +65,7 @@ public class Package extends JFrame implements ActionListener {
 		b2.setBorderPainted(false);
 		b2.addActionListener(this);
 		l1.add(b2);
-		bl2 = new JLabel();
+		bl2 = new JLabel(new ImageIcon("image\\panel\\BPackage.png"));
 		bl2.setBounds(453,166,326,460);
 		l1.add(bl2);
 
