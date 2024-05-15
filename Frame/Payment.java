@@ -12,7 +12,7 @@ import java.util.Scanner;
 public class Payment extends JFrame implements ActionListener {
     JLabel l,l1,l2,l3,l4,l5,l6,l7,l8,l9,l10,l11,l12,l13,l14,l15,l16,l17,l18,l19,l20,lP;
     JLabel pl1,pl2,Tpl; //for panel image
-    JLabel bl1,bl2,bl3,bl4,bl5,bl6,tl1,tl2,tl3; //for button and  textfield image
+    JLabel bl1,bl2,bl3,bl4,bl5,bl6,bl7,bl8,bl9,tl1,tl2,tl3; //for button and  textfield image
     JTextField t1,t2,t3;
     JButton b1,b2,b3,b4,b5,b6,b7,b8,b9; 
     
@@ -43,14 +43,15 @@ public class Payment extends JFrame implements ActionListener {
         l1.setIcon(image);
 
         l3 = new JLabel("ENTER YOUR");
-		l3.setFont(new Font("Felix Titling",Font.PLAIN,27));
-		l3.setForeground(new Color(0x000000));
+		l3.setFont(new Font("Felix Titling",Font.BOLD,34));
+		l3.setForeground(new Color(0x505050));
 		l3.setBounds(147,84,233,42);
+		l3.setHorizontalAlignment(SwingConstants.CENTER);
 		l1.add(l3);
 
 		l16 = new JLabel("CREDENTIAL HERE");
-		l16.setFont(new Font("Felix Titling",Font.PLAIN,27));
-		l16.setForeground(new Color(0x000000));
+		l16.setFont(new Font("Felix Titling",Font.BOLD,34));
+		l16.setForeground(new Color(0x505050));
 		l16.setBounds(96,151,335,42);
 		l16.setHorizontalAlignment(SwingConstants.CENTER);
 		l1.add(l16);
@@ -115,15 +116,17 @@ public class Payment extends JFrame implements ActionListener {
          
 
         l8 = new JLabel("PAYMENT");
-		l8.setFont(new Font("Felix Titling",Font.PLAIN,27));
-		l8.setForeground(new Color(0x000000));
+		l8.setFont(new Font("Felix Titling",Font.BOLD,33));
+		l8.setForeground(new Color(0x505050));
 		l8.setBounds(786,51,161,42);
+		l8.setHorizontalAlignment(SwingConstants.CENTER);
 		l1.add(l8);
 
         l9 = new JLabel("Select a Payment Method");
 		l9.setFont(new Font("Arial",Font.PLAIN,17));
 		l9.setForeground(new Color(0x505050));
-		l9.setBounds(763,172,195,20);
+		l9.setBounds(769,172,195,20);
+		l9.setHorizontalAlignment(SwingConstants.CENTER);
 		l1.add(l9);
 
         l10 = new JLabel("Bkash");
@@ -197,10 +200,14 @@ public class Payment extends JFrame implements ActionListener {
 		b7.setOpaque(false);
 		b7.setFocusable(false);
 		b7.setBackground(Color.green);
-		b7.setBounds(640,258,113,159);
+		b7.setBounds(641,259,113,159);
 		b7.setBorderPainted(false);
 		b7.addActionListener(this);
 		l1.add(b7);
+		bl7 = new JLabel(new ImageIcon("image\\button\\select.png"));
+		bl7.setBounds(641,259,113,159);
+		bl7.setVisible(false);
+		l1.add(bl7);
 
 		b8 = new JButton();
         b8.setFont(new Font("Arial",Font.PLAIN,25));
@@ -208,10 +215,14 @@ public class Payment extends JFrame implements ActionListener {
 		b8.setOpaque(false);
 		b8.setFocusable(false);
 		b8.setBackground(Color.green);
-		b8.setBounds(810,258,113,159);
+		b8.setBounds(811,259,113,159);
 		b8.setBorderPainted(false);
 		b8.addActionListener(this);
 		l1.add(b8);
+		bl8 = new JLabel(new ImageIcon("image\\button\\select.png"));
+		bl8.setBounds(811,259,113,159);
+		bl8.setVisible(false);
+		l1.add(bl8);
 
 		b9 = new JButton();
         b9.setFont(new Font("Arial",Font.PLAIN,25));
@@ -219,10 +230,14 @@ public class Payment extends JFrame implements ActionListener {
 		b9.setOpaque(false);
 		b9.setFocusable(false);
 		b9.setBackground(Color.green);
-		b9.setBounds(980,258,113,159);
+		b9.setBounds(981,259,113,159);
 		b9.setBorderPainted(false);
 		b9.addActionListener(this);
 		l1.add(b9);
+		bl9 = new JLabel(new ImageIcon("image\\button\\select.png"));
+		bl9.setBounds(981,259,113,159);
+		bl9.setVisible(false);
+		l1.add(bl9);
 
 		
 		
@@ -283,7 +298,7 @@ public class Payment extends JFrame implements ActionListener {
         l1.add(bl5);
 
         //payment layout
-		pl2 = new JLabel(new ImageIcon("image\\panel\\bookP2.png"));
+		pl2 = new JLabel(new ImageIcon("image\\panel\\paymentP.png"));
 		pl2.setBounds(528,24,678,670);
 		l1.add(pl2);
 
@@ -398,6 +413,24 @@ public class Payment extends JFrame implements ActionListener {
             }
 
 
+			else if(ae.getSource()==b7)
+			{
+				bl7.setVisible(true);
+				bl8.setVisible(false);
+				bl9.setVisible(false);
+			}
+			else if(ae.getSource()==b8)
+			{
+				bl7.setVisible(false);
+				bl8.setVisible(true);
+				bl9.setVisible(false);
+			}
+			else if(ae.getSource()==b9)
+			{
+				bl7.setVisible(false);
+				bl8.setVisible(false);
+				bl9.setVisible(true);
+			}
 
 			else if(ae.getSource()==b6) //profile2
 			{
@@ -417,7 +450,7 @@ public class Payment extends JFrame implements ActionListener {
 
             else if(ae.getSource()==b5) //back
 			{
-				Home f = new Home(this.userName);
+				Package f = new Package(this.userName);
 				this.setVisible(false);
 				f.setVisible(true);
 			}

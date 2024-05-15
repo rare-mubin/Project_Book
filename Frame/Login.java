@@ -32,16 +32,18 @@ public class Login extends JFrame implements ActionListener
 
         l1.setIcon(image);
 
-        l2 = new JLabel("Welcome to");
+        l2 = new JLabel("Welcome");
 		l2.setFont(new Font("Felix Titling",Font.BOLD,52));
 		l2.setForeground(new Color(0x505050));
 		l2.setBounds(753,95,372,64);
+		l2.setHorizontalAlignment(SwingConstants.CENTER);
 		l1.add(l2);
 
 		l3 = new JLabel("Pixelated Book");
-		l3.setFont(new Font("Felix Titling",Font.BOLD,57));
+		l3.setFont(new Font("Felix Titling",Font.BOLD,43));
 		l3.setForeground(new Color(0x505050));
 		l3.setBounds(743,180,392,70);
+		l3.setHorizontalAlignment(SwingConstants.CENTER);
 		l1.add(l3);
 
 		l4 = new JLabel("Enter Your User Name");

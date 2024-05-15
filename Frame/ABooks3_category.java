@@ -9,9 +9,9 @@ public class ABooks3_category extends JFrame implements ActionListener
 {
 		JLabel l,l1,l2,l3,l4,l5,l6,l7,l8,l9,l10,l11,l12,l13,l14,l15;
 		JLabel pl1,pl2,Tpl; //for panel image
-		JLabel bl1,bl2,bl3,bl4,bl5,bl6,tl1,tl2; //for button and  textfield image
+		JLabel bl1,bl2,bl3,bl4,bl5,bl6,bl17,tl1,tl2; //for button and  textfield image
 		JTextField t1,t2;
-		JButton b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16; 
+		JButton b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17; 
 
 		String Book[] = {"","","","","","","",""};
 		static Point LP;
@@ -193,6 +193,19 @@ public class ABooks3_category extends JFrame implements ActionListener
 		l14.setBounds(1010,386,169,279);
 		l1.add(l14);
 
+		//profile button
+		b17 = new JButton();
+		b17.setOpaque(false);
+		b17.setFocusable(false);
+		b17.setBackground(Color.white);
+		b17.setBounds(1234,585,35,35);
+		b17.setBorderPainted(false);
+		b17.addActionListener(this);
+		l1.add(b17);
+		bl17 = new JLabel(new ImageIcon("image\\button\\profile.png"));
+		bl17.setBounds(1234,585,35,35);
+        l1.add(bl17);
+
 		//Exit Button
 		b3 = new JButton();
 		b3.setOpaque(false);
@@ -367,6 +380,11 @@ public class ABooks3_category extends JFrame implements ActionListener
 				
 			}
 
+			else if(ae.getSource()==b17) //profile
+			{
+				Profile f = new Profile(userName);
+				f.setVisible(true);
+			}
 
 			else if(ae.getSource()==b3) //exit
 			{

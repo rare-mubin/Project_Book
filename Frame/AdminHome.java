@@ -178,7 +178,7 @@ public class AdminHome extends JFrame implements ActionListener
 		bl8.setBounds(1234,167,35,35);
         l1.add(bl8);
 
-		//about button
+		/*//about button
 		b9 = new JButton();
 		b9.setOpaque(false);
 		b9.setFocusable(false);
@@ -189,7 +189,7 @@ public class AdminHome extends JFrame implements ActionListener
 		l1.add(b9);
 		bl9 = new JLabel(new ImageIcon("image\\button\\about.png"));
 		bl9.setBounds(1234,673,35,35);
-        l1.add(bl9);
+        l1.add(bl9);*/
 
 		//profile image
 		l3 = new JLabel();

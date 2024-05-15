@@ -6,7 +6,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-public class SignUp extends JFrame implements ActionListener
+public class AddUser extends JFrame implements ActionListener
 {
 	
 
@@ -18,13 +18,14 @@ public class SignUp extends JFrame implements ActionListener
 
 		int lineNumber;
 		String user;
+		String userName;
 
 		static Point LP;
 		
-	public SignUp()
+	public AddUser(String userName)
 	{
-		
-		ImageIcon image = new ImageIcon("image\\background\\login_page_L.png");
+		this.userName = userName;
+        ImageIcon image = new ImageIcon("image\\background\\login_page_L.png");
 		ImageIcon Lpanel = new ImageIcon("image\\panel\\loginP.png");
 		ImageIcon textF = new ImageIcon("image\\TextField\\email_pass.png");
         l = new JLabel();
@@ -39,10 +40,11 @@ public class SignUp extends JFrame implements ActionListener
 
         l.setIcon(image);
 
-        l1 = new JLabel("Create An Account");
+        l1 = new JLabel("Add User");
 		l1.setFont(new Font("Felix Titling",Font.BOLD,31));
 		l1.setForeground(new Color(0x505050));
 		l1.setBounds(753,67,370,42);
+		l1.setHorizontalAlignment(SwingConstants.CENTER);
 		l.add(l1);
 		
 		l2 = new JLabel("Enter Your Name");
@@ -331,7 +333,7 @@ public class SignUp extends JFrame implements ActionListener
 			
 			else if(ae.getSource()==b5) //back
 			{
-				Login f = new Login();
+				UserInformation f = new UserInformation(this.userName);
 				this.setVisible(false);
 				f.setVisible(true);
 			}

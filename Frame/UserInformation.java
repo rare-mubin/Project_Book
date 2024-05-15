@@ -417,25 +417,25 @@ public class UserInformation extends JFrame implements ActionListener {
 		l44.setBounds(628,514,246,45);
 		l1.add(l44);
 
+		//emailadress8
+		l45 = new JLabel(userEmail[7]);
+		l45.setFont(new Font("Arial",Font.PLAIN,15));
+		l45.setHorizontalAlignment(SwingConstants.CENTER);
+		l45.setForeground(new Color(0x00000));
+		l45.setBounds(898,514,246,45);
+		l1.add(l45);
+
 			if(userName.equals("mubin"))
 			{
-				//emailadress8
-				l45 = new JLabel(userEmail[7]);
-				l45.setFont(new Font("Arial",Font.PLAIN,15));
-				l45.setHorizontalAlignment(SwingConstants.CENTER);
-				l45.setForeground(new Color(0x00000));
-				l45.setBounds(898,514,246,45);
-				l1.add(l45);
-
 				l46 = new JLabel("User Serial");
 				l46.setFont(new Font("Arial",Font.PLAIN,15));
 				l46.setForeground(new Color(0x00000));
-				l46.setBounds(273,582,75,17);
+				l46.setBounds(169,582,75,17);
 				l1.add(l46);
 
 				//userserial textfile
 				t1 = new JTextField(); 
-				t1.setBounds(249,604,124,49);
+				t1.setBounds(145,604,124,49);
 				t1.setFont(new Font("Arial",Font.PLAIN,20));
 				t1.setForeground(Color.black);
 				t1.setHorizontalAlignment(SwingConstants.CENTER);
@@ -443,18 +443,18 @@ public class UserInformation extends JFrame implements ActionListener {
 				t1.setOpaque(false);
 				l1.add(t1);
 				tl1 = new JLabel(new ImageIcon("image\\TextField\\user.png"));
-				tl1.setBounds(249,604,124,49);
+				tl1.setBounds(145,604,124,49);
 				l1.add(tl1);
 
 				l47 = new JLabel("Admin Password");
 				l47.setFont(new Font("Arial",Font.PLAIN,15));
 				l47.setForeground(new Color(0x00000));
-				l47.setBounds(533,582,113,17);
+				l47.setBounds(429,582,113,17);
 				l1.add(l47);
 
 				//adminpassword textfield
 				t2 = new JPasswordField(); 
-				t2.setBounds(405,604,370,49);
+				t2.setBounds(301,604,370,49);
 				t2.setFont(new Font("Arial",Font.PLAIN,20));
 				t2.setForeground(Color.black);
 				t2.setHorizontalAlignment(SwingConstants.CENTER);
@@ -462,23 +462,38 @@ public class UserInformation extends JFrame implements ActionListener {
 				t2.setOpaque(false);
 				l1.add(t2);
 				tl2 = new JLabel(new ImageIcon("image\\TextField\\email_pass.png"));
-				tl2.setBounds(405,604,370,49);
+				tl2.setBounds(301,604,370,49);
 				l1.add(tl2);
 
 				//remove
 				b1= new JButton("REMOVE");
-				b1.setFont(new Font("Arial",Font.PLAIN,15));
+				b1.setFont(new Font("Arial",Font.PLAIN,20));
 				b1.setForeground(Color.WHITE);
 				b1.setOpaque(false);
 				b1.setFocusable(false);
 				b1.setBackground(Color.blue);
-				b1.setBounds(807,604,176,49);
+				b1.setBounds(703,604,176,49);
 				b1.setBorderPainted(false);
 				b1.addActionListener(this);
 				l1.add(b1);
-				bl1 = new JLabel(new ImageIcon("image\\button\\Save.png"));
-				bl1.setBounds(807,604,176,49);
+				bl1 = new JLabel(new ImageIcon("image\\button\\remove.png"));
+				bl1.setBounds(703,604,176,49);
 				l1.add(bl1);
+
+				//add user
+				b2= new JButton("Add User");
+				b2.setFont(new Font("Arial",Font.PLAIN,20));
+				b2.setForeground(Color.WHITE);
+				b2.setOpaque(false);
+				b2.setFocusable(false);
+				b2.setBackground(Color.blue);
+				b2.setBounds(911,604,176,49);
+				b2.setBorderPainted(false);
+				b2.addActionListener(this);
+				l1.add(b2);
+				bl2 = new JLabel(new ImageIcon("image\\button\\Save.png"));
+				bl2.setBounds(911,604,176,49);
+				l1.add(bl2);
 			}
         
 
@@ -640,6 +655,13 @@ public class UserInformation extends JFrame implements ActionListener {
 			{
 				this.setState(JFrame.ICONIFIED);
 			}
+
+			else if(ae.getSource()==b2)
+				{
+					AddUser f = new AddUser(this.userName);
+					this.setVisible(false);
+					f.setVisible(true);
+				}
 
             else if(ae.getSource()==b5) //back
 			{
