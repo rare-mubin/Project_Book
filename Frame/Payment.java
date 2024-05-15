@@ -172,7 +172,7 @@ public class Payment extends JFrame implements ActionListener {
 		l15.setBounds(963,564,54,20);
 		l1.add(l15);
 
-		l18 = new JLabel("999 BDT");
+		l18 = new JLabel("599 BDT");
 		l18.setFont(new Font("Arial",Font.PLAIN,17));
 		l18.setForeground(new Color(0x505050));
 		l18.setBounds(956,585,68,20);
