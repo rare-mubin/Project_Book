@@ -619,15 +619,22 @@ public class UserInformation extends JFrame implements ActionListener {
 				String num = t1.getText();
 				String adminPassword = t2.getText();
 
-				int LineNumber = Integer.parseInt(userSerial);
-				LineNumber -= 1;
+				
 
-				if(num.isEmpty() || adminPassword.isEmpty()){
+				if( num.isEmpty() || adminPassword.isEmpty()){
 					JOptionPane.showMessageDialog(null,"Full Fill User Serial and Admin Password");
+				}
+
+				else if(num.equals("1") || num.equals("2"))
+				{
+					JOptionPane.showMessageDialog(null,"Admin and Moderator is not Removable");
 				}
 
 				else if(adminPassword.equals(this.Password))
 				{
+					int LineNumber = Integer.parseInt(userSerial);
+					LineNumber -= 1;
+
 					try {
 					List<String> lines = Files.readAllLines(path);
 					lines.remove(LineNumber);

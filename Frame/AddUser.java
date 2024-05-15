@@ -321,7 +321,7 @@ public class AddUser extends JFrame implements ActionListener
 					t5.setText("");
 					t6.setText("");
 					
-					Login f = new Login();
+					UserInformation f = new UserInformation(this.userName);
 					this.setVisible(false);
 					f.setVisible(true);
 	
