@@ -14,7 +14,7 @@ public class Payment extends JFrame implements ActionListener {
     JLabel pl1,pl2,Tpl; //for panel image
     JLabel bl1,bl2,bl3,bl4,bl5,bl6,bl7,bl8,bl9,tl1,tl2,tl3; //for button and  textfield image
     JTextField t1,t2,t3;
-    JButton b1,b2,b3,b4,b5,b6,b7,b8,b9; 
+    JButton b1,b2,b3,b4,b5,b6,b7,b8,b9,ab; 
     
     int lineNumber;
 
@@ -297,6 +297,19 @@ public class Payment extends JFrame implements ActionListener {
 		bl5.setBounds(1234,127,35,35);
         l1.add(bl5);
 
+		//about button
+		ab = new JButton();
+		ab.setOpaque(false);
+		ab.setFocusable(false);
+		ab.setBackground(Color.white);
+		ab.setBounds(1234,673,35,35);
+		ab.setBorderPainted(false);
+		ab.addActionListener(this);
+		l1.add(ab);
+		JLabel AB = new JLabel(new ImageIcon("image\\button\\about.png"));
+		AB.setBounds(1234,673,35,35);
+        l1.add(AB);
+
         //payment layout
 		pl2 = new JLabel(new ImageIcon("image\\panel\\paymentP.png"));
 		pl2.setBounds(528,24,678,670);
@@ -441,6 +454,11 @@ public class Payment extends JFrame implements ActionListener {
             else if(ae.getSource()==b3) //exit
 			{
 				System.exit(0);
+			}
+			else if(ae.getSource()==ab) //about
+			{
+				About c=new About();
+				c.setVisible(true);
 			}
 
 			else if(ae.getSource()==b4) //minimize

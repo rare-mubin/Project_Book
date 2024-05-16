@@ -10,7 +10,7 @@ public class Book7 extends JFrame implements ActionListener
 		JLabel bl1,bl2,bl3,bl4,bl5,bl6,tl1,tl2; //for button and  textfield image
 		JLabel BOOKp1;
 		JTextField t1,t2;
-		JButton b1,b2,b3,b4,b5,b6; 
+		JButton b1,b2,b3,b4,b5,b6,ab; 
 		
         int lineNumber;
 
@@ -171,6 +171,19 @@ public class Book7 extends JFrame implements ActionListener
 		bl6.setBounds(1234,585,35,35);
         l1.add(bl6);
 
+		//about button
+		ab = new JButton();
+		ab.setOpaque(false);
+		ab.setFocusable(false);
+		ab.setBackground(Color.white);
+		ab.setBounds(1234,673,35,35);
+		ab.setBorderPainted(false);
+		ab.addActionListener(this);
+		l1.add(ab);
+		JLabel AB = new JLabel(new ImageIcon("image\\button\\about.png"));
+		AB.setBounds(1234,673,35,35);
+        l1.add(AB);
+
         //Book image label
 		BOOKp1 = new JLabel(new ImageIcon("image\\Book\\Book7.1.png"));
 		BOOKp1.setBounds(57,69,413,582);
@@ -255,6 +268,11 @@ public class Book7 extends JFrame implements ActionListener
 				BookS f = new BookS(this.userName);
 				this.setVisible(false);
 				f.setVisible(true);
+			}
+			else if(ae.getSource()==ab) //about
+			{
+				About c=new About();
+				c.setVisible(true);
 			}
             else if(ae.getSource()==b6) //profile
 			{

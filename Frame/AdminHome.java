@@ -10,7 +10,7 @@ public class AdminHome extends JFrame implements ActionListener
 		JLabel pl1,Tpl; //for panel image
 		JLabel bl1,bl2,bl3,bl4,bl5,bl6,bl9,bl8,tl1,tl2; //for button and  textfield image
 		JTextField t1,t2;
-		JButton b1,b2,b3,b4,b5,b6,b7,b8,b9; 
+		JButton b1,b2,b3,b4,b5,b6,b7,b8,b9,ab; 
 		int lineNumber;
 
 		String userName;
@@ -178,18 +178,18 @@ public class AdminHome extends JFrame implements ActionListener
 		bl8.setBounds(1234,167,35,35);
         l1.add(bl8);
 
-		/*//about button
-		b9 = new JButton();
-		b9.setOpaque(false);
-		b9.setFocusable(false);
-		b9.setBackground(Color.white);
-		b9.setBounds(1234,673,35,35);
-		b9.setBorderPainted(false);
-		b9.addActionListener(this);
-		l1.add(b9);
-		bl9 = new JLabel(new ImageIcon("image\\button\\about.png"));
-		bl9.setBounds(1234,673,35,35);
-        l1.add(bl9);*/
+		//about button
+		ab = new JButton();
+		ab.setOpaque(false);
+		ab.setFocusable(false);
+		ab.setBackground(Color.white);
+		ab.setBounds(1234,673,35,35);
+		ab.setBorderPainted(false);
+		ab.addActionListener(this);
+		l1.add(ab);
+		JLabel AB = new JLabel(new ImageIcon("image\\button\\about.png"));
+		AB.setBounds(1234,673,35,35);
+        l1.add(AB);
 
 		//profile image
 		l3 = new JLabel();
@@ -294,6 +294,11 @@ public class AdminHome extends JFrame implements ActionListener
 				c.setVisible(true);
 			}
 
+			else if(ae.getSource()==ab) //about
+			{
+				About c=new About();
+				c.setVisible(true);
+			}
 		
 			
 			else if(ae.getSource()==b3) //exit

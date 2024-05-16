@@ -14,7 +14,7 @@ public class Books1_category extends JFrame implements ActionListener
 	JLabel pl1,pl2,Tpl; //for panel image
 	JLabel bl1,bl2,bl3,bl4,bl5,bl6,bl17,tl1,tl2; //for button and  textfield image
 	JTextField t1,t2;
-	JButton b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17; 
+	JButton b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,ab; 
 
 		static Point LP;
 		String payment;
@@ -264,6 +264,19 @@ public class Books1_category extends JFrame implements ActionListener
 		bl5.setBounds(1234,127,35,35);
         l1.add(bl5);
 
+		//about button
+		ab = new JButton();
+		ab.setOpaque(false);
+		ab.setFocusable(false);
+		ab.setBackground(Color.white);
+		ab.setBounds(1234,673,35,35);
+		ab.setBorderPainted(false);
+		ab.addActionListener(this);
+		l1.add(ab);
+		JLabel AB = new JLabel(new ImageIcon("image\\button\\about.png"));
+		AB.setBounds(1234,673,35,35);
+        l1.add(AB);
+
 		pl1 = new JLabel(new ImageIcon("image\\panel\\Books1P.png"));
 		pl1.setBounds(26,25,301,669);
 		l1.add(pl1);
@@ -437,6 +450,11 @@ public class Books1_category extends JFrame implements ActionListener
 			{
 				Profile f = new Profile(userName);
 				f.setVisible(true);
+			}
+			else if(ae.getSource()==ab) //about
+			{
+				About c=new About();
+				c.setVisible(true);
 			}
 
 			else if(ae.getSource()==b3) //exit

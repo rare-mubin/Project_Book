@@ -12,7 +12,7 @@ public class SignUp extends JFrame implements ActionListener
 
 		JLabel l,l1,l2,l3,l4,l5,l6,l7;
 		JTextField t1,t2,t3,t4,t5,t6;
-		JButton b1,b2,b3,b4,b5; 
+		JButton b1,b2,b3,b4,b5,ab; 
 		JLabel pl1,Tpl; //for panel image
 		JLabel bl1,bl2,bl3,bl4,bl5,tl1,tl2,tl3,tl4,tl5,tl6; //for button and  textfield image
 
@@ -214,6 +214,19 @@ public class SignUp extends JFrame implements ActionListener
 		bl5.setBounds(1234,127,35,35);
         l.add(bl5);
 
+		//about button
+		ab = new JButton();
+		ab.setOpaque(false);
+		ab.setFocusable(false);
+		ab.setBackground(Color.white);
+		ab.setBounds(1234,673,35,35);
+		ab.setBorderPainted(false);
+		ab.addActionListener(this);
+		l.add(ab);
+		JLabel AB = new JLabel(new ImageIcon("image\\button\\about.png"));
+		AB.setBounds(1234,673,35,35);
+        l.add(AB);
+
 
 		//SignUp panel
 		pl1 = new JLabel(); pl1.setIcon(Lpanel);
@@ -336,7 +349,11 @@ public class SignUp extends JFrame implements ActionListener
 				f.setVisible(true);
 			}
 
-			
+			else if(ae.getSource()==ab) //about
+			{
+				About c=new About();
+				c.setVisible(true);
+			}
 			
 			
 			

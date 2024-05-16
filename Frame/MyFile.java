@@ -15,7 +15,7 @@ public class MyFile extends JFrame implements ActionListener {
 		JLabel B1[] = new JLabel[8],B2[] = new JLabel[8],B3[] = new JLabel[8];//book image lable
 		JLabel bl1,bl2,bl3,bl4,bl5,bl6,bl7,bl8,bl9,tl1,tl2; //for button and  textfield image
 		JTextField t1,t2;
-		JButton b1,b2,b3,b4,b5,b6,b7,b8,b9,b10; 
+		JButton b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,ab; 
 		
         int lineNumber;
 
@@ -386,6 +386,19 @@ public class MyFile extends JFrame implements ActionListener {
 		bl5 = new JLabel(new ImageIcon("image\\button\\Back.png"));
 		bl5.setBounds(1234,127,35,35);
         l1.add(bl5);
+
+		//about button
+		ab = new JButton();
+		ab.setOpaque(false);
+		ab.setFocusable(false);
+		ab.setBackground(Color.white);
+		ab.setBounds(1234,673,35,35);
+		ab.setBorderPainted(false);
+		ab.addActionListener(this);
+		l1.add(ab);
+		JLabel AB = new JLabel(new ImageIcon("image\\button\\about.png"));
+		AB.setBounds(1234,673,35,35);
+        l1.add(AB);
 
 		l2 = new JLabel(new ImageIcon("image\\panel\\PanelSlot.png"));
 		l2.setBounds(26,24,1180,670);
@@ -789,6 +802,11 @@ public class MyFile extends JFrame implements ActionListener {
 						MyFile f = new MyFile(this.userName);
 						this.setVisible(false);
 						f.setVisible(true);
+			}
+			else if(ae.getSource()==ab) //about
+			{
+				About c=new About();
+				c.setVisible(true);
 			}
 			
             else if(ae.getSource()==b7) //exit

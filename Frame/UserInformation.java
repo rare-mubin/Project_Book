@@ -17,7 +17,7 @@ public class UserInformation extends JFrame implements ActionListener {
 		JLabel pl1,pl2,Tpl; //for panel image
 		JLabel bl1,bl2,bl3,bl4,bl5,bl6,tl1,tl2; //for button and  textfield image
 		JTextField t1,t2;
-		JButton b1,b2,b3,b4,b5,b6; 
+		JButton b1,b2,b3,b4,b5,b6,ab; 
 		
         int lineNumber;
 
@@ -44,10 +44,13 @@ public class UserInformation extends JFrame implements ActionListener {
                 String line = scanner.nextLine();
 				String[] value = line.split("\t");
 
-                    this.fullName[lineNumber] = value[3];
-                    this.UserName[lineNumber] = value[0];
-                    this.dateOfBirth[lineNumber] = value[2];
-                    this.userEmail[lineNumber] = value[4];
+				if(lineNumber >= 2)
+				{
+                    this.fullName[lineNumber - 2] = value[3];
+                    this.UserName[lineNumber - 2] = value[0];
+                    this.dateOfBirth[lineNumber - 2] = value[2];
+                    this.userEmail[lineNumber - 2] = value[4];
+				}
                     this.lineNumber = lineNumber;
                 
             }
@@ -551,6 +554,19 @@ public class UserInformation extends JFrame implements ActionListener {
 		bl5.setBounds(1234,127,35,35);
         l1.add(bl5);
 
+		//about button
+		ab = new JButton();
+		ab.setOpaque(false);
+		ab.setFocusable(false);
+		ab.setBackground(Color.white);
+		ab.setBounds(1234,673,35,35);
+		ab.setBorderPainted(false);
+		ab.addActionListener(this);
+		l1.add(ab);
+		JLabel AB = new JLabel(new ImageIcon("image\\button\\about.png"));
+		AB.setBounds(1234,673,35,35);
+        l1.add(AB);
+
 		l48 = new JLabel(new ImageIcon("image\\panel\\userdata.png"));
 		l48.setBounds(26,24,1180,670);
 		l1.add(l48);
@@ -612,6 +628,11 @@ public class UserInformation extends JFrame implements ActionListener {
 				this.setVisible(true);
 				f.setVisible(true);
 			}
+			else if(ae.getSource()==ab) //about
+			{
+				About c=new About();
+				c.setVisible(true);
+			}
 
 			else if(ae.getSource()==b1)
 			{
@@ -625,15 +646,10 @@ public class UserInformation extends JFrame implements ActionListener {
 					JOptionPane.showMessageDialog(null,"Full Fill User Serial and Admin Password");
 				}
 
-				else if(num.equals("1") || num.equals("2"))
-				{
-					JOptionPane.showMessageDialog(null,"Admin and Moderator is not Removable");
-				}
-
 				else if(adminPassword.equals(this.Password))
 				{
 					int LineNumber = Integer.parseInt(userSerial);
-					LineNumber -= 1;
+					LineNumber += 1;
 
 					try {
 					List<String> lines = Files.readAllLines(path);

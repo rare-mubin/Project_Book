@@ -9,7 +9,7 @@ public class Login extends JFrame implements ActionListener
 		JLabel pl1,Tpl; //for panel image
 		JLabel bl1,bl2,bl3,bl4,bl6,tl1,tl2; //for button and  textfield image
 		JTextField t1,t2;
-		JButton b1,b2,b3,b4,b5,b6,b7; 
+		JButton b1,b2,b3,b4,b5,b6,b7,ab; 
 
 
 		static Point LP;
@@ -174,6 +174,19 @@ public class Login extends JFrame implements ActionListener
 		bl6 = new JLabel(new ImageIcon("image\\button\\profile.png"));
 		bl6.setBounds(1234,585,35,35);
         l1.add(bl6);
+
+		//about button
+		ab = new JButton();
+		ab.setOpaque(false);
+		ab.setFocusable(false);
+		ab.setBackground(Color.white);
+		ab.setBounds(1234,673,35,35);
+		ab.setBorderPainted(false);
+		ab.addActionListener(this);
+		l1.add(ab);
+		JLabel AB = new JLabel(new ImageIcon("image\\button\\about.png"));
+		AB.setBounds(1234,673,35,35);
+        l1.add(AB);
 		
 
 		//log In panel
@@ -269,6 +282,11 @@ public class Login extends JFrame implements ActionListener
 				f.setVisible(true);
 			}
 
+			else if(ae.getSource()==ab) //about
+			{
+				About c=new About();
+				c.setVisible(true);
+			}
 			
 			
 			else if(ae.getSource()==b3)

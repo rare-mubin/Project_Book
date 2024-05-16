@@ -16,10 +16,10 @@ import java.util.Scanner;
 public class ProfileEdit extends JFrame implements ActionListener 
 {
 		JLabel l,l1,l2,l3,l4,l5,l6,l7,l8,l9,l10,l11,l12,l13,lP;
-		JLabel pl1,pl2,Tpl; //for panel image
+		JLabel pl1,pl2,pl3,Tpl; //for panel image
 		JLabel bl1,bl2,bl3,bl4,bl5,bl6,tl1,tl2,tl3,tl4,tl5; //for button and  textfield image
 		JTextField t1,t2,t3,t4,t5;
-		JButton b1,b2,b3,b4,b5,b6,b7,b8; 
+		JButton b1,b2,b3,b4,b5,b6,b7,b8,ab; 
 		
         int lineNumber;
 
@@ -87,10 +87,30 @@ public class ProfileEdit extends JFrame implements ActionListener
 				lP.setBounds(103,245,157,157);
 				l1.add(lP);
 			}
-			else{
+			else
+			{
 				lP = new JLabel(new ImageIcon("image\\profile\\dummy-profile-pic.png"));
 				lP.setBounds(103,245,157,157);
 				l1.add(lP);
+
+				pl3 = new JLabel(new ImageIcon("image\\panel\\picture.png"));
+				pl3.setBounds(78,506,208,100);
+				l1.add(pl3);
+
+				//upload pic 
+				b6 = new JButton("Upload Picture");
+				b6.setFont(new Font("Arial",Font.PLAIN,13));
+				b6.setForeground(Color.WHITE);
+				b6.setOpaque(false);
+				b6.setFocusable(false);
+				b6.setBackground(Color.white);
+				b6.setBounds(119,624,125,36);
+				b6.setBorderPainted(false);
+				b6.addActionListener(this);
+				l1.add(b6);
+				bl4 = new JLabel(new ImageIcon("image\\button\\button.png"));
+				bl4.setBounds(119,624,125,36);
+				l1.add(bl4);
 			}
 			
         //profile details
@@ -276,21 +296,6 @@ public class ProfileEdit extends JFrame implements ActionListener
 		l13.setHorizontalAlignment(JLabel.CENTER);
 		l13.setBounds(47,445,270,37);
 		l1.add(l13);
-
-		//upload pic 
-		b6 = new JButton("Upload Picture");
-		b6.setFont(new Font("Arial",Font.PLAIN,13));
-		b6.setForeground(Color.WHITE);
-		b6.setOpaque(false);
-		b6.setFocusable(false);
-		b6.setBackground(Color.white);
-		b6.setBounds(119,624,125,36);
-		b6.setBorderPainted(false);
-		b6.addActionListener(this);
-		l1.add(b6);
-		bl4 = new JLabel(new ImageIcon("image\\button\\button.png"));
-		bl4.setBounds(119,624,125,36);
-        l1.add(bl4);
         
 		//Exit Button
 		b3 = new JButton();
@@ -330,6 +335,19 @@ public class ProfileEdit extends JFrame implements ActionListener
 		bl5 = new JLabel(new ImageIcon("image\\button\\Back.png"));
 		bl5.setBounds(1234,127,35,35);
         l1.add(bl5);
+
+		//about button
+		ab = new JButton();
+		ab.setOpaque(false);
+		ab.setFocusable(false);
+		ab.setBackground(Color.white);
+		ab.setBounds(1234,673,35,35);
+		ab.setBorderPainted(false);
+		ab.addActionListener(this);
+		l1.add(ab);
+		JLabel AB = new JLabel(new ImageIcon("image\\button\\about.png"));
+		AB.setBounds(1234,673,35,35);
+        l1.add(AB);
 
 		//right profile details er niche
         pl1 = new JLabel(new ImageIcon("image\\panel\\profile2.png"));
@@ -588,6 +606,11 @@ public class ProfileEdit extends JFrame implements ActionListener
 				f.setVisible(true);
 			}
 
+			else if(ae.getSource()==ab) //about
+			{
+				About c=new About();
+				c.setVisible(true);
+			}
 
             else if(ae.getSource()==b3) //exit
 			{
