@@ -114,10 +114,11 @@ public class ProfileEdit extends JFrame implements ActionListener
 			}
 			
         //profile details
-        l2 = new JLabel("profile details");
+        l2 = new JLabel("profile Edit");
 		l2.setFont(new Font("Felix Titling",Font.PLAIN,35));
 		l2.setForeground(new Color(0x505050));
 		l2.setBounds(674,51,289,42);
+		l2.setHorizontalAlignment(SwingConstants.CENTER);
 		l1.add(l2);
 
         //full name

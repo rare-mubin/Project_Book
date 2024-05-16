@@ -1,3 +1,5 @@
-mubin	1234	01/01/2003	Mubin Hasan	mubin@gmail.com	0	aa	aa	aa
+mubin	1234	01/01/2003	Mubin Hasan	mubin@gmail.com	1	aa	aa	aa
 dipon	4321	23/02/2003	Shazidul Islam	dip@gmail.com	1	aa	aa	P-0077
-fahim	1234	sedrfg	ilzsujdrbgf	adfg	0	aa	aa	aa
+rafiur	1111	09/20/2003	Rafiur Rahman	rafiur@gmail.com	1	P-0078	aa	Si-281X
+abhi	2222	03/04/2002	Abhigyan Sadhak Rindo	abhi@gmail.com	0	aa	aa	aa
+fahim	3333	02/04/2002	Fahim Uddin	fahim@gmail.com	0	aa	aa	aa

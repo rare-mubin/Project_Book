@@ -45,10 +45,10 @@ public class SignUp extends JFrame implements ActionListener
 		l1.setBounds(753,67,370,42);
 		l.add(l1);
 		
-		l2 = new JLabel("Enter Your Name");
+		l2 = new JLabel("Enter Your Full Name");
 		l2.setFont(new Font("Arial",Font.PLAIN,17));
 		l2.setForeground(new Color(0x777777));
-		l2.setBounds(754,140,136,21);
+		l2.setBounds(754,140,300,21);
 		l.add(l2);
 		
 		l3 = new JLabel("Enter Your Date of Birth (dd/mm/yyyy)");
