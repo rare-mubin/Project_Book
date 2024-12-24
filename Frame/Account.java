@@ -65,7 +65,7 @@ public class Account extends Fpass{
     {
         try
         {
-            file = new File("bin\\files\\Users.txt");
+            file = new File("bin/files/Users.txt");
             file.createNewFile();
             writer  = new FileWriter(file,true);
             writer.write(getUserName()+"\t");
@@ -89,7 +89,7 @@ public class Account extends Fpass{
     public boolean getAccount(String userName,String userPassword)
     {
         boolean isAuth = false;
-        String path ="bin\\files\\Users.txt";
+        String path ="bin/files/Users.txt";
         file = new File(path);
         try{
             sc = new Scanner(file);
@@ -114,7 +114,7 @@ public class Account extends Fpass{
     public boolean getAccount(String UserName,String UserEmail,String DOF)
     {
         boolean isAuth = false;
-        String path ="bin\\files\\Users.txt";
+        String path ="bin/files/Users.txt";
         file = new File(path);
         try{
             sc = new Scanner(file);

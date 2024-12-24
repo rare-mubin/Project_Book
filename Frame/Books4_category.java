@@ -26,7 +26,7 @@ public class Books4_category extends JFrame implements ActionListener
 	{
 		this.payment = payment;
 		this.userName = userName;
-        ImageIcon image = new ImageIcon("image\\background\\login_page_L.png");
+        ImageIcon image = new ImageIcon("image/background/login_page_L.png");
         l1 = new JLabel();
 
         this.setTitle("project_BOOK");
@@ -87,7 +87,7 @@ public class Books4_category extends JFrame implements ActionListener
 		b8.setBorderPainted(false);
 		b8.addActionListener(this);
 		l1.add(b8);
-		l5 = new JLabel(new ImageIcon("image\\button\\Cat.png"));
+		l5 = new JLabel(new ImageIcon("image/button/Cat.png"));
 		l5.setBounds(54,272,246,45);
 		l1.add(l5);
 
@@ -101,7 +101,7 @@ public class Books4_category extends JFrame implements ActionListener
 		b9.setBorderPainted(false);
 		b9.addActionListener(this);
 		l1.add(b9);
-		l7 = new JLabel(new ImageIcon("image\\Book\\Book5.2.png"));
+		l7 = new JLabel(new ImageIcon("image/Book/Book5.2.png"));
 		l7.setBounds(377,55,169,279);
 		l1.add(l7);
         //Book 2
@@ -113,7 +113,7 @@ public class Books4_category extends JFrame implements ActionListener
 		b10.setBorderPainted(false);
 		b10.addActionListener(this);
 		l1.add(b10);
-		l8 = new JLabel(new ImageIcon("image\\Book\\Book6.2.png"));
+		l8 = new JLabel(new ImageIcon("image/Book/Book6.2.png"));
 		l8.setBounds(588,55,169,279);
 		l1.add(l8);
         //Book3
@@ -198,7 +198,7 @@ public class Books4_category extends JFrame implements ActionListener
 		b17.setBorderPainted(false);
 		b17.addActionListener(this);
 		l1.add(b17);
-		bl17 = new JLabel(new ImageIcon("image\\button\\profile.png"));
+		bl17 = new JLabel(new ImageIcon("image/button/profile.png"));
 		bl17.setBounds(1234,585,35,35);
         l1.add(bl17);
 
@@ -220,7 +220,7 @@ public class Books4_category extends JFrame implements ActionListener
 			b6.setBorderPainted(false);
 			b6.addActionListener(this);
 			l1.add(b6);
-			bl6 = new JLabel(new ImageIcon("image\\button\\Cancelsubmission.png"));
+			bl6 = new JLabel(new ImageIcon("image/button/Cancelsubmission.png"));
 			bl6.setBounds(119,642,125,28);
 			l1.add(bl6);
 		}
@@ -234,7 +234,7 @@ public class Books4_category extends JFrame implements ActionListener
 		b3.setBorderPainted(false);
 		b3.addActionListener(this);
 		l1.add(b3);
-		bl3 = new JLabel(new ImageIcon("image\\button\\Exit.png"));
+		bl3 = new JLabel(new ImageIcon("image/button/Exit.png"));
 		bl3.setBounds(1234,11,35,35);
         l1.add(bl3);
 
@@ -247,7 +247,7 @@ public class Books4_category extends JFrame implements ActionListener
 		b4.setBorderPainted(false);
 		b4.addActionListener(this);
 		l1.add(b4);
-		bl4 = new JLabel(new ImageIcon("image\\button\\Minimize.png"));
+		bl4 = new JLabel(new ImageIcon("image/button/Minimize.png"));
 		bl4.setBounds(1234,51,35,35);
         l1.add(bl4);
 
@@ -260,7 +260,7 @@ public class Books4_category extends JFrame implements ActionListener
 		b5.setBorderPainted(false);
 		b5.addActionListener(this);
 		l1.add(b5);
-		bl5 = new JLabel(new ImageIcon("image\\button\\Back.png"));
+		bl5 = new JLabel(new ImageIcon("image/button/Back.png"));
 		bl5.setBounds(1234,127,35,35);
         l1.add(bl5);
 
@@ -273,21 +273,21 @@ public class Books4_category extends JFrame implements ActionListener
 		ab.setBorderPainted(false);
 		ab.addActionListener(this);
 		l1.add(ab);
-		JLabel AB = new JLabel(new ImageIcon("image\\button\\about.png"));
+		JLabel AB = new JLabel(new ImageIcon("image/button/about.png"));
 		AB.setBounds(1234,673,35,35);
         l1.add(AB);
 
-		pl1 = new JLabel(new ImageIcon("image\\panel\\Books1P.png"));
+		pl1 = new JLabel(new ImageIcon("image/panel/Books1P.png"));
 		pl1.setBounds(26,25,301,669);
 		l1.add(pl1);
 
-		pl2 = new JLabel(new ImageIcon("image\\panel\\Books2P.png"));
+		pl2 = new JLabel(new ImageIcon("image/panel/Books2P.png"));
 		pl2.setBounds(350,25,855,669);
 		l1.add(pl2);
 
 
 		//right title bar
-		Tpl = new JLabel(new ImageIcon("image\\panel\\titleP.png"));
+		Tpl = new JLabel(new ImageIcon("image/panel/titleP.png"));
 		Tpl.setBounds(1228,5,46,710);
         l1.add(Tpl);
 

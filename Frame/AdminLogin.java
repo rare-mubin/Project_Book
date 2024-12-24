@@ -19,10 +19,10 @@ public class AdminLogin extends JFrame implements ActionListener
 	{
 		this.userName = userName;
 
-        ImageIcon image = new ImageIcon("image\\background\\login_page_L.png");
-		ImageIcon Lpanel = new ImageIcon("image\\panel\\loginP.png");
-		ImageIcon log_sign = new ImageIcon("image\\button\\Login_Sign.png");
-		ImageIcon textF = new ImageIcon("image\\TextField\\email_pass.png");
+        ImageIcon image = new ImageIcon("image/background/login_page_L.png");
+		ImageIcon Lpanel = new ImageIcon("image/panel/loginP.png");
+		ImageIcon log_sign = new ImageIcon("image/button/Login_Sign.png");
+		ImageIcon textF = new ImageIcon("image/TextField/email_pass.png");
         l1 = new JLabel();
 
         this.setTitle("project_BOOK");
@@ -35,7 +35,7 @@ public class AdminLogin extends JFrame implements ActionListener
 
         l1.setIcon(image);
 
-		String picpath = "image\\profile\\mubin.png";
+		String picpath = "image/profile/mubin.png";
 		
 			File file = new File(picpath);
 			if (file.exists()){
@@ -44,7 +44,7 @@ public class AdminLogin extends JFrame implements ActionListener
 				l1.add(lP);
 			}
 			else{
-				lP = new JLabel(new ImageIcon("image\\profile\\dummy-profile-pic.png"));
+				lP = new JLabel(new ImageIcon("image/profile/dummy-profile-pic.png"));
 				lP.setBounds(860,148,157,157);
 				l1.add(lP);
 			}
@@ -130,7 +130,7 @@ public class AdminLogin extends JFrame implements ActionListener
 		b3.setBorderPainted(false);
 		b3.addActionListener(this);
 		l1.add(b3);
-		bl3 = new JLabel(new ImageIcon("image\\button\\Exit.png"));
+		bl3 = new JLabel(new ImageIcon("image/button/Exit.png"));
 		bl3.setBounds(1234,11,35,35);
         l1.add(bl3);
 
@@ -143,7 +143,7 @@ public class AdminLogin extends JFrame implements ActionListener
 		b4.setBorderPainted(false);
 		b4.addActionListener(this);
 		l1.add(b4);
-		bl4 = new JLabel(new ImageIcon("image\\button\\Minimize.png"));
+		bl4 = new JLabel(new ImageIcon("image/button/Minimize.png"));
 		bl4.setBounds(1234,51,35,35);
         l1.add(bl4);
 
@@ -156,7 +156,7 @@ public class AdminLogin extends JFrame implements ActionListener
 		b5.setBorderPainted(false);
 		b5.addActionListener(this);
 		l1.add(b5);
-		bl5 = new JLabel(new ImageIcon("image\\button\\Back.png"));
+		bl5 = new JLabel(new ImageIcon("image/button/Back.png"));
 		bl5.setBounds(1234,127,35,35);
         l1.add(bl5);
 
@@ -169,7 +169,7 @@ public class AdminLogin extends JFrame implements ActionListener
 		ab.setBorderPainted(false);
 		ab.addActionListener(this);
 		l1.add(ab);
-		JLabel AB = new JLabel(new ImageIcon("image\\button\\about.png"));
+		JLabel AB = new JLabel(new ImageIcon("image/button/about.png"));
 		AB.setBounds(1234,673,35,35);
         l1.add(AB);
 		
@@ -180,7 +180,7 @@ public class AdminLogin extends JFrame implements ActionListener
         l1.add(pl1);
 
 		//right title bar
-		Tpl = new JLabel(new ImageIcon("image\\panel\\titleP.png"));
+		Tpl = new JLabel(new ImageIcon("image/panel/titleP.png"));
 		Tpl.setBounds(1228,5,46,710);
         l1.add(Tpl);
 

@@ -24,9 +24,9 @@ public class SignUp extends JFrame implements ActionListener
 	public SignUp()
 	{
 		
-		ImageIcon image = new ImageIcon("image\\background\\login_page_L.png");
-		ImageIcon Lpanel = new ImageIcon("image\\panel\\loginP.png");
-		ImageIcon textF = new ImageIcon("image\\TextField\\email_pass.png");
+		ImageIcon image = new ImageIcon("image/background/login_page_L.png");
+		ImageIcon Lpanel = new ImageIcon("image/panel/loginP.png");
+		ImageIcon textF = new ImageIcon("image/TextField/email_pass.png");
         l = new JLabel();
 
         this.setTitle("project_BOOK");
@@ -171,7 +171,7 @@ public class SignUp extends JFrame implements ActionListener
 		b2.setBorderPainted(false);
 		b2.addActionListener(this);
 		l.add(b2);
-		bl2 = new JLabel(new ImageIcon("image\\button\\Save.png"));
+		bl2 = new JLabel(new ImageIcon("image/button/Save.png"));
 		bl2.setBounds(851,611,176,49);
 		l.add(bl2);
 
@@ -184,7 +184,7 @@ public class SignUp extends JFrame implements ActionListener
 		b3.setBorderPainted(false);
 		b3.addActionListener(this);
 		l.add(b3);
-		bl3 = new JLabel(new ImageIcon("image\\button\\Exit.png"));
+		bl3 = new JLabel(new ImageIcon("image/button/Exit.png"));
 		bl3.setBounds(1234,11,35,35);
         l.add(bl3);
 
@@ -197,7 +197,7 @@ public class SignUp extends JFrame implements ActionListener
 		b4.setBorderPainted(false);
 		b4.addActionListener(this);
 		l.add(b4);
-		bl4 = new JLabel(new ImageIcon("image\\button\\Minimize.png"));
+		bl4 = new JLabel(new ImageIcon("image/button/Minimize.png"));
 		bl4.setBounds(1234,51,35,35);
         l.add(bl4);
 
@@ -210,7 +210,7 @@ public class SignUp extends JFrame implements ActionListener
 		b5.setBorderPainted(false);
 		b5.addActionListener(this);
 		l.add(b5);
-		bl5 = new JLabel(new ImageIcon("image\\button\\Back.png"));
+		bl5 = new JLabel(new ImageIcon("image/button/Back.png"));
 		bl5.setBounds(1234,127,35,35);
         l.add(bl5);
 
@@ -223,7 +223,7 @@ public class SignUp extends JFrame implements ActionListener
 		ab.setBorderPainted(false);
 		ab.addActionListener(this);
 		l.add(ab);
-		JLabel AB = new JLabel(new ImageIcon("image\\button\\about.png"));
+		JLabel AB = new JLabel(new ImageIcon("image/button/about.png"));
 		AB.setBounds(1234,673,35,35);
         l.add(AB);
 
@@ -234,7 +234,7 @@ public class SignUp extends JFrame implements ActionListener
         l.add(pl1);
 
 		//Right title bar
-		Tpl = new JLabel(new ImageIcon("image\\panel\\titleP.png"));
+		Tpl = new JLabel(new ImageIcon("image/panel/titleP.png"));
 		Tpl.setBounds(1228,5,46,710);
         l.add(Tpl);
 

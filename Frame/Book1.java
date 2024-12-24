@@ -24,7 +24,7 @@ public class Book1 extends JFrame implements ActionListener
 	{
 		this.userName = userName;
 
-        ImageIcon image = new ImageIcon("image\\background\\login_page_L.png");
+        ImageIcon image = new ImageIcon("image/background/login_page_L.png");
         l1 = new JLabel();
 
         this.setTitle("project_BOOK");
@@ -115,7 +115,7 @@ public class Book1 extends JFrame implements ActionListener
 		b2.setBorderPainted(false);
 		b2.addActionListener(this);
 		l1.add(b2);
-		bl2 = new JLabel(new ImageIcon("image\\button\\add_collection.png"));
+		bl2 = new JLabel(new ImageIcon("image/button/add_collection.png"));
 		bl2.setBounds(739,610,256,49);
         l1.add(bl2);
 		
@@ -128,7 +128,7 @@ public class Book1 extends JFrame implements ActionListener
 		b3.setBorderPainted(false);
 		b3.addActionListener(this);
 		l1.add(b3);
-		bl3 = new JLabel(new ImageIcon("image\\button\\Exit.png"));
+		bl3 = new JLabel(new ImageIcon("image/button/Exit.png"));
 		bl3.setBounds(1234,11,35,35);
         l1.add(bl3);
 
@@ -141,7 +141,7 @@ public class Book1 extends JFrame implements ActionListener
 		b4.setBorderPainted(false);
 		b4.addActionListener(this);
 		l1.add(b4);
-		bl4 = new JLabel(new ImageIcon("image\\button\\Minimize.png"));
+		bl4 = new JLabel(new ImageIcon("image/button/Minimize.png"));
 		bl4.setBounds(1234,51,35,35);
         l1.add(bl4);
 
@@ -154,7 +154,7 @@ public class Book1 extends JFrame implements ActionListener
 		b5.setBorderPainted(false);
 		b5.addActionListener(this);
 		l1.add(b5);
-		bl5 = new JLabel(new ImageIcon("image\\button\\Back.png"));
+		bl5 = new JLabel(new ImageIcon("image/button/Back.png"));
 		bl5.setBounds(1234,127,35,35);
         l1.add(bl5);
 
@@ -167,7 +167,7 @@ public class Book1 extends JFrame implements ActionListener
 		b6.setBorderPainted(false);
 		b6.addActionListener(this);
 		l1.add(b6);
-		bl6 = new JLabel(new ImageIcon("image\\button\\profile.png"));
+		bl6 = new JLabel(new ImageIcon("image/button/profile.png"));
 		bl6.setBounds(1234,585,35,35);
         l1.add(bl6);
 
@@ -180,24 +180,24 @@ public class Book1 extends JFrame implements ActionListener
 		ab.setBorderPainted(false);
 		ab.addActionListener(this);
 		l1.add(ab);
-		JLabel AB = new JLabel(new ImageIcon("image\\button\\about.png"));
+		JLabel AB = new JLabel(new ImageIcon("image/button/about.png"));
 		AB.setBounds(1234,673,35,35);
         l1.add(AB);
 
         //Book image label
-		BOOKp1 = new JLabel(new ImageIcon("image\\Book\\Book1.1.png"));
+		BOOKp1 = new JLabel(new ImageIcon("image/Book/Book1.1.png"));
 		BOOKp1.setBounds(57,69,413,582);
         l1.add(BOOKp1);
-		pl1 = new JLabel(new ImageIcon("image\\panel\\bookP1.png"));
+		pl1 = new JLabel(new ImageIcon("image/panel/bookP1.png"));
 		pl1.setBounds(26,24,475,670);
         l1.add(pl1);
         //book Details label
-		pl2 = new JLabel(new ImageIcon("image\\panel\\bookP2.png"));
+		pl2 = new JLabel(new ImageIcon("image/panel/bookP2.png"));
 		pl2.setBounds(528,24,678,670);
         l1.add(pl2);
 
 		//right title bar
-		Tpl = new JLabel(new ImageIcon("image\\panel\\titleP.png"));
+		Tpl = new JLabel(new ImageIcon("image/panel/titleP.png"));
 		Tpl.setBounds(1228,5,46,710);
         l1.add(Tpl);
 

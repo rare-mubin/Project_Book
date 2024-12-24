@@ -62,11 +62,11 @@ public class ProfileEdit extends JFrame implements ActionListener
         }
 
 		
-        ImageIcon image = new ImageIcon("image\\background\\login_page_L.png");
-		ImageIcon textF = new ImageIcon("image\\TextField\\profiletextfield.png");
-		ImageIcon textf = new ImageIcon("image\\TextField\\profiletextfield2.png");
-		ImageIcon button = new ImageIcon("image\\button\\button.png");
-		ImageIcon button1 = new ImageIcon("image\\button\\profilebutton.png");
+        ImageIcon image = new ImageIcon("image/background/login_page_L.png");
+		ImageIcon textF = new ImageIcon("image/TextField/profiletextfield.png");
+		ImageIcon textf = new ImageIcon("image/TextField/profiletextfield2.png");
+		ImageIcon button = new ImageIcon("image/button/button.png");
+		ImageIcon button1 = new ImageIcon("image/button/profilebutton.png");
         l1 = new JLabel();
 
         this.setTitle("project_BOOK");
@@ -79,7 +79,7 @@ public class ProfileEdit extends JFrame implements ActionListener
 
         l1.setIcon(image);
 
-		String picpath = "image\\profile\\"+userName+".png";
+		String picpath = "image/profile/"+userName+".png";
 		
 			File file = new File(picpath);
 			if (file.exists()){
@@ -89,11 +89,11 @@ public class ProfileEdit extends JFrame implements ActionListener
 			}
 			else
 			{
-				lP = new JLabel(new ImageIcon("image\\profile\\dummy-profile-pic.png"));
+				lP = new JLabel(new ImageIcon("image/profile/dummy-profile-pic.png"));
 				lP.setBounds(103,245,157,157);
 				l1.add(lP);
 
-				pl3 = new JLabel(new ImageIcon("image\\panel\\picture.png"));
+				pl3 = new JLabel(new ImageIcon("image/panel/picture.png"));
 				pl3.setBounds(78,506,208,100);
 				l1.add(pl3);
 
@@ -108,7 +108,7 @@ public class ProfileEdit extends JFrame implements ActionListener
 				b6.setBorderPainted(false);
 				b6.addActionListener(this);
 				l1.add(b6);
-				bl4 = new JLabel(new ImageIcon("image\\button\\button.png"));
+				bl4 = new JLabel(new ImageIcon("image/button/button.png"));
 				bl4.setBounds(119,624,125,36);
 				l1.add(bl4);
 			}
@@ -307,7 +307,7 @@ public class ProfileEdit extends JFrame implements ActionListener
 		b3.setBorderPainted(false);
 		b3.addActionListener(this);
 		l1.add(b3);
-		bl3 = new JLabel(new ImageIcon("image\\button\\Exit.png"));
+		bl3 = new JLabel(new ImageIcon("image/button/Exit.png"));
 		bl3.setBounds(1234,11,35,35);
         l1.add(bl3);
 
@@ -320,7 +320,7 @@ public class ProfileEdit extends JFrame implements ActionListener
 		b4.setBorderPainted(false);
 		b4.addActionListener(this);
 		l1.add(b4);
-		bl4 = new JLabel(new ImageIcon("image\\button\\Minimize.png"));
+		bl4 = new JLabel(new ImageIcon("image/button/Minimize.png"));
 		bl4.setBounds(1234,51,35,35);
         l1.add(bl4);
 
@@ -333,7 +333,7 @@ public class ProfileEdit extends JFrame implements ActionListener
 		b5.setBorderPainted(false);
 		b5.addActionListener(this);
 		l1.add(b5);
-		bl5 = new JLabel(new ImageIcon("image\\button\\Back.png"));
+		bl5 = new JLabel(new ImageIcon("image/button/Back.png"));
 		bl5.setBounds(1234,127,35,35);
         l1.add(bl5);
 
@@ -346,22 +346,22 @@ public class ProfileEdit extends JFrame implements ActionListener
 		ab.setBorderPainted(false);
 		ab.addActionListener(this);
 		l1.add(ab);
-		JLabel AB = new JLabel(new ImageIcon("image\\button\\about.png"));
+		JLabel AB = new JLabel(new ImageIcon("image/button/about.png"));
 		AB.setBounds(1234,673,35,35);
         l1.add(AB);
 
 		//right profile details er niche
-        pl1 = new JLabel(new ImageIcon("image\\panel\\profile2.png"));
+        pl1 = new JLabel(new ImageIcon("image/panel/profile2.png"));
 		pl1.setBounds(366,24,840,670);
 		l1.add(pl1);
 
 		//username er nicher ta
-		pl2 = new JLabel(new ImageIcon("image\\panel\\profile1.png"));
+		pl2 = new JLabel(new ImageIcon("image/panel/profile1.png"));
 		pl2.setBounds(26,24,311,670);
 		l1.add(pl2);
 
 		//right title bar
-		Tpl = new JLabel(new ImageIcon("image\\panel\\titleP.png"));
+		Tpl = new JLabel(new ImageIcon("image/panel/titleP.png"));
 		Tpl.setBounds(1228,5,46,710);
         l1.add(Tpl);
 
@@ -420,7 +420,7 @@ public class ProfileEdit extends JFrame implements ActionListener
 					File selectedFile = fileChooser.getSelectedFile();
 					projectPath = System.getProperty("user.dir");
 					Path sourcePath = Paths.get(selectedFile.getAbsolutePath());
-					Path destinationPath = Paths.get("image\\profile\\", selectedFile.getName());
+					Path destinationPath = Paths.get("image/profile/", selectedFile.getName());
 
 					try {
 						Files.copy(sourcePath, destinationPath);

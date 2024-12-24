@@ -13,7 +13,7 @@ public class About extends JFrame implements ActionListener {
     public About(){
 
 		
-        ImageIcon image = new ImageIcon("image\\background\\login_page_L.png");
+        ImageIcon image = new ImageIcon("image/background/login_page_L.png");
         l1 = new JLabel();
 
         this.setTitle("project_BOOK");
@@ -26,7 +26,7 @@ public class About extends JFrame implements ActionListener {
 
         l1.setIcon(image);
 
-        l2 = new JLabel(new ImageIcon("image\\panel\\about.png"));
+        l2 = new JLabel(new ImageIcon("image/panel/about.png"));
 		l2.setFont(new Font("Felix Titling",Font.BOLD,32));
 		l2.setForeground(new Color(0x505050));
 		l2.setBounds(78,68,1075,626);
@@ -42,17 +42,17 @@ public class About extends JFrame implements ActionListener {
 		b3.setBorderPainted(false);
 		b3.addActionListener(this);
 		l1.add(b3);
-		bl3 = new JLabel(new ImageIcon("image\\button\\Exit.png"));
+		bl3 = new JLabel(new ImageIcon("image/button/Exit.png"));
 		bl3.setBounds(1234,11,35,35);
         l1.add(bl3);
 
 
-		l2 = new JLabel(new ImageIcon("image\\panel\\aboutB.png"));
+		l2 = new JLabel(new ImageIcon("image/panel/aboutB.png"));
 		l2.setBounds(26,24,1180,670);
 		l1.add(l2);
 
 		//right title bar
-		Tpl = new JLabel(new ImageIcon("image\\panel\\titleP.png"));
+		Tpl = new JLabel(new ImageIcon("image/panel/titleP.png"));
 		Tpl.setBounds(1228,5,46,710);
         l1.add(Tpl);
 

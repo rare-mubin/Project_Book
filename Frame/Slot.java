@@ -53,15 +53,15 @@ public class Slot extends JFrame implements ActionListener {
         }
 
 		
-        ImageIcon image = new ImageIcon("image\\background\\login_page_L.png");
-		ImageIcon Bookimg1 = new ImageIcon("image\\Book\\Book1.png");
-		ImageIcon Bookimg2 = new ImageIcon("image\\Book\\Book2.png");
-		ImageIcon Bookimg3 = new ImageIcon("image\\Book\\Book3.png");
-		ImageIcon Bookimg4 = new ImageIcon("image\\Book\\Book4.png");
-		ImageIcon Bookimg5 = new ImageIcon("image\\Book\\Book5.png");
-		ImageIcon Bookimg6 = new ImageIcon("image\\Book\\Book6.png");
-		ImageIcon Bookimg7 = new ImageIcon("image\\Book\\Book7.png");
-		ImageIcon Bookimg8 = new ImageIcon("image\\Book\\Book8.png");
+        ImageIcon image = new ImageIcon("image/background/login_page_L.png");
+		ImageIcon Bookimg1 = new ImageIcon("image/Book/Book1.png");
+		ImageIcon Bookimg2 = new ImageIcon("image/Book/Book2.png");
+		ImageIcon Bookimg3 = new ImageIcon("image/Book/Book3.png");
+		ImageIcon Bookimg4 = new ImageIcon("image/Book/Book4.png");
+		ImageIcon Bookimg5 = new ImageIcon("image/Book/Book5.png");
+		ImageIcon Bookimg6 = new ImageIcon("image/Book/Book6.png");
+		ImageIcon Bookimg7 = new ImageIcon("image/Book/Book7.png");
+		ImageIcon Bookimg8 = new ImageIcon("image/Book/Book8.png");
         l1 = new JLabel();
 
         this.setTitle("project_BOOK");
@@ -288,7 +288,7 @@ public class Slot extends JFrame implements ActionListener {
 		b6.setBorderPainted(false);
 		b6.addActionListener(this);
 		l1.add(b6);
-		bl6 = new JLabel(new ImageIcon("image\\button\\profile.png"));
+		bl6 = new JLabel(new ImageIcon("image/button/profile.png"));
 		bl6.setBounds(1234,585,35,35);
         l1.add(bl6);
 
@@ -301,7 +301,7 @@ public class Slot extends JFrame implements ActionListener {
 		b7.setBorderPainted(false);
 		b7.addActionListener(this);
 		l1.add(b7);
-		bl3 = new JLabel(new ImageIcon("image\\button\\Exit.png"));
+		bl3 = new JLabel(new ImageIcon("image/button/Exit.png"));
 		bl3.setBounds(1234,11,35,35);
         l1.add(bl3);
 
@@ -314,7 +314,7 @@ public class Slot extends JFrame implements ActionListener {
 		b4.setBorderPainted(false);
 		b4.addActionListener(this);
 		l1.add(b4);
-		bl4 = new JLabel(new ImageIcon("image\\button\\Minimize.png"));
+		bl4 = new JLabel(new ImageIcon("image/button/Minimize.png"));
 		bl4.setBounds(1234,51,35,35);
         l1.add(bl4);
 
@@ -327,7 +327,7 @@ public class Slot extends JFrame implements ActionListener {
 		b5.setBorderPainted(false);
 		b5.addActionListener(this);
 		l1.add(b5);
-		bl5 = new JLabel(new ImageIcon("image\\button\\Back.png"));
+		bl5 = new JLabel(new ImageIcon("image/button/Back.png"));
 		bl5.setBounds(1234,127,35,35);
         l1.add(bl5);
 
@@ -340,16 +340,16 @@ public class Slot extends JFrame implements ActionListener {
 		ab.setBorderPainted(false);
 		ab.addActionListener(this);
 		l1.add(ab);
-		JLabel AB = new JLabel(new ImageIcon("image\\button\\about.png"));
+		JLabel AB = new JLabel(new ImageIcon("image/button/about.png"));
 		AB.setBounds(1234,673,35,35);
         l1.add(AB);
 
-		l2 = new JLabel(new ImageIcon("image\\panel\\PanelSlot.png"));
+		l2 = new JLabel(new ImageIcon("image/panel/PanelSlot.png"));
 		l2.setBounds(26,24,1180,670);
 		l1.add(l2);
 
 		//right title bar
-		Tpl = new JLabel(new ImageIcon("image\\panel\\titleP.png"));
+		Tpl = new JLabel(new ImageIcon("image/panel/titleP.png"));
 		Tpl.setBounds(1228,5,46,710);
         l1.add(Tpl);
 

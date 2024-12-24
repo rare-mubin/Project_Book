@@ -22,7 +22,7 @@ public class AdminHome extends JFrame implements ActionListener
 	{
 		this.userName = userName;
 
-        ImageIcon image = new ImageIcon("image\\background\\login_page_L.png");
+        ImageIcon image = new ImageIcon("image/background/login_page_L.png");
         l1 = new JLabel();
 
         this.setTitle("project_BOOK");
@@ -57,7 +57,7 @@ public class AdminHome extends JFrame implements ActionListener
 		b7.setBorderPainted(false);
 		b7.addActionListener(this);
 		l1.add(b7);
-			String picpath = "image\\profile\\"+userName+".png";
+			String picpath = "image/profile/"+userName+".png";
 		
 			File file = new File(picpath);
 			if (file.exists()){
@@ -66,7 +66,7 @@ public class AdminHome extends JFrame implements ActionListener
 				l1.add(lP);
 			}
 			else{
-				lP = new JLabel(new ImageIcon("image\\profile\\dummy-profile-pic.png"));
+				lP = new JLabel(new ImageIcon("image/profile/dummy-profile-pic.png"));
 				lP.setBounds(170,53,157,157);
 				l1.add(lP);
 			}
@@ -95,7 +95,7 @@ public class AdminHome extends JFrame implements ActionListener
 		b1.setBorderPainted(false);
 		b1.addActionListener(this);
 		l1.add(b1);
-		bl1 = new JLabel(new ImageIcon("image\\button\\userinfo.png"));
+		bl1 = new JLabel(new ImageIcon("image/button/userinfo.png"));
 		bl1.setBounds(53,290,542,377);
 		l1.add(bl1);
         
@@ -108,7 +108,7 @@ public class AdminHome extends JFrame implements ActionListener
 		b2.setBorderPainted(false);
 		b2.addActionListener(this);
 		l1.add(b2);
-		bl2 = new JLabel(new ImageIcon("image\\button\\MyCollection.png"));
+		bl2 = new JLabel(new ImageIcon("image/button/MyCollection.png"));
 		bl2.setBounds(633,290,542,377);
 		l1.add(bl2);
 		
@@ -122,7 +122,7 @@ public class AdminHome extends JFrame implements ActionListener
 		b3.setBorderPainted(false);
 		b3.addActionListener(this);
 		l1.add(b3);
-		bl3 = new JLabel(new ImageIcon("image\\button\\Exit.png"));
+		bl3 = new JLabel(new ImageIcon("image/button/Exit.png"));
 		bl3.setBounds(1234,11,35,35);
         l1.add(bl3);
 
@@ -135,7 +135,7 @@ public class AdminHome extends JFrame implements ActionListener
 		b4.setBorderPainted(false);
 		b4.addActionListener(this);
 		l1.add(b4);
-		bl4 = new JLabel(new ImageIcon("image\\button\\Minimize.png"));
+		bl4 = new JLabel(new ImageIcon("image/button/Minimize.png"));
 		bl4.setBounds(1234,51,35,35);
         l1.add(bl4);
 
@@ -148,7 +148,7 @@ public class AdminHome extends JFrame implements ActionListener
 		b5.setBorderPainted(false);
 		b5.addActionListener(this);
 		l1.add(b5);
-		bl5 = new JLabel(new ImageIcon("image\\button\\Back.png"));
+		bl5 = new JLabel(new ImageIcon("image/button/Back.png"));
 		bl5.setBounds(1234,127,35,35);
         l1.add(bl5);
 
@@ -161,7 +161,7 @@ public class AdminHome extends JFrame implements ActionListener
 		b6.setBorderPainted(false);
 		b6.addActionListener(this);
 		l1.add(b6);
-		bl6 = new JLabel(new ImageIcon("image\\button\\profile.png"));
+		bl6 = new JLabel(new ImageIcon("image/button/profile.png"));
 		bl6.setBounds(1234,585,35,35);
         l1.add(bl6);
 
@@ -174,7 +174,7 @@ public class AdminHome extends JFrame implements ActionListener
 		b8.setBorderPainted(false);
 		b8.addActionListener(this);
 		l1.add(b8);
-		bl8 = new JLabel(new ImageIcon("image\\button\\reload.png"));
+		bl8 = new JLabel(new ImageIcon("image/button/reload.png"));
 		bl8.setBounds(1234,167,35,35);
         l1.add(bl8);
 
@@ -187,7 +187,7 @@ public class AdminHome extends JFrame implements ActionListener
 		ab.setBorderPainted(false);
 		ab.addActionListener(this);
 		l1.add(ab);
-		JLabel AB = new JLabel(new ImageIcon("image\\button\\about.png"));
+		JLabel AB = new JLabel(new ImageIcon("image/button/about.png"));
 		AB.setBounds(1234,673,35,35);
         l1.add(AB);
 
@@ -197,17 +197,17 @@ public class AdminHome extends JFrame implements ActionListener
 		l1.add(l3);
 		
 		//uper panel
-		l2 = new JLabel(new ImageIcon("image\\panel\\HomeU.png"));
+		l2 = new JLabel(new ImageIcon("image/panel/HomeU.png"));
 		l2.setBounds(26,25,1179,213);
 		l1.add(l2);
 
 		//Lower panel
-		l5 = new JLabel(new ImageIcon("image\\panel\\HomeB.png"));
+		l5 = new JLabel(new ImageIcon("image/panel/HomeB.png"));
 		l5.setBounds(26,264,1179,430);
 		l1.add(l5);
 
 		//right title bar
-		Tpl = new JLabel(new ImageIcon("image\\panel\\titleP.png"));
+		Tpl = new JLabel(new ImageIcon("image/panel/titleP.png"));
 		Tpl.setBounds(1228,5,46,710);
         l1.add(Tpl);
 

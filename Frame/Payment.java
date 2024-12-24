@@ -28,8 +28,8 @@ public class Payment extends JFrame implements ActionListener {
         
 
         this.userName = userName;
-        ImageIcon image = new ImageIcon("image\\background\\login_page_L.png");
-        ImageIcon textF = new ImageIcon("image\\TextField\\email_pass.png");
+        ImageIcon image = new ImageIcon("image/background/login_page_L.png");
+        ImageIcon textF = new ImageIcon("image/TextField/email_pass.png");
         l1 = new JLabel();
 
         this.setTitle("project_BOOK");
@@ -189,7 +189,7 @@ public class Payment extends JFrame implements ActionListener {
 		b1.setBorderPainted(false);
 		b1.addActionListener(this);
 		l1.add(b1);
-        bl1 = new JLabel(new ImageIcon("image\\button\\Save.png"));
+        bl1 = new JLabel(new ImageIcon("image/button/Save.png"));
 		bl1.setBounds(176,574,176,49);
 		l1.add(bl1);
 
@@ -204,7 +204,7 @@ public class Payment extends JFrame implements ActionListener {
 		b7.setBorderPainted(false);
 		b7.addActionListener(this);
 		l1.add(b7);
-		bl7 = new JLabel(new ImageIcon("image\\button\\select.png"));
+		bl7 = new JLabel(new ImageIcon("image/button/select.png"));
 		bl7.setBounds(641,259,113,159);
 		bl7.setVisible(false);
 		l1.add(bl7);
@@ -219,7 +219,7 @@ public class Payment extends JFrame implements ActionListener {
 		b8.setBorderPainted(false);
 		b8.addActionListener(this);
 		l1.add(b8);
-		bl8 = new JLabel(new ImageIcon("image\\button\\select.png"));
+		bl8 = new JLabel(new ImageIcon("image/button/select.png"));
 		bl8.setBounds(811,259,113,159);
 		bl8.setVisible(false);
 		l1.add(bl8);
@@ -234,7 +234,7 @@ public class Payment extends JFrame implements ActionListener {
 		b9.setBorderPainted(false);
 		b9.addActionListener(this);
 		l1.add(b9);
-		bl9 = new JLabel(new ImageIcon("image\\button\\select.png"));
+		bl9 = new JLabel(new ImageIcon("image/button/select.png"));
 		bl9.setBounds(981,259,113,159);
 		bl9.setVisible(false);
 		l1.add(bl9);
@@ -254,7 +254,7 @@ public class Payment extends JFrame implements ActionListener {
 		b6.setBorderPainted(false);
 		b6.addActionListener(this);
 		l1.add(b6);
-		bl6 = new JLabel(new ImageIcon("image\\button\\profile.png"));
+		bl6 = new JLabel(new ImageIcon("image/button/profile.png"));
 		bl6.setBounds(1234,585,35,35);
         l1.add(bl6);
 
@@ -267,7 +267,7 @@ public class Payment extends JFrame implements ActionListener {
 		b3.setBorderPainted(false);
 		b3.addActionListener(this);
 		l1.add(b3);
-		bl3 = new JLabel(new ImageIcon("image\\button\\Exit.png"));
+		bl3 = new JLabel(new ImageIcon("image/button/Exit.png"));
 		bl3.setBounds(1234,11,35,35);
         l1.add(bl3);
 
@@ -280,7 +280,7 @@ public class Payment extends JFrame implements ActionListener {
 		b4.setBorderPainted(false);
 		b4.addActionListener(this);
 		l1.add(b4);
-		bl4 = new JLabel(new ImageIcon("image\\button\\Minimize.png"));
+		bl4 = new JLabel(new ImageIcon("image/button/Minimize.png"));
 		bl4.setBounds(1234,51,35,35);
         l1.add(bl4);
 
@@ -293,7 +293,7 @@ public class Payment extends JFrame implements ActionListener {
 		b5.setBorderPainted(false);
 		b5.addActionListener(this);
 		l1.add(b5);
-		bl5 = new JLabel(new ImageIcon("image\\button\\Back.png"));
+		bl5 = new JLabel(new ImageIcon("image/button/Back.png"));
 		bl5.setBounds(1234,127,35,35);
         l1.add(bl5);
 
@@ -306,22 +306,22 @@ public class Payment extends JFrame implements ActionListener {
 		ab.setBorderPainted(false);
 		ab.addActionListener(this);
 		l1.add(ab);
-		JLabel AB = new JLabel(new ImageIcon("image\\button\\about.png"));
+		JLabel AB = new JLabel(new ImageIcon("image/button/about.png"));
 		AB.setBounds(1234,673,35,35);
         l1.add(AB);
 
         //payment layout
-		pl2 = new JLabel(new ImageIcon("image\\panel\\paymentP.png"));
+		pl2 = new JLabel(new ImageIcon("image/panel/paymentP.png"));
 		pl2.setBounds(528,24,678,670);
 		l1.add(pl2);
 
         //CREDENTIAL layout
-		pl1 = new JLabel(new ImageIcon("image\\panel\\bookP1.png"));
+		pl1 = new JLabel(new ImageIcon("image/panel/bookP1.png"));
 		pl1.setBounds(26,24,475,670);
         l1.add(pl1);
 
 		//right title bar
-		Tpl = new JLabel(new ImageIcon("image\\panel\\titleP.png"));
+		Tpl = new JLabel(new ImageIcon("image/panel/titleP.png"));
 		Tpl.setBounds(1228,5,46,710);
         l1.add(Tpl);
 

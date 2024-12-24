@@ -13,7 +13,7 @@ import java.util.Scanner;
 
 
 public class UserInformation extends JFrame implements ActionListener {
-        JLabel l,l1,l2,l3,l4,l5,l6,l7,l8,l9,l10,l11,l12,l13,l14,l15,l16,l17,l18,l19,l20,l21,l22,l23,l24,l25,l26,l27,l28,l29,l30,l31,l32,l33,l34,l35,l36,l37,l38,l39,l40,l41,l42,l43,l44,l45,l46,l47,l48,l49,l50,lP;
+        JLabel l,l1,l2,l3,l4,l5,l6,l7,l8,l9,l10,l11,l12,l13,l14,l15,l16,l17,l18,l19,l20,l21,l22,l23,l24,l25,l26,l27,l28,l29,l30,l31,l32,l33,l34,l35,l36,l37,l38,l39,l40,l41,l42,l43,l44,l45,l46,l47,l48,lP;
 		JLabel pl1,pl2,Tpl; //for panel image
 		JLabel bl1,bl2,bl3,bl4,bl5,bl6,tl1,tl2; //for button and  textfield image
 		JTextField t1,t2;
@@ -81,7 +81,7 @@ public class UserInformation extends JFrame implements ActionListener {
         }
 
 		
-        ImageIcon image = new ImageIcon("image\\background\\login_page_L.png");
+        ImageIcon image = new ImageIcon("image/background/login_page_L.png");
         l1 = new JLabel();
 
         this.setTitle("project_BOOK");
@@ -445,7 +445,7 @@ public class UserInformation extends JFrame implements ActionListener {
 				t1.setBorder(null);
 				t1.setOpaque(false);
 				l1.add(t1);
-				tl1 = new JLabel(new ImageIcon("image\\TextField\\user.png"));
+				tl1 = new JLabel(new ImageIcon("image/TextField/user.png"));
 				tl1.setBounds(145,604,124,49);
 				l1.add(tl1);
 
@@ -464,7 +464,7 @@ public class UserInformation extends JFrame implements ActionListener {
 				t2.setBorder(null);
 				t2.setOpaque(false);
 				l1.add(t2);
-				tl2 = new JLabel(new ImageIcon("image\\TextField\\email_pass.png"));
+				tl2 = new JLabel(new ImageIcon("image/TextField/email_pass.png"));
 				tl2.setBounds(301,604,370,49);
 				l1.add(tl2);
 
@@ -479,7 +479,7 @@ public class UserInformation extends JFrame implements ActionListener {
 				b1.setBorderPainted(false);
 				b1.addActionListener(this);
 				l1.add(b1);
-				bl1 = new JLabel(new ImageIcon("image\\button\\remove.png"));
+				bl1 = new JLabel(new ImageIcon("image/button/remove.png"));
 				bl1.setBounds(703,604,176,49);
 				l1.add(bl1);
 
@@ -494,7 +494,7 @@ public class UserInformation extends JFrame implements ActionListener {
 				b2.setBorderPainted(false);
 				b2.addActionListener(this);
 				l1.add(b2);
-				bl2 = new JLabel(new ImageIcon("image\\button\\Save.png"));
+				bl2 = new JLabel(new ImageIcon("image/button/Save.png"));
 				bl2.setBounds(911,604,176,49);
 				l1.add(bl2);
 			}
@@ -511,7 +511,7 @@ public class UserInformation extends JFrame implements ActionListener {
 		b6.setBorderPainted(false);
 		b6.addActionListener(this);
 		l1.add(b6);
-		bl6 = new JLabel(new ImageIcon("image\\button\\profile.png"));
+		bl6 = new JLabel(new ImageIcon("image/button/profile.png"));
 		bl6.setBounds(1234,585,35,35);
         l1.add(bl6);
 
@@ -524,7 +524,7 @@ public class UserInformation extends JFrame implements ActionListener {
 		b3.setBorderPainted(false);
 		b3.addActionListener(this);
 		l1.add(b3);
-		bl3 = new JLabel(new ImageIcon("image\\button\\Exit.png"));
+		bl3 = new JLabel(new ImageIcon("image/button/Exit.png"));
 		bl3.setBounds(1234,11,35,35);
         l1.add(bl3);
 
@@ -537,7 +537,7 @@ public class UserInformation extends JFrame implements ActionListener {
 		b4.setBorderPainted(false);
 		b4.addActionListener(this);
 		l1.add(b4);
-		bl4 = new JLabel(new ImageIcon("image\\button\\Minimize.png"));
+		bl4 = new JLabel(new ImageIcon("image/button/Minimize.png"));
 		bl4.setBounds(1234,51,35,35);
         l1.add(bl4);
 
@@ -550,7 +550,7 @@ public class UserInformation extends JFrame implements ActionListener {
 		b5.setBorderPainted(false);
 		b5.addActionListener(this);
 		l1.add(b5);
-		bl5 = new JLabel(new ImageIcon("image\\button\\Back.png"));
+		bl5 = new JLabel(new ImageIcon("image/button/Back.png"));
 		bl5.setBounds(1234,127,35,35);
         l1.add(bl5);
 
@@ -563,16 +563,16 @@ public class UserInformation extends JFrame implements ActionListener {
 		ab.setBorderPainted(false);
 		ab.addActionListener(this);
 		l1.add(ab);
-		JLabel AB = new JLabel(new ImageIcon("image\\button\\about.png"));
+		JLabel AB = new JLabel(new ImageIcon("image/button/about.png"));
 		AB.setBounds(1234,673,35,35);
         l1.add(AB);
 
-		l48 = new JLabel(new ImageIcon("image\\panel\\userdata.png"));
+		l48 = new JLabel(new ImageIcon("image/panel/userdata.png"));
 		l48.setBounds(26,24,1180,670);
 		l1.add(l48);
 
 		//right title bar
-		Tpl = new JLabel(new ImageIcon("image\\panel\\titleP.png"));
+		Tpl = new JLabel(new ImageIcon("image/panel/titleP.png"));
 		Tpl.setBounds(1228,5,46,710);
         l1.add(Tpl);
 
